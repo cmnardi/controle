@@ -4,6 +4,8 @@ use Illuminate\Foundation\Testing\WithoutMiddleware;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
 
+date_default_timezone_set( 'Europe/Paris' );
+
 use \OfxParser\Ofx;
 
 require_once __DIR__ . '/../vendor/autoload.php';

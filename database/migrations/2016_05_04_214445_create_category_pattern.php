@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class Transaction extends Migration
+class CreateCategoryPattern extends Migration
 {
     /**
      * Run the migrations.
@@ -13,15 +13,15 @@ class Transaction extends Migration
     public function up()
     {
         //
-         Schema::create('transaction', function (Blueprint $table) {
+         Schema::create('category_pattern', function (Blueprint $table) {
             $table->increments('id');
             $table->string('description');
-            $table->decimal('value');
+            $table->string('pattern');
+            $table->integer('order');
             $table->integer('id_category')->unsigned();
             $table->timestamps();
             $table->softDeletes();
             $table->foreign('id_category')->references('id')->on('category');
-            
         });
     }
 
@@ -33,6 +33,6 @@ class Transaction extends Migration
     public function down()
     {
         //
-        Schema::drop('transaction');
+        Schema::drop('category_pattern');
     }
 }

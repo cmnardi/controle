@@ -1,0 +1,9 @@
+{
+    "name": "Controle",
+    "description": "Laravel 5 aplication",
+    "license": "MIT",
+    "private": true,
+    "dependencies": {
+        "admin-lte": "2.3.3"
+    }
+}

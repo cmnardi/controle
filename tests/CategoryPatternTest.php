@@ -11,7 +11,7 @@ class CategoryPatternTest extends TestCase
      *
      * @return void
      */
-    public function testExample()
+    public function testInicial()
     {
     	$c = new \App\Model\Category();
     	$c->name = 'Teste';

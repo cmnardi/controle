@@ -80,7 +80,7 @@ class CategoryTest extends TestCase
                 echo "\t#".$p1->id_category."[".$p1->description."]";
                 $t = new Transaction();
                 $t->description = $transaction->memo;
-                $t->id_category = $p1->id_category;
+                $t->id_category = $p1->id;
                 $t->value = $transaction->amount;
                 $t->save();
             }

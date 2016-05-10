@@ -32,5 +32,17 @@ class CategorySeeder extends Seeder
             'name' => 'Carro',
             'id' => 5
         ]);
+        DB::table('category')->insert([
+            'name' => 'Cachorros',
+            'id' => 6
+        ]);
+        DB::table('category')->insert([
+            'name' => 'Banco',
+            'id' => 7
+        ]);
+        DB::table('category')->insert([
+            'name' => 'Não Sei',
+            'id' => 8
+        ]);
     }
 }

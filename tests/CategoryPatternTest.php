@@ -4,12 +4,11 @@ use Illuminate\Foundation\Testing\WithoutMiddleware;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
 
-use \App\Model\CategoryPattern;
 use \App\Model\Category;
 use \App\Model\Transaction;
 use \OfxParser\Ofx;
 
-class CategoryPatternTest extends TestCase
+class CategoryTest extends TestCase
 {
     /**
      * A basic test example.
@@ -22,19 +21,19 @@ class CategoryPatternTest extends TestCase
     	$c->name = 'Teste';
 //    	$c->save();
 
-        $categoryPattern = new CategoryPattern();
-        $categoryPattern->description = 'Gasolina';
-        $categoryPattern->pattern = '/Posto.*/';
-        $categoryPattern->id_category = 28;
-        //$categoryPattern->save();
+        $Category = new Category();
+        $Category->description = 'Gasolina';
+        $Category->pattern = '/Posto.*/';
+        $Category->id_category = 28;
+        //$Category->save();
     }
 
     public function testMatch()
     {
-        $patterns = CategoryPattern::all();
-        $p1 = CategoryPattern::testPattern('Posto');
-        $p2 = CategoryPattern::testPattern('Teste');
-        $p3 = CategoryPattern::testPattern('WEUY');
+        $patterns = Category::all();
+        $p1 = Category::testPattern('Posto');
+        $p2 = Category::testPattern('Teste');
+        $p3 = Category::testPattern('WEUY');
 
         $this->assertNotNull($p1);
         $this->assertNotNull($p2);
@@ -43,40 +42,40 @@ class CategoryPatternTest extends TestCase
 
     public function testTransporte()
     {
-        $p1 = CategoryPattern::testPattern('Auto Posto ASIU');
+        $p1 = Category::testPattern('Auto Posto ASIU');
         $this->assertNotNull($p1);
         $this->assertEquals($p1->id_category, 28);
     }
 
     public function testSaude()
     {
-        $p1 = CategoryPattern::testPattern('Qualicorp');
+        $p1 = Category::testPattern('Qualicorp');
         $this->assertNotNull($p1);
         $this->assertEquals($p1->id_category, 27);
     }
 
     public function testMercado()
     {
-        $p1 = CategoryPattern::testPattern('Extra');
+        $p1 = Category::testPattern('Extra');
         $this->assertNotNull($p1);
         $this->assertEquals($p1->id_category, 26);
     }
 
     public function testOfx()
     {
-        echo "\n";
-        $ofxFile = 'tests/ofxdata-xml.ofx';
-        if (!file_exists($ofxFile)){
-            $this->markTestSkipped('Could not find data file, cannot test Ofx Class');
-        }
-        $ofxdata = simplexml_load_string( file_get_contents($ofxFile) );
-        $Ofx = new Ofx($ofxdata);
+        echo "\n#OFX";
+        
+        $ofxdata = 'tests/bra.ofx';
+        $OfxParser = new \OfxParser\Parser;
+        $Ofx = $OfxParser->loadFromFile($ofxdata);
+        //$Ofx = new Ofx($ofxdata);
         $Account = $Ofx->BankAccount;
         $Statement = $Account->Statement;
         $Transactions = $Statement->transactions;
         foreach( $Transactions as $i => $transaction ){
             echo "\n[".$transaction->type."]\t".$transaction->name." ".$transaction->amount;
-            $p1 = CategoryPattern::testPattern($transaction->memo);
+            echo "\ntest ".$transaction->memo;
+            $p1 = Category::testPattern($transaction->memo);
             if ($p1){
                 echo "\t#".$p1->id_category."[".$p1->description."]";
                 $t = new Transaction();

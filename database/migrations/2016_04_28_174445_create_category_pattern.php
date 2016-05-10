@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class Category extends Migration
+class CreateCategoryPattern extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,19 @@ class Category extends Migration
     public function up()
     {
         //
-        Schema::create('category', function (Blueprint $table) {
+         Schema::create('category', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
-            
+            $table->string('description')->nullable();
+            $table->string('pattern')->nullable();
+            $table->integer('order');
+            $table->integer('id_category')->unsigned()->nullable();
             $table->timestamps();
             $table->softDeletes();
+        });
+
+        Schema::table('category', function (Blueprint $table) {
+            $table->foreign('id_category')->references('id')->on('category');
         });
     }
 

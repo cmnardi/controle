@@ -12,40 +12,40 @@ class CategoryPatternSeeder extends Seeder
     public function run()
     {
         //
-        DB::table('category_pattern')->insert([
-            'description' => 'Casa',
+        DB::table('category')->insert([
+            'name' => 'Casa',
             'id_category' => 1,
-            'pattern' => '\*\\',
+            'pattern' => '/.*/',
             'order' => 99999
         ]);
-        DB::table('category_pattern')->insert([
-            'description' => 'Drogasil',
+        DB::table('category')->insert([
+            'name' => 'Drogasil',
             'id_category' => 2,
-            'pattern' => '\*Drogasil*\\',
+            'pattern' => '/.*Drogasil.*/',
             'order' => 1
         ]);
-        DB::table('category_pattern')->insert([
-            'description' => 'Gasolina',
+        DB::table('category')->insert([
+            'name' => 'Gasolina',
             'id_category' => 3,
-            'pattern' => '\*Posto*\\',
+            'pattern' => '/.*Posto.*/',
             'order' => 1
         ]);
-        DB::table('category_pattern')->insert([
-            'description' => 'Bilhete',
+        DB::table('category')->insert([
+            'name' => 'Bilhete',
             'id_category' => 3,
-            'pattern' => '\*SP Trans*\\',
+            'pattern' => '/.*SP Trans.*/',
             'order' => 1
         ]);
-        DB::table('category_pattern')->insert([
-            'description' => 'Extra',
+        DB::table('category')->insert([
+            'name' => 'Extra',
             'id_category' => 4,
-            'pattern' => '\*Extra*\\',
+            'pattern' => '/.*Extra.*/',
             'order' => 1
         ]);
-        DB::table('category_pattern')->insert([
-            'description' => 'Padrão',
+        DB::table('category')->insert([
+            'name' => 'Padrão',
             'id_category' => 4,
-            'pattern' => '\*Padrao*\\',
+            'pattern' => '/.*Padrao.*/',
             'order' => 1
         ]);
     }

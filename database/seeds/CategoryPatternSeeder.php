@@ -19,33 +19,39 @@ class CategoryPatternSeeder extends Seeder
             'order' => 99999
         ]);
         DB::table('category')->insert([
+            'name' => 'Aluguel',
+            'id_category' => 1,
+            'pattern' => '/.*Doneda*/',
+            'order' => 1
+        ]);
+        DB::table('category')->insert([
             'name' => 'NET',
             'id_category' => 1,
-            'pattern' => '/.net servicos*/',
+            'pattern' => '/.*Net Servicos*/',
             'order' => 1
         ]);
         DB::table('category')->insert([
             'name' => 'Claro',
             'id_category' => 1,
-            'pattern' => '/.Conta Telefone Claro.*/',
+            'pattern' => '/.*Conta Telefone Claro.*/',
             'order' => 1
         ]);
         DB::table('category')->insert([
             'name' => 'Previdencia',
             'id_category' => 1,
-            'pattern' => '/.Prudential.*/',
+            'pattern' => '/.*Prudential.*/',
             'order' => 1
         ]);
         DB::table('category')->insert([
             'name' => 'Luz',
             'id_category' => 1,
-            'pattern' => '/.eletropaulo.*/',
+            'pattern' => '/.*Eletropaulo.*/',
             'order' => 1
         ]);
         DB::table('category')->insert([
             'name' => 'Água',
             'id_category' => 1,
-            'pattern' => '/.Sabest.*/',
+            'pattern' => '/.*Sabesp.*/',
             'order' => 1
         ]);
 
@@ -53,9 +59,22 @@ class CategoryPatternSeeder extends Seeder
         DB::table('category')->insert([
             'name' => 'Empréstimo',
             'id_category' => 7,
-            'pattern' => '/.Parc Cred Pess. */',
+            'pattern' => '/.*Parc Cred Pess.*/',
             'order' => 1
         ]);
+         DB::table('category')->insert([
+            'name' => 'Limite/Tarifa',
+            'id_category' => 7,
+            'pattern' => '/.*Encargo.*/',
+            'order' => 1
+        ]);
+          DB::table('category')->insert([
+            'name' => 'Empréstimo',
+            'id_category' => 7,
+            'pattern' => '/.*Tarifa Bancaria.*/',
+            'order' => 1
+        ]);
+
 
         //saúde
         DB::table('category')->insert([
@@ -150,7 +169,7 @@ class CategoryPatternSeeder extends Seeder
         DB::table('category')->insert([
             'name' => 'Ração',
             'id_category' => 6,
-            'pattern' => '/.*Racoes Bom dia.*/',
+            'pattern' => '/.*Racoes Bom dia.*/i',
             'order' => 1
         ]);
         DB::table('category')->insert([

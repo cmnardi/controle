@@ -27,12 +27,6 @@ class OfxTest extends TestCase
         $this->ofxdata = simplexml_load_string( file_get_contents($ofxFile) );
     }
 
-    public function testAcceptOnlySimpleXMLElement()
-    {
-        //$this->setExpectedException('\Exception');
-        //new Ofx('This is not an SimpleXMLObject');
-    }
-
     public function testCreateDateTimeFromOFXDateFormats()
     {
         // October 5, 2008, at 1:22 and 124 milliseconds pm, Easter Standard Time

@@ -18,6 +18,7 @@ class CategoryPatternSeeder extends Seeder
             'pattern' => '/.*/',
             'order' => 99999
         ]);
+        //casa
         DB::table('category')->insert([
             'name' => 'Aluguel',
             'id_category' => 1,
@@ -54,6 +55,18 @@ class CategoryPatternSeeder extends Seeder
             'pattern' => '/.*Sabesp.*/',
             'order' => 1
         ]);
+        DB::table('category')->insert([
+            'name' => 'Crédito',
+            'id_category' => 1,
+            'pattern' => '/.*nu Bank*/i',
+            'order' => 1
+        ]);
+        DB::table('category')->insert([
+            'name' => 'Sofia',
+            'id_category' => 1,
+            'pattern' => '/.*Marcelandia*/i',
+            'order' => 1
+        ]);
 
         //Banco
         DB::table('category')->insert([
@@ -65,11 +78,11 @@ class CategoryPatternSeeder extends Seeder
          DB::table('category')->insert([
             'name' => 'Limite/Tarifa',
             'id_category' => 7,
-            'pattern' => '/.*Encargo.*/',
+            'pattern' => '/.*Encargo|Limite.*/',
             'order' => 1
         ]);
           DB::table('category')->insert([
-            'name' => 'Empréstimo',
+            'name' => 'Tarifa Bancaria',
             'id_category' => 7,
             'pattern' => '/.*Tarifa Bancaria.*/',
             'order' => 1
@@ -115,6 +128,12 @@ class CategoryPatternSeeder extends Seeder
             'name' => 'Borracharia',
             'id_category' => 5,
             'pattern' => '/.*Borracharia.*/',
+            'order' => 1
+        ]);
+        DB::table('category')->insert([
+            'name' => 'Impostos',
+            'id_category' => 5,
+            'pattern' => '/.*DAV5872.*/i',
             'order' => 1
         ]);
         

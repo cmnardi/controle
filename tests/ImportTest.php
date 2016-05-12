@@ -25,6 +25,12 @@ class ImportTest extends TestCase
             //echo "\ntest ".$transaction->memo;
             Transaction::testTransaction($transaction);
         }
-        echo "\n";
+        //echo "\n";
+    }
+
+    public function testSum()
+    {
+    	$res = Transaction::getAgregateDataByCategory();
+    	print_r($res);
     }
 }

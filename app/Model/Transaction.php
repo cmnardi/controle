@@ -2,6 +2,7 @@
 
 namespace App\Model;
 
+use DB;
 use Illuminate\Database\Eloquent\Model;
 
 class Transaction extends Model
@@ -31,5 +32,26 @@ class Transaction extends Model
             $t->date = $transaction->date;
             $t->save();
         }
+    }
+
+    public static function getAgregateDataBySubCategory()
+    {
+    	$rows = DB::table('transaction')
+            ->join('category', 'transaction.id_category', '=', 'category.id')
+            ->groupBy('category.name')
+            ->select('category.id', 'category.name','transaction.value')
+            ->get();
+		return $rows;
+    }
+
+    public static function getAgregateDataByCategory()
+    {
+    	$rows = DB::table('transaction')
+            ->join('category AS c1', 'transaction.id_category', '=', 'c1.id')
+            ->join('category AS c2', 'c1.id_category', '=', 'c2.id')
+            ->groupBy('c2.id')
+            ->select('c2.id', 'c2.name','transaction.value')
+            ->get();
+		return $rows;
     }
 }

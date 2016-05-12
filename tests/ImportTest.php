@@ -23,19 +23,7 @@ class ImportTest extends TestCase
         foreach( $Transactions as $i => $transaction ){
             //echo "\n[".$transaction->type."]\t".$transaction->name." ".$transaction->amount;
             //echo "\ntest ".$transaction->memo;
-            $p1 = Category::testPattern($transaction->memo);
-            if ($p1){
-                //echo "\t#".$p1->id_category."[".$p1->description."]";
-                $uniqueId = $transaction->uniqueId;
-                //print_r($transaction);
-                $t = Transaction::findByUniqueId($uniqueId);
-                $t->description = $transaction->memo;
-                $t->fitid = $transaction->uniqueId;
-                $t->id_category = $p1->id;
-                $t->value = $transaction->amount;
-                $t->date = $transaction->date;
-                $t->save();
-            }
+            Transaction::testTransaction($transaction);
         }
         echo "\n";
     }

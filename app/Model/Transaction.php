@@ -31,7 +31,9 @@ class Transaction extends Model
             $t->value = $transaction->amount;
             $t->date = $transaction->date;
             $t->save();
+            return $t;
         }
+        return false;
     }
 
     public static function getAgregateDataBySubCategory()
@@ -39,7 +41,8 @@ class Transaction extends Model
     	$rows = DB::table('transaction')
             ->join('category', 'transaction.id_category', '=', 'category.id')
             ->groupBy('category.name')
-            ->select('category.id', 'category.name','transaction.value')
+            //->select('category.id', 'category.name','transaction.value')
+            ->select(\DB::raw('category.id, SUM(transaction.value) as value, category.name'))
             ->get();
 		return $rows;
     }
@@ -50,7 +53,8 @@ class Transaction extends Model
             ->join('category AS c1', 'transaction.id_category', '=', 'c1.id')
             ->join('category AS c2', 'c1.id_category', '=', 'c2.id')
             ->groupBy('c2.id')
-            ->select('c2.id', 'c2.name','transaction.value')
+            //->select('c2.id', 'c2.name','transaction.value')
+            ->select(\DB::raw('c2.id, SUM(transaction.value) as value, c2.name'))
             ->get();
 		return $rows;
     }

@@ -8,7 +8,7 @@ use \App\Model\Category;
 use \App\Model\Transaction;
 use \OfxParser\Ofx;
 
-class CategoryTest extends TestCase
+class CategoryPatternTest extends TestCase
 {
    
     public function testMatch()

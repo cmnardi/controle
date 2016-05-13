@@ -70,7 +70,7 @@ class OfxTest extends TestCase
 
     public function testBuildsMultipleBankAccounts()
     {
-        $multiOfxFile = 'fixtures/ofx-multiple-accounts-xml.ofx';
+        $multiOfxFile = 'vendor/asgrim/ofxparser/tests/fixtures/ofx-multiple-accounts-xml.ofx';
         if (!file_exists($multiOfxFile))
         {
             $this->markTestSkipped('Could not find multiple account data file, cannot fully test Multiple Bank Accounts');

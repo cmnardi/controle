@@ -40,9 +40,11 @@ class Transaction extends Model
     {
     	$rows = DB::table('transaction')
             ->join('category', 'transaction.id_category', '=', 'category.id')
+            ->join('category AS c2', 'category.id_category', '=', 'c2.id')
             ->groupBy('category.name')
             //->select('category.id', 'category.name','transaction.value')
-            ->select(\DB::raw('category.id, SUM(transaction.value) as value, category.name'))
+            ->select(\DB::raw('category.id, SUM(transaction.value) as value, category.name, 
+                c2.name as category'))
             ->get();
 		return $rows;
     }

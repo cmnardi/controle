@@ -18,6 +18,19 @@
 		</div>
 		<!-- /.info-box -->
 	</div>
+	<div class="col-md-3 col-sm-6 col-xs-12">
+		<div class="info-box">
+			<span class="info-box-icon bg-green">
+				<i class="ion ion-ios-cart-outline"></i></span>
+
+			<div class="info-box-content">
+				<span class="info-box-text">Total (mês)</span>
+				<span class="info-box-number">{{$monthTotal}}</span>
+			</div>
+			<!-- /.info-box-content -->
+		</div>
+		<!-- /.info-box -->
+	</div>
 </div>
 <div class="row">
 	<div class="col-md-6 col-sm-12">

@@ -14,8 +14,10 @@ class HomeController extends Controller
     	$categoryData = Transaction::getAgregateDataByCategory();
     	$subCategoryData = Transaction::getAgregateDataBySubCategory();
 		$total = Transaction::getTotal();
+		$monthTotal = Transaction::getMonthTotal(date('m'));
     	return view('home', [
 			'total' => $total,
+			'monthTotal' => $monthTotal,
     		'categoryData'=>$categoryData,
     		'subCategoryData' => $subCategoryData
 		]);

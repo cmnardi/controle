@@ -18,7 +18,6 @@ class Transaction extends Model
 
     public static function testTransaction($transaction) 
     {
-
         $p1 = Category::testPattern($transaction->memo);
         if ($p1){
             //echo "\t#".$p1->id_category."[".$p1->description."]";
@@ -64,6 +63,14 @@ class Transaction extends Model
     public static function getTotal()
     {
         return DB::table('transaction')
+            ->sum('value')
+            ;
+    }
+
+    public static function getMonthTotal($month)
+    {
+        return DB::table('transaction')
+            ->whereMonth('date', '=', $month)
             ->sum('value')
             ;
     }

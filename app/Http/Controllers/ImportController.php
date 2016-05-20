@@ -43,7 +43,8 @@ class ImportController extends Controller
         foreach( $Transactions as $i => $transaction ){
             $result = Transaction::testTransaction($transaction);
         }
-        return response()->json(['success' => true], 200);
+        //return response()->json(['success' => true], 200);
+        return view('import');
     }
 
 }

@@ -60,4 +60,11 @@ class Transaction extends Model
             ->get();
 		return $rows;
     }
+
+    public static function getTotal()
+    {
+        return DB::table('transaction')
+            ->sum('value')
+            ;
+    }
 }

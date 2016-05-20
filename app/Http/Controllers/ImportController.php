@@ -24,7 +24,7 @@ class ImportController extends Controller
 
     public function store()
     {
-    	$image = Input::file('image');
+    	$image = Input::file('file');
        /** $validator = Validator::make([$image], ['image' => 'required']);
         if ($validator->fails()) {
             return $this->errors(['message' => 'Not an image.', 'code' => 400]);

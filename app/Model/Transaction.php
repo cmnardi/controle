@@ -74,4 +74,9 @@ class Transaction extends Model
             ->sum('value')
             ;
     }
+
+    public static function getByCategory($id_category)
+    {
+        return self::where('id_category',$id_category);
+    }
 }

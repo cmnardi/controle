@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Model\Category;
+use App\Model\Transaction;
 
 class CategoryController extends Controller
 {
@@ -50,6 +51,7 @@ class CategoryController extends Controller
     {
         //
         $category = Category::find($id);
+        $transactions = Transaction::getByCategory($id);
         return view('category/show', [
             'category'=>$category
             ]);

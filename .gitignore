@@ -5,7 +5,7 @@ Homestead.yaml
 Homestead.json
 .env
 
-
+.idea/.*
 
 # Created by https://www.gitignore.io/api/laravel
 

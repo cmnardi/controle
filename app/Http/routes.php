@@ -13,5 +13,7 @@
 
 Route::get('/', 'HomeController@index');
 
-Route::resource('category', 'CategoryController');
+Route::resource('api_category', 'ApiCategoryController');
 Route::resource('import', 'ImportController');
+
+Route::resource('category', 'CategoryController');

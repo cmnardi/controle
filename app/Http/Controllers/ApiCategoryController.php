@@ -49,10 +49,7 @@ class CategoryController extends Controller
     public function show($id)
     {
         //
-        $category = Category::find($id);
-        return view('category/show', [
-            'category'=>$category
-            ]);
+        return Category::find($id);
     }
 
     /**

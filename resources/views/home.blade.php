@@ -173,7 +173,7 @@
 				<tr>
 				@foreach ($categoryData as $row)
 				    <tr>
-				    	<td>{{$row->name}}</td>
+				    	<td><a href="/category/{{$row->id}}">{{$row->name}}</a></td>
 				    	<td>{{$row->value}}</td>
 				    </tr>
 				@endforeach
@@ -190,8 +190,8 @@
 				<tr>
 				@foreach ($subCategoryData as $row)
 				    <tr>
-				    	<td>{{$row->category}}</td>
-				    	<td>{{$row->name}}</td>
+				    	<td><a href="#">{{$row->category}}</a></td>
+				    	<td><a href="/category/{{$row->id}}">{{$row->name}}</a></td>
 				    	<td>{{$row->value}}</td>
 				    </tr>
 				@endforeach

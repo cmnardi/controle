@@ -4,6 +4,3484 @@
 },propHooks:{tabIndex:{get:function(a){var b=n.find.attr(a,"tabindex");return b?parseInt(b,10):cb.test(a.nodeName)||db.test(a.nodeName)&&a.href?0:-1}}},propFix:{"for":"htmlFor","class":"className"}}),l.optSelected||(n.propHooks.selected={get:function(a){var b=a.parentNode;return b&&b.parentNode&&b.parentNode.selectedIndex,null}}),n.each(["tabIndex","readOnly","maxLength","cellSpacing","cellPadding","rowSpan","colSpan","useMap","frameBorder","contentEditable"],function(){n.propFix[this.toLowerCase()]=this});var eb=/[\t\r\n\f]/g;function fb(a){return a.getAttribute&&a.getAttribute("class")||""}n.fn.extend({addClass:function(a){var b,c,d,e,f,g,h,i=0;if(n.isFunction(a))return this.each(function(b){n(this).addClass(a.call(this,b,fb(this)))});if("string"==typeof a&&a){b=a.match(G)||[];while(c=this[i++])if(e=fb(c),d=1===c.nodeType&&(" "+e+" ").replace(eb," ")){g=0;while(f=b[g++])d.indexOf(" "+f+" ")<0&&(d+=f+" ");h=n.trim(d),e!==h&&c.setAttribute("class",h)}}return this},removeClass:function(a){var b,c,d,e,f,g,h,i=0;if(n.isFunction(a))return this.each(function(b){n(this).removeClass(a.call(this,b,fb(this)))});if(!arguments.length)return this.attr("class","");if("string"==typeof a&&a){b=a.match(G)||[];while(c=this[i++])if(e=fb(c),d=1===c.nodeType&&(" "+e+" ").replace(eb," ")){g=0;while(f=b[g++])while(d.indexOf(" "+f+" ")>-1)d=d.replace(" "+f+" "," ");h=n.trim(d),e!==h&&c.setAttribute("class",h)}}return this},toggleClass:function(a,b){var c=typeof a;return"boolean"==typeof b&&"string"===c?b?this.addClass(a):this.removeClass(a):n.isFunction(a)?this.each(function(c){n(this).toggleClass(a.call(this,c,fb(this),b),b)}):this.each(function(){var b,d,e,f;if("string"===c){d=0,e=n(this),f=a.match(G)||[];while(b=f[d++])e.hasClass(b)?e.removeClass(b):e.addClass(b)}else(void 0===a||"boolean"===c)&&(b=fb(this),b&&N.set(this,"__className__",b),this.setAttribute&&this.setAttribute("class",b||a===!1?"":N.get(this,"__className__")||""))})},hasClass:function(a){var b,c,d=0;b=" "+a+" ";while(c=this[d++])if(1===c.nodeType&&(" "+fb(c)+" ").replace(eb," ").indexOf(b)>-1)return!0;return!1}});var gb=/\r/g;n.fn.extend({val:function(a){var b,c,d,e=this[0];{if(arguments.length)return d=n.isFunction(a),this.each(function(c){var e;1===this.nodeType&&(e=d?a.call(this,c,n(this).val()):a,null==e?e="":"number"==typeof e?e+="":n.isArray(e)&&(e=n.map(e,function(a){return null==a?"":a+""})),b=n.valHooks[this.type]||n.valHooks[this.nodeName.toLowerCase()],b&&"set"in b&&void 0!==b.set(this,e,"value")||(this.value=e))});if(e)return b=n.valHooks[e.type]||n.valHooks[e.nodeName.toLowerCase()],b&&"get"in b&&void 0!==(c=b.get(e,"value"))?c:(c=e.value,"string"==typeof c?c.replace(gb,""):null==c?"":c)}}}),n.extend({valHooks:{option:{get:function(a){return n.trim(a.value)}},select:{get:function(a){for(var b,c,d=a.options,e=a.selectedIndex,f="select-one"===a.type||0>e,g=f?null:[],h=f?e+1:d.length,i=0>e?h:f?e:0;h>i;i++)if(c=d[i],(c.selected||i===e)&&(l.optDisabled?!c.disabled:null===c.getAttribute("disabled"))&&(!c.parentNode.disabled||!n.nodeName(c.parentNode,"optgroup"))){if(b=n(c).val(),f)return b;g.push(b)}return g},set:function(a,b){var c,d,e=a.options,f=n.makeArray(b),g=e.length;while(g--)d=e[g],(d.selected=n.inArray(n.valHooks.option.get(d),f)>-1)&&(c=!0);return c||(a.selectedIndex=-1),f}}}}),n.each(["radio","checkbox"],function(){n.valHooks[this]={set:function(a,b){return n.isArray(b)?a.checked=n.inArray(n(a).val(),b)>-1:void 0}},l.checkOn||(n.valHooks[this].get=function(a){return null===a.getAttribute("value")?"on":a.value})});var hb=/^(?:focusinfocus|focusoutblur)$/;n.extend(n.event,{trigger:function(b,c,e,f){var g,h,i,j,l,m,o,p=[e||d],q=k.call(b,"type")?b.type:b,r=k.call(b,"namespace")?b.namespace.split("."):[];if(h=i=e=e||d,3!==e.nodeType&&8!==e.nodeType&&!hb.test(q+n.event.triggered)&&(q.indexOf(".")>-1&&(r=q.split("."),q=r.shift(),r.sort()),l=q.indexOf(":")<0&&"on"+q,b=b[n.expando]?b:new n.Event(q,"object"==typeof b&&b),b.isTrigger=f?2:3,b.namespace=r.join("."),b.rnamespace=b.namespace?new RegExp("(^|\\.)"+r.join("\\.(?:.*\\.|)")+"(\\.|$)"):null,b.result=void 0,b.target||(b.target=e),c=null==c?[b]:n.makeArray(c,[b]),o=n.event.special[q]||{},f||!o.trigger||o.trigger.apply(e,c)!==!1)){if(!f&&!o.noBubble&&!n.isWindow(e)){for(j=o.delegateType||q,hb.test(j+q)||(h=h.parentNode);h;h=h.parentNode)p.push(h),i=h;i===(e.ownerDocument||d)&&p.push(i.defaultView||i.parentWindow||a)}g=0;while((h=p[g++])&&!b.isPropagationStopped())b.type=g>1?j:o.bindType||q,m=(N.get(h,"events")||{})[b.type]&&N.get(h,"handle"),m&&m.apply(h,c),m=l&&h[l],m&&m.apply&&L(h)&&(b.result=m.apply(h,c),b.result===!1&&b.preventDefault());return b.type=q,f||b.isDefaultPrevented()||o._default&&o._default.apply(p.pop(),c)!==!1||!L(e)||l&&n.isFunction(e[q])&&!n.isWindow(e)&&(i=e[l],i&&(e[l]=null),n.event.triggered=q,e[q](),n.event.triggered=void 0,i&&(e[l]=i)),b.result}},simulate:function(a,b,c){var d=n.extend(new n.Event,c,{type:a,isSimulated:!0});n.event.trigger(d,null,b),d.isDefaultPrevented()&&c.preventDefault()}}),n.fn.extend({trigger:function(a,b){return this.each(function(){n.event.trigger(a,b,this)})},triggerHandler:function(a,b){var c=this[0];return c?n.event.trigger(a,b,c,!0):void 0}}),n.each("blur focus focusin focusout load resize scroll unload click dblclick mousedown mouseup mousemove mouseover mouseout mouseenter mouseleave change select submit keydown keypress keyup error contextmenu".split(" "),function(a,b){n.fn[b]=function(a,c){return arguments.length>0?this.on(b,null,a,c):this.trigger(b)}}),n.fn.extend({hover:function(a,b){return this.mouseenter(a).mouseleave(b||a)}}),l.focusin="onfocusin"in a,l.focusin||n.each({focus:"focusin",blur:"focusout"},function(a,b){var c=function(a){n.event.simulate(b,a.target,n.event.fix(a))};n.event.special[b]={setup:function(){var d=this.ownerDocument||this,e=N.access(d,b);e||d.addEventListener(a,c,!0),N.access(d,b,(e||0)+1)},teardown:function(){var d=this.ownerDocument||this,e=N.access(d,b)-1;e?N.access(d,b,e):(d.removeEventListener(a,c,!0),N.remove(d,b))}}});var ib=a.location,jb=n.now(),kb=/\?/;n.parseJSON=function(a){return JSON.parse(a+"")},n.parseXML=function(b){var c;if(!b||"string"!=typeof b)return null;try{c=(new a.DOMParser).parseFromString(b,"text/xml")}catch(d){c=void 0}return(!c||c.getElementsByTagName("parsererror").length)&&n.error("Invalid XML: "+b),c};var lb=/#.*$/,mb=/([?&])_=[^&]*/,nb=/^(.*?):[ \t]*([^\r\n]*)$/gm,ob=/^(?:about|app|app-storage|.+-extension|file|res|widget):$/,pb=/^(?:GET|HEAD)$/,qb=/^\/\//,rb={},sb={},tb="*/".concat("*"),ub=d.createElement("a");ub.href=ib.href;function vb(a){return function(b,c){"string"!=typeof b&&(c=b,b="*");var d,e=0,f=b.toLowerCase().match(G)||[];if(n.isFunction(c))while(d=f[e++])"+"===d[0]?(d=d.slice(1)||"*",(a[d]=a[d]||[]).unshift(c)):(a[d]=a[d]||[]).push(c)}}function wb(a,b,c,d){var e={},f=a===sb;function g(h){var i;return e[h]=!0,n.each(a[h]||[],function(a,h){var j=h(b,c,d);return"string"!=typeof j||f||e[j]?f?!(i=j):void 0:(b.dataTypes.unshift(j),g(j),!1)}),i}return g(b.dataTypes[0])||!e["*"]&&g("*")}function xb(a,b){var c,d,e=n.ajaxSettings.flatOptions||{};for(c in b)void 0!==b[c]&&((e[c]?a:d||(d={}))[c]=b[c]);return d&&n.extend(!0,a,d),a}function yb(a,b,c){var d,e,f,g,h=a.contents,i=a.dataTypes;while("*"===i[0])i.shift(),void 0===d&&(d=a.mimeType||b.getResponseHeader("Content-Type"));if(d)for(e in h)if(h[e]&&h[e].test(d)){i.unshift(e);break}if(i[0]in c)f=i[0];else{for(e in c){if(!i[0]||a.converters[e+" "+i[0]]){f=e;break}g||(g=e)}f=f||g}return f?(f!==i[0]&&i.unshift(f),c[f]):void 0}function zb(a,b,c,d){var e,f,g,h,i,j={},k=a.dataTypes.slice();if(k[1])for(g in a.converters)j[g.toLowerCase()]=a.converters[g];f=k.shift();while(f)if(a.responseFields[f]&&(c[a.responseFields[f]]=b),!i&&d&&a.dataFilter&&(b=a.dataFilter(b,a.dataType)),i=f,f=k.shift())if("*"===f)f=i;else if("*"!==i&&i!==f){if(g=j[i+" "+f]||j["* "+f],!g)for(e in j)if(h=e.split(" "),h[1]===f&&(g=j[i+" "+h[0]]||j["* "+h[0]])){g===!0?g=j[e]:j[e]!==!0&&(f=h[0],k.unshift(h[1]));break}if(g!==!0)if(g&&a["throws"])b=g(b);else try{b=g(b)}catch(l){return{state:"parsererror",error:g?l:"No conversion from "+i+" to "+f}}}return{state:"success",data:b}}n.extend({active:0,lastModified:{},etag:{},ajaxSettings:{url:ib.href,type:"GET",isLocal:ob.test(ib.protocol),global:!0,processData:!0,async:!0,contentType:"application/x-www-form-urlencoded; charset=UTF-8",accepts:{"*":tb,text:"text/plain",html:"text/html",xml:"application/xml, text/xml",json:"application/json, text/javascript"},contents:{xml:/\bxml\b/,html:/\bhtml/,json:/\bjson\b/},responseFields:{xml:"responseXML",text:"responseText",json:"responseJSON"},converters:{"* text":String,"text html":!0,"text json":n.parseJSON,"text xml":n.parseXML},flatOptions:{url:!0,context:!0}},ajaxSetup:function(a,b){return b?xb(xb(a,n.ajaxSettings),b):xb(n.ajaxSettings,a)},ajaxPrefilter:vb(rb),ajaxTransport:vb(sb),ajax:function(b,c){"object"==typeof b&&(c=b,b=void 0),c=c||{};var e,f,g,h,i,j,k,l,m=n.ajaxSetup({},c),o=m.context||m,p=m.context&&(o.nodeType||o.jquery)?n(o):n.event,q=n.Deferred(),r=n.Callbacks("once memory"),s=m.statusCode||{},t={},u={},v=0,w="canceled",x={readyState:0,getResponseHeader:function(a){var b;if(2===v){if(!h){h={};while(b=nb.exec(g))h[b[1].toLowerCase()]=b[2]}b=h[a.toLowerCase()]}return null==b?null:b},getAllResponseHeaders:function(){return 2===v?g:null},setRequestHeader:function(a,b){var c=a.toLowerCase();return v||(a=u[c]=u[c]||a,t[a]=b),this},overrideMimeType:function(a){return v||(m.mimeType=a),this},statusCode:function(a){var b;if(a)if(2>v)for(b in a)s[b]=[s[b],a[b]];else x.always(a[x.status]);return this},abort:function(a){var b=a||w;return e&&e.abort(b),z(0,b),this}};if(q.promise(x).complete=r.add,x.success=x.done,x.error=x.fail,m.url=((b||m.url||ib.href)+"").replace(lb,"").replace(qb,ib.protocol+"//"),m.type=c.method||c.type||m.method||m.type,m.dataTypes=n.trim(m.dataType||"*").toLowerCase().match(G)||[""],null==m.crossDomain){j=d.createElement("a");try{j.href=m.url,j.href=j.href,m.crossDomain=ub.protocol+"//"+ub.host!=j.protocol+"//"+j.host}catch(y){m.crossDomain=!0}}if(m.data&&m.processData&&"string"!=typeof m.data&&(m.data=n.param(m.data,m.traditional)),wb(rb,m,c,x),2===v)return x;k=n.event&&m.global,k&&0===n.active++&&n.event.trigger("ajaxStart"),m.type=m.type.toUpperCase(),m.hasContent=!pb.test(m.type),f=m.url,m.hasContent||(m.data&&(f=m.url+=(kb.test(f)?"&":"?")+m.data,delete m.data),m.cache===!1&&(m.url=mb.test(f)?f.replace(mb,"$1_="+jb++):f+(kb.test(f)?"&":"?")+"_="+jb++)),m.ifModified&&(n.lastModified[f]&&x.setRequestHeader("If-Modified-Since",n.lastModified[f]),n.etag[f]&&x.setRequestHeader("If-None-Match",n.etag[f])),(m.data&&m.hasContent&&m.contentType!==!1||c.contentType)&&x.setRequestHeader("Content-Type",m.contentType),x.setRequestHeader("Accept",m.dataTypes[0]&&m.accepts[m.dataTypes[0]]?m.accepts[m.dataTypes[0]]+("*"!==m.dataTypes[0]?", "+tb+"; q=0.01":""):m.accepts["*"]);for(l in m.headers)x.setRequestHeader(l,m.headers[l]);if(m.beforeSend&&(m.beforeSend.call(o,x,m)===!1||2===v))return x.abort();w="abort";for(l in{success:1,error:1,complete:1})x[l](m[l]);if(e=wb(sb,m,c,x)){if(x.readyState=1,k&&p.trigger("ajaxSend",[x,m]),2===v)return x;m.async&&m.timeout>0&&(i=a.setTimeout(function(){x.abort("timeout")},m.timeout));try{v=1,e.send(t,z)}catch(y){if(!(2>v))throw y;z(-1,y)}}else z(-1,"No Transport");function z(b,c,d,h){var j,l,t,u,w,y=c;2!==v&&(v=2,i&&a.clearTimeout(i),e=void 0,g=h||"",x.readyState=b>0?4:0,j=b>=200&&300>b||304===b,d&&(u=yb(m,x,d)),u=zb(m,u,x,j),j?(m.ifModified&&(w=x.getResponseHeader("Last-Modified"),w&&(n.lastModified[f]=w),w=x.getResponseHeader("etag"),w&&(n.etag[f]=w)),204===b||"HEAD"===m.type?y="nocontent":304===b?y="notmodified":(y=u.state,l=u.data,t=u.error,j=!t)):(t=y,(b||!y)&&(y="error",0>b&&(b=0))),x.status=b,x.statusText=(c||y)+"",j?q.resolveWith(o,[l,y,x]):q.rejectWith(o,[x,y,t]),x.statusCode(s),s=void 0,k&&p.trigger(j?"ajaxSuccess":"ajaxError",[x,m,j?l:t]),r.fireWith(o,[x,y]),k&&(p.trigger("ajaxComplete",[x,m]),--n.active||n.event.trigger("ajaxStop")))}return x},getJSON:function(a,b,c){return n.get(a,b,c,"json")},getScript:function(a,b){return n.get(a,void 0,b,"script")}}),n.each(["get","post"],function(a,b){n[b]=function(a,c,d,e){return n.isFunction(c)&&(e=e||d,d=c,c=void 0),n.ajax(n.extend({url:a,type:b,dataType:e,data:c,success:d},n.isPlainObject(a)&&a))}}),n._evalUrl=function(a){return n.ajax({url:a,type:"GET",dataType:"script",async:!1,global:!1,"throws":!0})},n.fn.extend({wrapAll:function(a){var b;return n.isFunction(a)?this.each(function(b){n(this).wrapAll(a.call(this,b))}):(this[0]&&(b=n(a,this[0].ownerDocument).eq(0).clone(!0),this[0].parentNode&&b.insertBefore(this[0]),b.map(function(){var a=this;while(a.firstElementChild)a=a.firstElementChild;return a}).append(this)),this)},wrapInner:function(a){return n.isFunction(a)?this.each(function(b){n(this).wrapInner(a.call(this,b))}):this.each(function(){var b=n(this),c=b.contents();c.length?c.wrapAll(a):b.append(a)})},wrap:function(a){var b=n.isFunction(a);return this.each(function(c){n(this).wrapAll(b?a.call(this,c):a)})},unwrap:function(){return this.parent().each(function(){n.nodeName(this,"body")||n(this).replaceWith(this.childNodes)}).end()}}),n.expr.filters.hidden=function(a){return!n.expr.filters.visible(a)},n.expr.filters.visible=function(a){return a.offsetWidth>0||a.offsetHeight>0||a.getClientRects().length>0};var Ab=/%20/g,Bb=/\[\]$/,Cb=/\r?\n/g,Db=/^(?:submit|button|image|reset|file)$/i,Eb=/^(?:input|select|textarea|keygen)/i;function Fb(a,b,c,d){var e;if(n.isArray(b))n.each(b,function(b,e){c||Bb.test(a)?d(a,e):Fb(a+"["+("object"==typeof e&&null!=e?b:"")+"]",e,c,d)});else if(c||"object"!==n.type(b))d(a,b);else for(e in b)Fb(a+"["+e+"]",b[e],c,d)}n.param=function(a,b){var c,d=[],e=function(a,b){b=n.isFunction(b)?b():null==b?"":b,d[d.length]=encodeURIComponent(a)+"="+encodeURIComponent(b)};if(void 0===b&&(b=n.ajaxSettings&&n.ajaxSettings.traditional),n.isArray(a)||a.jquery&&!n.isPlainObject(a))n.each(a,function(){e(this.name,this.value)});else for(c in a)Fb(c,a[c],b,e);return d.join("&").replace(Ab,"+")},n.fn.extend({serialize:function(){return n.param(this.serializeArray())},serializeArray:function(){return this.map(function(){var a=n.prop(this,"elements");return a?n.makeArray(a):this}).filter(function(){var a=this.type;return this.name&&!n(this).is(":disabled")&&Eb.test(this.nodeName)&&!Db.test(a)&&(this.checked||!X.test(a))}).map(function(a,b){var c=n(this).val();return null==c?null:n.isArray(c)?n.map(c,function(a){return{name:b.name,value:a.replace(Cb,"\r\n")}}):{name:b.name,value:c.replace(Cb,"\r\n")}}).get()}}),n.ajaxSettings.xhr=function(){try{return new a.XMLHttpRequest}catch(b){}};var Gb={0:200,1223:204},Hb=n.ajaxSettings.xhr();l.cors=!!Hb&&"withCredentials"in Hb,l.ajax=Hb=!!Hb,n.ajaxTransport(function(b){var c,d;return l.cors||Hb&&!b.crossDomain?{send:function(e,f){var g,h=b.xhr();if(h.open(b.type,b.url,b.async,b.username,b.password),b.xhrFields)for(g in b.xhrFields)h[g]=b.xhrFields[g];b.mimeType&&h.overrideMimeType&&h.overrideMimeType(b.mimeType),b.crossDomain||e["X-Requested-With"]||(e["X-Requested-With"]="XMLHttpRequest");for(g in e)h.setRequestHeader(g,e[g]);c=function(a){return function(){c&&(c=d=h.onload=h.onerror=h.onabort=h.onreadystatechange=null,"abort"===a?h.abort():"error"===a?"number"!=typeof h.status?f(0,"error"):f(h.status,h.statusText):f(Gb[h.status]||h.status,h.statusText,"text"!==(h.responseType||"text")||"string"!=typeof h.responseText?{binary:h.response}:{text:h.responseText},h.getAllResponseHeaders()))}},h.onload=c(),d=h.onerror=c("error"),void 0!==h.onabort?h.onabort=d:h.onreadystatechange=function(){4===h.readyState&&a.setTimeout(function(){c&&d()})},c=c("abort");try{h.send(b.hasContent&&b.data||null)}catch(i){if(c)throw i}},abort:function(){c&&c()}}:void 0}),n.ajaxSetup({accepts:{script:"text/javascript, application/javascript, application/ecmascript, application/x-ecmascript"},contents:{script:/\b(?:java|ecma)script\b/},converters:{"text script":function(a){return n.globalEval(a),a}}}),n.ajaxPrefilter("script",function(a){void 0===a.cache&&(a.cache=!1),a.crossDomain&&(a.type="GET")}),n.ajaxTransport("script",function(a){if(a.crossDomain){var b,c;return{send:function(e,f){b=n("<script>").prop({charset:a.scriptCharset,src:a.url}).on("load error",c=function(a){b.remove(),c=null,a&&f("error"===a.type?404:200,a.type)}),d.head.appendChild(b[0])},abort:function(){c&&c()}}}});var Ib=[],Jb=/(=)\?(?=&|$)|\?\?/;n.ajaxSetup({jsonp:"callback",jsonpCallback:function(){var a=Ib.pop()||n.expando+"_"+jb++;return this[a]=!0,a}}),n.ajaxPrefilter("json jsonp",function(b,c,d){var e,f,g,h=b.jsonp!==!1&&(Jb.test(b.url)?"url":"string"==typeof b.data&&0===(b.contentType||"").indexOf("application/x-www-form-urlencoded")&&Jb.test(b.data)&&"data");return h||"jsonp"===b.dataTypes[0]?(e=b.jsonpCallback=n.isFunction(b.jsonpCallback)?b.jsonpCallback():b.jsonpCallback,h?b[h]=b[h].replace(Jb,"$1"+e):b.jsonp!==!1&&(b.url+=(kb.test(b.url)?"&":"?")+b.jsonp+"="+e),b.converters["script json"]=function(){return g||n.error(e+" was not called"),g[0]},b.dataTypes[0]="json",f=a[e],a[e]=function(){g=arguments},d.always(function(){void 0===f?n(a).removeProp(e):a[e]=f,b[e]&&(b.jsonpCallback=c.jsonpCallback,Ib.push(e)),g&&n.isFunction(f)&&f(g[0]),g=f=void 0}),"script"):void 0}),l.createHTMLDocument=function(){var a=d.implementation.createHTMLDocument("").body;return a.innerHTML="<form></form><form></form>",2===a.childNodes.length}(),n.parseHTML=function(a,b,c){if(!a||"string"!=typeof a)return null;"boolean"==typeof b&&(c=b,b=!1),b=b||(l.createHTMLDocument?d.implementation.createHTMLDocument(""):d);var e=x.exec(a),f=!c&&[];return e?[b.createElement(e[1])]:(e=ca([a],b,f),f&&f.length&&n(f).remove(),n.merge([],e.childNodes))};var Kb=n.fn.load;n.fn.load=function(a,b,c){if("string"!=typeof a&&Kb)return Kb.apply(this,arguments);var d,e,f,g=this,h=a.indexOf(" ");return h>-1&&(d=n.trim(a.slice(h)),a=a.slice(0,h)),n.isFunction(b)?(c=b,b=void 0):b&&"object"==typeof b&&(e="POST"),g.length>0&&n.ajax({url:a,type:e||"GET",dataType:"html",data:b}).done(function(a){f=arguments,g.html(d?n("<div>").append(n.parseHTML(a)).find(d):a)}).always(c&&function(a,b){g.each(function(){c.apply(g,f||[a.responseText,b,a])})}),this},n.each(["ajaxStart","ajaxStop","ajaxComplete","ajaxError","ajaxSuccess","ajaxSend"],function(a,b){n.fn[b]=function(a){return this.on(b,a)}}),n.expr.filters.animated=function(a){return n.grep(n.timers,function(b){return a===b.elem}).length};function Lb(a){return n.isWindow(a)?a:9===a.nodeType&&a.defaultView}n.offset={setOffset:function(a,b,c){var d,e,f,g,h,i,j,k=n.css(a,"position"),l=n(a),m={};"static"===k&&(a.style.position="relative"),h=l.offset(),f=n.css(a,"top"),i=n.css(a,"left"),j=("absolute"===k||"fixed"===k)&&(f+i).indexOf("auto")>-1,j?(d=l.position(),g=d.top,e=d.left):(g=parseFloat(f)||0,e=parseFloat(i)||0),n.isFunction(b)&&(b=b.call(a,c,n.extend({},h))),null!=b.top&&(m.top=b.top-h.top+g),null!=b.left&&(m.left=b.left-h.left+e),"using"in b?b.using.call(a,m):l.css(m)}},n.fn.extend({offset:function(a){if(arguments.length)return void 0===a?this:this.each(function(b){n.offset.setOffset(this,a,b)});var b,c,d=this[0],e={top:0,left:0},f=d&&d.ownerDocument;if(f)return b=f.documentElement,n.contains(b,d)?(e=d.getBoundingClientRect(),c=Lb(f),{top:e.top+c.pageYOffset-b.clientTop,left:e.left+c.pageXOffset-b.clientLeft}):e},position:function(){if(this[0]){var a,b,c=this[0],d={top:0,left:0};return"fixed"===n.css(c,"position")?b=c.getBoundingClientRect():(a=this.offsetParent(),b=this.offset(),n.nodeName(a[0],"html")||(d=a.offset()),d.top+=n.css(a[0],"borderTopWidth",!0)-a.scrollTop(),d.left+=n.css(a[0],"borderLeftWidth",!0)-a.scrollLeft()),{top:b.top-d.top-n.css(c,"marginTop",!0),left:b.left-d.left-n.css(c,"marginLeft",!0)}}},offsetParent:function(){return this.map(function(){var a=this.offsetParent;while(a&&"static"===n.css(a,"position"))a=a.offsetParent;return a||Ea})}}),n.each({scrollLeft:"pageXOffset",scrollTop:"pageYOffset"},function(a,b){var c="pageYOffset"===b;n.fn[a]=function(d){return K(this,function(a,d,e){var f=Lb(a);return void 0===e?f?f[b]:a[d]:void(f?f.scrollTo(c?f.pageXOffset:e,c?e:f.pageYOffset):a[d]=e)},a,d,arguments.length)}}),n.each(["top","left"],function(a,b){n.cssHooks[b]=Ga(l.pixelPosition,function(a,c){return c?(c=Fa(a,b),Ba.test(c)?n(a).position()[b]+"px":c):void 0})}),n.each({Height:"height",Width:"width"},function(a,b){n.each({padding:"inner"+a,content:b,"":"outer"+a},function(c,d){n.fn[d]=function(d,e){var f=arguments.length&&(c||"boolean"!=typeof d),g=c||(d===!0||e===!0?"margin":"border");return K(this,function(b,c,d){var e;return n.isWindow(b)?b.document.documentElement["client"+a]:9===b.nodeType?(e=b.documentElement,Math.max(b.body["scroll"+a],e["scroll"+a],b.body["offset"+a],e["offset"+a],e["client"+a])):void 0===d?n.css(b,c,g):n.style(b,c,d,g)},b,f?d:void 0,f,null)}})}),n.fn.extend({bind:function(a,b,c){return this.on(a,null,b,c)},unbind:function(a,b){return this.off(a,null,b)},delegate:function(a,b,c,d){return this.on(b,a,c,d)},undelegate:function(a,b,c){return 1===arguments.length?this.off(a,"**"):this.off(b,a||"**",c)},size:function(){return this.length}}),n.fn.andSelf=n.fn.addBack,"function"==typeof define&&define.amd&&define("jquery",[],function(){return n});var Mb=a.jQuery,Nb=a.$;return n.noConflict=function(b){return a.$===n&&(a.$=Nb),b&&a.jQuery===n&&(a.jQuery=Mb),n},b||(a.jQuery=a.$=n),n});
 
 /*!
+ * Chart.js
+ * http://chartjs.org/
+ * Version: 1.0.2
+ *
+ * Copyright 2015 Nick Downie
+ * Released under the MIT license
+ * https://github.com/nnnick/Chart.js/blob/master/LICENSE.md
+ */
+
+
+(function(){
+
+	"use strict";
+
+	//Declare root variable - window in the browser, global on the server
+	var root = this,
+		previous = root.Chart;
+
+	//Occupy the global variable of Chart, and create a simple base class
+	var Chart = function(context){
+		var chart = this;
+		this.canvas = context.canvas;
+
+		this.ctx = context;
+
+		//Variables global to the chart
+		var computeDimension = function(element,dimension)
+		{
+			if (element['offset'+dimension])
+			{
+				return element['offset'+dimension];
+			}
+			else
+			{
+				return document.defaultView.getComputedStyle(element).getPropertyValue(dimension);
+			}
+		}
+
+		var width = this.width = computeDimension(context.canvas,'Width');
+		var height = this.height = computeDimension(context.canvas,'Height');
+
+		// Firefox requires this to work correctly
+		context.canvas.width  = width;
+		context.canvas.height = height;
+
+		var width = this.width = context.canvas.width;
+		var height = this.height = context.canvas.height;
+		this.aspectRatio = this.width / this.height;
+		//High pixel density displays - multiply the size of the canvas height/width by the device pixel ratio, then scale.
+		helpers.retinaScale(this);
+
+		return this;
+	};
+	//Globally expose the defaults to allow for user updating/changing
+	Chart.defaults = {
+		global: {
+			// Boolean - Whether to animate the chart
+			animation: true,
+
+			// Number - Number of animation steps
+			animationSteps: 60,
+
+			// String - Animation easing effect
+			animationEasing: "easeOutQuart",
+
+			// Boolean - If we should show the scale at all
+			showScale: true,
+
+			// Boolean - If we want to override with a hard coded scale
+			scaleOverride: false,
+
+			// ** Required if scaleOverride is true **
+			// Number - The number of steps in a hard coded scale
+			scaleSteps: null,
+			// Number - The value jump in the hard coded scale
+			scaleStepWidth: null,
+			// Number - The scale starting value
+			scaleStartValue: null,
+
+			// String - Colour of the scale line
+			scaleLineColor: "rgba(0,0,0,.1)",
+
+			// Number - Pixel width of the scale line
+			scaleLineWidth: 1,
+
+			// Boolean - Whether to show labels on the scale
+			scaleShowLabels: true,
+
+			// Interpolated JS string - can access value
+			scaleLabel: "<%=value%>",
+
+			// Boolean - Whether the scale should stick to integers, and not show any floats even if drawing space is there
+			scaleIntegersOnly: true,
+
+			// Boolean - Whether the scale should start at zero, or an order of magnitude down from the lowest value
+			scaleBeginAtZero: false,
+
+			// String - Scale label font declaration for the scale label
+			scaleFontFamily: "'Helvetica Neue', 'Helvetica', 'Arial', sans-serif",
+
+			// Number - Scale label font size in pixels
+			scaleFontSize: 12,
+
+			// String - Scale label font weight style
+			scaleFontStyle: "normal",
+
+			// String - Scale label font colour
+			scaleFontColor: "#666",
+
+			// Boolean - whether or not the chart should be responsive and resize when the browser does.
+			responsive: false,
+
+			// Boolean - whether to maintain the starting aspect ratio or not when responsive, if set to false, will take up entire container
+			maintainAspectRatio: true,
+
+			// Boolean - Determines whether to draw tooltips on the canvas or not - attaches events to touchmove & mousemove
+			showTooltips: true,
+
+			// Boolean - Determines whether to draw built-in tooltip or call custom tooltip function
+			customTooltips: false,
+
+			// Array - Array of string names to attach tooltip events
+			tooltipEvents: ["mousemove", "touchstart", "touchmove", "mouseout"],
+
+			// String - Tooltip background colour
+			tooltipFillColor: "rgba(0,0,0,0.8)",
+
+			// String - Tooltip label font declaration for the scale label
+			tooltipFontFamily: "'Helvetica Neue', 'Helvetica', 'Arial', sans-serif",
+
+			// Number - Tooltip label font size in pixels
+			tooltipFontSize: 14,
+
+			// String - Tooltip font weight style
+			tooltipFontStyle: "normal",
+
+			// String - Tooltip label font colour
+			tooltipFontColor: "#fff",
+
+			// String - Tooltip title font declaration for the scale label
+			tooltipTitleFontFamily: "'Helvetica Neue', 'Helvetica', 'Arial', sans-serif",
+
+			// Number - Tooltip title font size in pixels
+			tooltipTitleFontSize: 14,
+
+			// String - Tooltip title font weight style
+			tooltipTitleFontStyle: "bold",
+
+			// String - Tooltip title font colour
+			tooltipTitleFontColor: "#fff",
+
+			// Number - pixel width of padding around tooltip text
+			tooltipYPadding: 6,
+
+			// Number - pixel width of padding around tooltip text
+			tooltipXPadding: 6,
+
+			// Number - Size of the caret on the tooltip
+			tooltipCaretSize: 8,
+
+			// Number - Pixel radius of the tooltip border
+			tooltipCornerRadius: 6,
+
+			// Number - Pixel offset from point x to tooltip edge
+			tooltipXOffset: 10,
+
+			// String - Template string for single tooltips
+			tooltipTemplate: "<%if (label){%><%=label%>: <%}%><%= value %>",
+
+			// String - Template string for single tooltips
+			multiTooltipTemplate: "<%= value %>",
+
+			// String - Colour behind the legend colour block
+			multiTooltipKeyBackground: '#fff',
+
+			// Function - Will fire on animation progression.
+			onAnimationProgress: function(){},
+
+			// Function - Will fire on animation completion.
+			onAnimationComplete: function(){}
+
+		}
+	};
+
+	//Create a dictionary of chart types, to allow for extension of existing types
+	Chart.types = {};
+
+	//Global Chart helpers object for utility methods and classes
+	var helpers = Chart.helpers = {};
+
+		//-- Basic js utility methods
+	var each = helpers.each = function(loopable,callback,self){
+			var additionalArgs = Array.prototype.slice.call(arguments, 3);
+			// Check to see if null or undefined firstly.
+			if (loopable){
+				if (loopable.length === +loopable.length){
+					var i;
+					for (i=0; i<loopable.length; i++){
+						callback.apply(self,[loopable[i], i].concat(additionalArgs));
+					}
+				}
+				else{
+					for (var item in loopable){
+						callback.apply(self,[loopable[item],item].concat(additionalArgs));
+					}
+				}
+			}
+		},
+		clone = helpers.clone = function(obj){
+			var objClone = {};
+			each(obj,function(value,key){
+				if (obj.hasOwnProperty(key)) objClone[key] = value;
+			});
+			return objClone;
+		},
+		extend = helpers.extend = function(base){
+			each(Array.prototype.slice.call(arguments,1), function(extensionObject) {
+				each(extensionObject,function(value,key){
+					if (extensionObject.hasOwnProperty(key)) base[key] = value;
+				});
+			});
+			return base;
+		},
+		merge = helpers.merge = function(base,master){
+			//Merge properties in left object over to a shallow clone of object right.
+			var args = Array.prototype.slice.call(arguments,0);
+			args.unshift({});
+			return extend.apply(null, args);
+		},
+		indexOf = helpers.indexOf = function(arrayToSearch, item){
+			if (Array.prototype.indexOf) {
+				return arrayToSearch.indexOf(item);
+			}
+			else{
+				for (var i = 0; i < arrayToSearch.length; i++) {
+					if (arrayToSearch[i] === item) return i;
+				}
+				return -1;
+			}
+		},
+		where = helpers.where = function(collection, filterCallback){
+			var filtered = [];
+
+			helpers.each(collection, function(item){
+				if (filterCallback(item)){
+					filtered.push(item);
+				}
+			});
+
+			return filtered;
+		},
+		findNextWhere = helpers.findNextWhere = function(arrayToSearch, filterCallback, startIndex){
+			// Default to start of the array
+			if (!startIndex){
+				startIndex = -1;
+			}
+			for (var i = startIndex + 1; i < arrayToSearch.length; i++) {
+				var currentItem = arrayToSearch[i];
+				if (filterCallback(currentItem)){
+					return currentItem;
+				}
+			}
+		},
+		findPreviousWhere = helpers.findPreviousWhere = function(arrayToSearch, filterCallback, startIndex){
+			// Default to end of the array
+			if (!startIndex){
+				startIndex = arrayToSearch.length;
+			}
+			for (var i = startIndex - 1; i >= 0; i--) {
+				var currentItem = arrayToSearch[i];
+				if (filterCallback(currentItem)){
+					return currentItem;
+				}
+			}
+		},
+		inherits = helpers.inherits = function(extensions){
+			//Basic javascript inheritance based on the model created in Backbone.js
+			var parent = this;
+			var ChartElement = (extensions && extensions.hasOwnProperty("constructor")) ? extensions.constructor : function(){ return parent.apply(this, arguments); };
+
+			var Surrogate = function(){ this.constructor = ChartElement;};
+			Surrogate.prototype = parent.prototype;
+			ChartElement.prototype = new Surrogate();
+
+			ChartElement.extend = inherits;
+
+			if (extensions) extend(ChartElement.prototype, extensions);
+
+			ChartElement.__super__ = parent.prototype;
+
+			return ChartElement;
+		},
+		noop = helpers.noop = function(){},
+		uid = helpers.uid = (function(){
+			var id=0;
+			return function(){
+				return "chart-" + id++;
+			};
+		})(),
+		warn = helpers.warn = function(str){
+			//Method for warning of errors
+			if (window.console && typeof window.console.warn == "function") console.warn(str);
+		},
+		amd = helpers.amd = (typeof define == 'function' && define.amd),
+		//-- Math methods
+		isNumber = helpers.isNumber = function(n){
+			return !isNaN(parseFloat(n)) && isFinite(n);
+		},
+		max = helpers.max = function(array){
+			return Math.max.apply( Math, array );
+		},
+		min = helpers.min = function(array){
+			return Math.min.apply( Math, array );
+		},
+		cap = helpers.cap = function(valueToCap,maxValue,minValue){
+			if(isNumber(maxValue)) {
+				if( valueToCap > maxValue ) {
+					return maxValue;
+				}
+			}
+			else if(isNumber(minValue)){
+				if ( valueToCap < minValue ){
+					return minValue;
+				}
+			}
+			return valueToCap;
+		},
+		getDecimalPlaces = helpers.getDecimalPlaces = function(num){
+			if (num%1!==0 && isNumber(num)){
+				return num.toString().split(".")[1].length;
+			}
+			else {
+				return 0;
+			}
+		},
+		toRadians = helpers.radians = function(degrees){
+			return degrees * (Math.PI/180);
+		},
+		// Gets the angle from vertical upright to the point about a centre.
+		getAngleFromPoint = helpers.getAngleFromPoint = function(centrePoint, anglePoint){
+			var distanceFromXCenter = anglePoint.x - centrePoint.x,
+				distanceFromYCenter = anglePoint.y - centrePoint.y,
+				radialDistanceFromCenter = Math.sqrt( distanceFromXCenter * distanceFromXCenter + distanceFromYCenter * distanceFromYCenter);
+
+
+			var angle = Math.PI * 2 + Math.atan2(distanceFromYCenter, distanceFromXCenter);
+
+			//If the segment is in the top left quadrant, we need to add another rotation to the angle
+			if (distanceFromXCenter < 0 && distanceFromYCenter < 0){
+				angle += Math.PI*2;
+			}
+
+			return {
+				angle: angle,
+				distance: radialDistanceFromCenter
+			};
+		},
+		aliasPixel = helpers.aliasPixel = function(pixelWidth){
+			return (pixelWidth % 2 === 0) ? 0 : 0.5;
+		},
+		splineCurve = helpers.splineCurve = function(FirstPoint,MiddlePoint,AfterPoint,t){
+			//Props to Rob Spencer at scaled innovation for his post on splining between points
+			//http://scaledinnovation.com/analytics/splines/aboutSplines.html
+			var d01=Math.sqrt(Math.pow(MiddlePoint.x-FirstPoint.x,2)+Math.pow(MiddlePoint.y-FirstPoint.y,2)),
+				d12=Math.sqrt(Math.pow(AfterPoint.x-MiddlePoint.x,2)+Math.pow(AfterPoint.y-MiddlePoint.y,2)),
+				fa=t*d01/(d01+d12),// scaling factor for triangle Ta
+				fb=t*d12/(d01+d12);
+			return {
+				inner : {
+					x : MiddlePoint.x-fa*(AfterPoint.x-FirstPoint.x),
+					y : MiddlePoint.y-fa*(AfterPoint.y-FirstPoint.y)
+				},
+				outer : {
+					x: MiddlePoint.x+fb*(AfterPoint.x-FirstPoint.x),
+					y : MiddlePoint.y+fb*(AfterPoint.y-FirstPoint.y)
+				}
+			};
+		},
+		calculateOrderOfMagnitude = helpers.calculateOrderOfMagnitude = function(val){
+			return Math.floor(Math.log(val) / Math.LN10);
+		},
+		calculateScaleRange = helpers.calculateScaleRange = function(valuesArray, drawingSize, textSize, startFromZero, integersOnly){
+
+			//Set a minimum step of two - a point at the top of the graph, and a point at the base
+			var minSteps = 2,
+				maxSteps = Math.floor(drawingSize/(textSize * 1.5)),
+				skipFitting = (minSteps >= maxSteps);
+
+			var maxValue = max(valuesArray),
+				minValue = min(valuesArray);
+
+			// We need some degree of seperation here to calculate the scales if all the values are the same
+			// Adding/minusing 0.5 will give us a range of 1.
+			if (maxValue === minValue){
+				maxValue += 0.5;
+				// So we don't end up with a graph with a negative start value if we've said always start from zero
+				if (minValue >= 0.5 && !startFromZero){
+					minValue -= 0.5;
+				}
+				else{
+					// Make up a whole number above the values
+					maxValue += 0.5;
+				}
+			}
+
+			var	valueRange = Math.abs(maxValue - minValue),
+				rangeOrderOfMagnitude = calculateOrderOfMagnitude(valueRange),
+				graphMax = Math.ceil(maxValue / (1 * Math.pow(10, rangeOrderOfMagnitude))) * Math.pow(10, rangeOrderOfMagnitude),
+				graphMin = (startFromZero) ? 0 : Math.floor(minValue / (1 * Math.pow(10, rangeOrderOfMagnitude))) * Math.pow(10, rangeOrderOfMagnitude),
+				graphRange = graphMax - graphMin,
+				stepValue = Math.pow(10, rangeOrderOfMagnitude),
+				numberOfSteps = Math.round(graphRange / stepValue);
+
+			//If we have more space on the graph we'll use it to give more definition to the data
+			while((numberOfSteps > maxSteps || (numberOfSteps * 2) < maxSteps) && !skipFitting) {
+				if(numberOfSteps > maxSteps){
+					stepValue *=2;
+					numberOfSteps = Math.round(graphRange/stepValue);
+					// Don't ever deal with a decimal number of steps - cancel fitting and just use the minimum number of steps.
+					if (numberOfSteps % 1 !== 0){
+						skipFitting = true;
+					}
+				}
+				//We can fit in double the amount of scale points on the scale
+				else{
+					//If user has declared ints only, and the step value isn't a decimal
+					if (integersOnly && rangeOrderOfMagnitude >= 0){
+						//If the user has said integers only, we need to check that making the scale more granular wouldn't make it a float
+						if(stepValue/2 % 1 === 0){
+							stepValue /=2;
+							numberOfSteps = Math.round(graphRange/stepValue);
+						}
+						//If it would make it a float break out of the loop
+						else{
+							break;
+						}
+					}
+					//If the scale doesn't have to be an int, make the scale more granular anyway.
+					else{
+						stepValue /=2;
+						numberOfSteps = Math.round(graphRange/stepValue);
+					}
+
+				}
+			}
+
+			if (skipFitting){
+				numberOfSteps = minSteps;
+				stepValue = graphRange / numberOfSteps;
+			}
+
+			return {
+				steps : numberOfSteps,
+				stepValue : stepValue,
+				min : graphMin,
+				max	: graphMin + (numberOfSteps * stepValue)
+			};
+
+		},
+		/* jshint ignore:start */
+		// Blows up jshint errors based on the new Function constructor
+		//Templating methods
+		//Javascript micro templating by John Resig - source at http://ejohn.org/blog/javascript-micro-templating/
+		template = helpers.template = function(templateString, valuesObject){
+
+			// If templateString is function rather than string-template - call the function for valuesObject
+
+			if(templateString instanceof Function){
+			 	return templateString(valuesObject);
+		 	}
+
+			var cache = {};
+			function tmpl(str, data){
+				// Figure out if we're getting a template, or if we need to
+				// load the template - and be sure to cache the result.
+				var fn = !/\W/.test(str) ?
+				cache[str] = cache[str] :
+
+				// Generate a reusable function that will serve as a template
+				// generator (and which will be cached).
+				new Function("obj",
+					"var p=[],print=function(){p.push.apply(p,arguments);};" +
+
+					// Introduce the data as local variables using with(){}
+					"with(obj){p.push('" +
+
+					// Convert the template into pure JavaScript
+					str
+						.replace(/[\r\t\n]/g, " ")
+						.split("<%").join("\t")
+						.replace(/((^|%>)[^\t]*)'/g, "$1\r")
+						.replace(/\t=(.*?)%>/g, "',$1,'")
+						.split("\t").join("');")
+						.split("%>").join("p.push('")
+						.split("\r").join("\\'") +
+					"');}return p.join('');"
+				);
+
+				// Provide some basic currying to the user
+				return data ? fn( data ) : fn;
+			}
+			return tmpl(templateString,valuesObject);
+		},
+		/* jshint ignore:end */
+		generateLabels = helpers.generateLabels = function(templateString,numberOfSteps,graphMin,stepValue){
+			var labelsArray = new Array(numberOfSteps);
+			if (labelTemplateString){
+				each(labelsArray,function(val,index){
+					labelsArray[index] = template(templateString,{value: (graphMin + (stepValue*(index+1)))});
+				});
+			}
+			return labelsArray;
+		},
+		//--Animation methods
+		//Easing functions adapted from Robert Penner's easing equations
+		//http://www.robertpenner.com/easing/
+		easingEffects = helpers.easingEffects = {
+			linear: function (t) {
+				return t;
+			},
+			easeInQuad: function (t) {
+				return t * t;
+			},
+			easeOutQuad: function (t) {
+				return -1 * t * (t - 2);
+			},
+			easeInOutQuad: function (t) {
+				if ((t /= 1 / 2) < 1) return 1 / 2 * t * t;
+				return -1 / 2 * ((--t) * (t - 2) - 1);
+			},
+			easeInCubic: function (t) {
+				return t * t * t;
+			},
+			easeOutCubic: function (t) {
+				return 1 * ((t = t / 1 - 1) * t * t + 1);
+			},
+			easeInOutCubic: function (t) {
+				if ((t /= 1 / 2) < 1) return 1 / 2 * t * t * t;
+				return 1 / 2 * ((t -= 2) * t * t + 2);
+			},
+			easeInQuart: function (t) {
+				return t * t * t * t;
+			},
+			easeOutQuart: function (t) {
+				return -1 * ((t = t / 1 - 1) * t * t * t - 1);
+			},
+			easeInOutQuart: function (t) {
+				if ((t /= 1 / 2) < 1) return 1 / 2 * t * t * t * t;
+				return -1 / 2 * ((t -= 2) * t * t * t - 2);
+			},
+			easeInQuint: function (t) {
+				return 1 * (t /= 1) * t * t * t * t;
+			},
+			easeOutQuint: function (t) {
+				return 1 * ((t = t / 1 - 1) * t * t * t * t + 1);
+			},
+			easeInOutQuint: function (t) {
+				if ((t /= 1 / 2) < 1) return 1 / 2 * t * t * t * t * t;
+				return 1 / 2 * ((t -= 2) * t * t * t * t + 2);
+			},
+			easeInSine: function (t) {
+				return -1 * Math.cos(t / 1 * (Math.PI / 2)) + 1;
+			},
+			easeOutSine: function (t) {
+				return 1 * Math.sin(t / 1 * (Math.PI / 2));
+			},
+			easeInOutSine: function (t) {
+				return -1 / 2 * (Math.cos(Math.PI * t / 1) - 1);
+			},
+			easeInExpo: function (t) {
+				return (t === 0) ? 1 : 1 * Math.pow(2, 10 * (t / 1 - 1));
+			},
+			easeOutExpo: function (t) {
+				return (t === 1) ? 1 : 1 * (-Math.pow(2, -10 * t / 1) + 1);
+			},
+			easeInOutExpo: function (t) {
+				if (t === 0) return 0;
+				if (t === 1) return 1;
+				if ((t /= 1 / 2) < 1) return 1 / 2 * Math.pow(2, 10 * (t - 1));
+				return 1 / 2 * (-Math.pow(2, -10 * --t) + 2);
+			},
+			easeInCirc: function (t) {
+				if (t >= 1) return t;
+				return -1 * (Math.sqrt(1 - (t /= 1) * t) - 1);
+			},
+			easeOutCirc: function (t) {
+				return 1 * Math.sqrt(1 - (t = t / 1 - 1) * t);
+			},
+			easeInOutCirc: function (t) {
+				if ((t /= 1 / 2) < 1) return -1 / 2 * (Math.sqrt(1 - t * t) - 1);
+				return 1 / 2 * (Math.sqrt(1 - (t -= 2) * t) + 1);
+			},
+			easeInElastic: function (t) {
+				var s = 1.70158;
+				var p = 0;
+				var a = 1;
+				if (t === 0) return 0;
+				if ((t /= 1) == 1) return 1;
+				if (!p) p = 1 * 0.3;
+				if (a < Math.abs(1)) {
+					a = 1;
+					s = p / 4;
+				} else s = p / (2 * Math.PI) * Math.asin(1 / a);
+				return -(a * Math.pow(2, 10 * (t -= 1)) * Math.sin((t * 1 - s) * (2 * Math.PI) / p));
+			},
+			easeOutElastic: function (t) {
+				var s = 1.70158;
+				var p = 0;
+				var a = 1;
+				if (t === 0) return 0;
+				if ((t /= 1) == 1) return 1;
+				if (!p) p = 1 * 0.3;
+				if (a < Math.abs(1)) {
+					a = 1;
+					s = p / 4;
+				} else s = p / (2 * Math.PI) * Math.asin(1 / a);
+				return a * Math.pow(2, -10 * t) * Math.sin((t * 1 - s) * (2 * Math.PI) / p) + 1;
+			},
+			easeInOutElastic: function (t) {
+				var s = 1.70158;
+				var p = 0;
+				var a = 1;
+				if (t === 0) return 0;
+				if ((t /= 1 / 2) == 2) return 1;
+				if (!p) p = 1 * (0.3 * 1.5);
+				if (a < Math.abs(1)) {
+					a = 1;
+					s = p / 4;
+				} else s = p / (2 * Math.PI) * Math.asin(1 / a);
+				if (t < 1) return -0.5 * (a * Math.pow(2, 10 * (t -= 1)) * Math.sin((t * 1 - s) * (2 * Math.PI) / p));
+				return a * Math.pow(2, -10 * (t -= 1)) * Math.sin((t * 1 - s) * (2 * Math.PI) / p) * 0.5 + 1;
+			},
+			easeInBack: function (t) {
+				var s = 1.70158;
+				return 1 * (t /= 1) * t * ((s + 1) * t - s);
+			},
+			easeOutBack: function (t) {
+				var s = 1.70158;
+				return 1 * ((t = t / 1 - 1) * t * ((s + 1) * t + s) + 1);
+			},
+			easeInOutBack: function (t) {
+				var s = 1.70158;
+				if ((t /= 1 / 2) < 1) return 1 / 2 * (t * t * (((s *= (1.525)) + 1) * t - s));
+				return 1 / 2 * ((t -= 2) * t * (((s *= (1.525)) + 1) * t + s) + 2);
+			},
+			easeInBounce: function (t) {
+				return 1 - easingEffects.easeOutBounce(1 - t);
+			},
+			easeOutBounce: function (t) {
+				if ((t /= 1) < (1 / 2.75)) {
+					return 1 * (7.5625 * t * t);
+				} else if (t < (2 / 2.75)) {
+					return 1 * (7.5625 * (t -= (1.5 / 2.75)) * t + 0.75);
+				} else if (t < (2.5 / 2.75)) {
+					return 1 * (7.5625 * (t -= (2.25 / 2.75)) * t + 0.9375);
+				} else {
+					return 1 * (7.5625 * (t -= (2.625 / 2.75)) * t + 0.984375);
+				}
+			},
+			easeInOutBounce: function (t) {
+				if (t < 1 / 2) return easingEffects.easeInBounce(t * 2) * 0.5;
+				return easingEffects.easeOutBounce(t * 2 - 1) * 0.5 + 1 * 0.5;
+			}
+		},
+		//Request animation polyfill - http://www.paulirish.com/2011/requestanimationframe-for-smart-animating/
+		requestAnimFrame = helpers.requestAnimFrame = (function(){
+			return window.requestAnimationFrame ||
+				window.webkitRequestAnimationFrame ||
+				window.mozRequestAnimationFrame ||
+				window.oRequestAnimationFrame ||
+				window.msRequestAnimationFrame ||
+				function(callback) {
+					return window.setTimeout(callback, 1000 / 60);
+				};
+		})(),
+		cancelAnimFrame = helpers.cancelAnimFrame = (function(){
+			return window.cancelAnimationFrame ||
+				window.webkitCancelAnimationFrame ||
+				window.mozCancelAnimationFrame ||
+				window.oCancelAnimationFrame ||
+				window.msCancelAnimationFrame ||
+				function(callback) {
+					return window.clearTimeout(callback, 1000 / 60);
+				};
+		})(),
+		animationLoop = helpers.animationLoop = function(callback,totalSteps,easingString,onProgress,onComplete,chartInstance){
+
+			var currentStep = 0,
+				easingFunction = easingEffects[easingString] || easingEffects.linear;
+
+			var animationFrame = function(){
+				currentStep++;
+				var stepDecimal = currentStep/totalSteps;
+				var easeDecimal = easingFunction(stepDecimal);
+
+				callback.call(chartInstance,easeDecimal,stepDecimal, currentStep);
+				onProgress.call(chartInstance,easeDecimal,stepDecimal);
+				if (currentStep < totalSteps){
+					chartInstance.animationFrame = requestAnimFrame(animationFrame);
+				} else{
+					onComplete.apply(chartInstance);
+				}
+			};
+			requestAnimFrame(animationFrame);
+		},
+		//-- DOM methods
+		getRelativePosition = helpers.getRelativePosition = function(evt){
+			var mouseX, mouseY;
+			var e = evt.originalEvent || evt,
+				canvas = evt.currentTarget || evt.srcElement,
+				boundingRect = canvas.getBoundingClientRect();
+
+			if (e.touches){
+				mouseX = e.touches[0].clientX - boundingRect.left;
+				mouseY = e.touches[0].clientY - boundingRect.top;
+
+			}
+			else{
+				mouseX = e.clientX - boundingRect.left;
+				mouseY = e.clientY - boundingRect.top;
+			}
+
+			return {
+				x : mouseX,
+				y : mouseY
+			};
+
+		},
+		addEvent = helpers.addEvent = function(node,eventType,method){
+			if (node.addEventListener){
+				node.addEventListener(eventType,method);
+			} else if (node.attachEvent){
+				node.attachEvent("on"+eventType, method);
+			} else {
+				node["on"+eventType] = method;
+			}
+		},
+		removeEvent = helpers.removeEvent = function(node, eventType, handler){
+			if (node.removeEventListener){
+				node.removeEventListener(eventType, handler, false);
+			} else if (node.detachEvent){
+				node.detachEvent("on"+eventType,handler);
+			} else{
+				node["on" + eventType] = noop;
+			}
+		},
+		bindEvents = helpers.bindEvents = function(chartInstance, arrayOfEvents, handler){
+			// Create the events object if it's not already present
+			if (!chartInstance.events) chartInstance.events = {};
+
+			each(arrayOfEvents,function(eventName){
+				chartInstance.events[eventName] = function(){
+					handler.apply(chartInstance, arguments);
+				};
+				addEvent(chartInstance.chart.canvas,eventName,chartInstance.events[eventName]);
+			});
+		},
+		unbindEvents = helpers.unbindEvents = function (chartInstance, arrayOfEvents) {
+			each(arrayOfEvents, function(handler,eventName){
+				removeEvent(chartInstance.chart.canvas, eventName, handler);
+			});
+		},
+		getMaximumWidth = helpers.getMaximumWidth = function(domNode){
+			var container = domNode.parentNode;
+			// TODO = check cross browser stuff with this.
+			return container.clientWidth;
+		},
+		getMaximumHeight = helpers.getMaximumHeight = function(domNode){
+			var container = domNode.parentNode;
+			// TODO = check cross browser stuff with this.
+			return container.clientHeight;
+		},
+		getMaximumSize = helpers.getMaximumSize = helpers.getMaximumWidth, // legacy support
+		retinaScale = helpers.retinaScale = function(chart){
+			var ctx = chart.ctx,
+				width = chart.canvas.width,
+				height = chart.canvas.height;
+
+			if (window.devicePixelRatio) {
+				ctx.canvas.style.width = width + "px";
+				ctx.canvas.style.height = height + "px";
+				ctx.canvas.height = height * window.devicePixelRatio;
+				ctx.canvas.width = width * window.devicePixelRatio;
+				ctx.scale(window.devicePixelRatio, window.devicePixelRatio);
+			}
+		},
+		//-- Canvas methods
+		clear = helpers.clear = function(chart){
+			chart.ctx.clearRect(0,0,chart.width,chart.height);
+		},
+		fontString = helpers.fontString = function(pixelSize,fontStyle,fontFamily){
+			return fontStyle + " " + pixelSize+"px " + fontFamily;
+		},
+		longestText = helpers.longestText = function(ctx,font,arrayOfStrings){
+			ctx.font = font;
+			var longest = 0;
+			each(arrayOfStrings,function(string){
+				var textWidth = ctx.measureText(string).width;
+				longest = (textWidth > longest) ? textWidth : longest;
+			});
+			return longest;
+		},
+		drawRoundedRectangle = helpers.drawRoundedRectangle = function(ctx,x,y,width,height,radius){
+			ctx.beginPath();
+			ctx.moveTo(x + radius, y);
+			ctx.lineTo(x + width - radius, y);
+			ctx.quadraticCurveTo(x + width, y, x + width, y + radius);
+			ctx.lineTo(x + width, y + height - radius);
+			ctx.quadraticCurveTo(x + width, y + height, x + width - radius, y + height);
+			ctx.lineTo(x + radius, y + height);
+			ctx.quadraticCurveTo(x, y + height, x, y + height - radius);
+			ctx.lineTo(x, y + radius);
+			ctx.quadraticCurveTo(x, y, x + radius, y);
+			ctx.closePath();
+		};
+
+
+	//Store a reference to each instance - allowing us to globally resize chart instances on window resize.
+	//Destroy method on the chart will remove the instance of the chart from this reference.
+	Chart.instances = {};
+
+	Chart.Type = function(data,options,chart){
+		this.options = options;
+		this.chart = chart;
+		this.id = uid();
+		//Add the chart instance to the global namespace
+		Chart.instances[this.id] = this;
+
+		// Initialize is always called when a chart type is created
+		// By default it is a no op, but it should be extended
+		if (options.responsive){
+			this.resize();
+		}
+		this.initialize.call(this,data);
+	};
+
+	//Core methods that'll be a part of every chart type
+	extend(Chart.Type.prototype,{
+		initialize : function(){return this;},
+		clear : function(){
+			clear(this.chart);
+			return this;
+		},
+		stop : function(){
+			// Stops any current animation loop occuring
+			cancelAnimFrame(this.animationFrame);
+			return this;
+		},
+		resize : function(callback){
+			this.stop();
+			var canvas = this.chart.canvas,
+				newWidth = getMaximumWidth(this.chart.canvas),
+				newHeight = this.options.maintainAspectRatio ? newWidth / this.chart.aspectRatio : getMaximumHeight(this.chart.canvas);
+
+			canvas.width = this.chart.width = newWidth;
+			canvas.height = this.chart.height = newHeight;
+
+			retinaScale(this.chart);
+
+			if (typeof callback === "function"){
+				callback.apply(this, Array.prototype.slice.call(arguments, 1));
+			}
+			return this;
+		},
+		reflow : noop,
+		render : function(reflow){
+			if (reflow){
+				this.reflow();
+			}
+			if (this.options.animation && !reflow){
+				helpers.animationLoop(
+					this.draw,
+					this.options.animationSteps,
+					this.options.animationEasing,
+					this.options.onAnimationProgress,
+					this.options.onAnimationComplete,
+					this
+				);
+			}
+			else{
+				this.draw();
+				this.options.onAnimationComplete.call(this);
+			}
+			return this;
+		},
+		generateLegend : function(){
+			return template(this.options.legendTemplate,this);
+		},
+		destroy : function(){
+			this.clear();
+			unbindEvents(this, this.events);
+			var canvas = this.chart.canvas;
+
+			// Reset canvas height/width attributes starts a fresh with the canvas context
+			canvas.width = this.chart.width;
+			canvas.height = this.chart.height;
+
+			// < IE9 doesn't support removeProperty
+			if (canvas.style.removeProperty) {
+				canvas.style.removeProperty('width');
+				canvas.style.removeProperty('height');
+			} else {
+				canvas.style.removeAttribute('width');
+				canvas.style.removeAttribute('height');
+			}
+
+			delete Chart.instances[this.id];
+		},
+		showTooltip : function(ChartElements, forceRedraw){
+			// Only redraw the chart if we've actually changed what we're hovering on.
+			if (typeof this.activeElements === 'undefined') this.activeElements = [];
+
+			var isChanged = (function(Elements){
+				var changed = false;
+
+				if (Elements.length !== this.activeElements.length){
+					changed = true;
+					return changed;
+				}
+
+				each(Elements, function(element, index){
+					if (element !== this.activeElements[index]){
+						changed = true;
+					}
+				}, this);
+				return changed;
+			}).call(this, ChartElements);
+
+			if (!isChanged && !forceRedraw){
+				return;
+			}
+			else{
+				this.activeElements = ChartElements;
+			}
+			this.draw();
+			if(this.options.customTooltips){
+				this.options.customTooltips(false);
+			}
+			if (ChartElements.length > 0){
+				// If we have multiple datasets, show a MultiTooltip for all of the data points at that index
+				if (this.datasets && this.datasets.length > 1) {
+					var dataArray,
+						dataIndex;
+
+					for (var i = this.datasets.length - 1; i >= 0; i--) {
+						dataArray = this.datasets[i].points || this.datasets[i].bars || this.datasets[i].segments;
+						dataIndex = indexOf(dataArray, ChartElements[0]);
+						if (dataIndex !== -1){
+							break;
+						}
+					}
+					var tooltipLabels = [],
+						tooltipColors = [],
+						medianPosition = (function(index) {
+
+							// Get all the points at that particular index
+							var Elements = [],
+								dataCollection,
+								xPositions = [],
+								yPositions = [],
+								xMax,
+								yMax,
+								xMin,
+								yMin;
+							helpers.each(this.datasets, function(dataset){
+								dataCollection = dataset.points || dataset.bars || dataset.segments;
+								if (dataCollection[dataIndex] && dataCollection[dataIndex].hasValue()){
+									Elements.push(dataCollection[dataIndex]);
+								}
+							});
+
+							helpers.each(Elements, function(element) {
+								xPositions.push(element.x);
+								yPositions.push(element.y);
+
+
+								//Include any colour information about the element
+								tooltipLabels.push(helpers.template(this.options.multiTooltipTemplate, element));
+								tooltipColors.push({
+									fill: element._saved.fillColor || element.fillColor,
+									stroke: element._saved.strokeColor || element.strokeColor
+								});
+
+							}, this);
+
+							yMin = min(yPositions);
+							yMax = max(yPositions);
+
+							xMin = min(xPositions);
+							xMax = max(xPositions);
+
+							return {
+								x: (xMin > this.chart.width/2) ? xMin : xMax,
+								y: (yMin + yMax)/2
+							};
+						}).call(this, dataIndex);
+
+					new Chart.MultiTooltip({
+						x: medianPosition.x,
+						y: medianPosition.y,
+						xPadding: this.options.tooltipXPadding,
+						yPadding: this.options.tooltipYPadding,
+						xOffset: this.options.tooltipXOffset,
+						fillColor: this.options.tooltipFillColor,
+						textColor: this.options.tooltipFontColor,
+						fontFamily: this.options.tooltipFontFamily,
+						fontStyle: this.options.tooltipFontStyle,
+						fontSize: this.options.tooltipFontSize,
+						titleTextColor: this.options.tooltipTitleFontColor,
+						titleFontFamily: this.options.tooltipTitleFontFamily,
+						titleFontStyle: this.options.tooltipTitleFontStyle,
+						titleFontSize: this.options.tooltipTitleFontSize,
+						cornerRadius: this.options.tooltipCornerRadius,
+						labels: tooltipLabels,
+						legendColors: tooltipColors,
+						legendColorBackground : this.options.multiTooltipKeyBackground,
+						title: ChartElements[0].label,
+						chart: this.chart,
+						ctx: this.chart.ctx,
+						custom: this.options.customTooltips
+					}).draw();
+
+				} else {
+					each(ChartElements, function(Element) {
+						var tooltipPosition = Element.tooltipPosition();
+						new Chart.Tooltip({
+							x: Math.round(tooltipPosition.x),
+							y: Math.round(tooltipPosition.y),
+							xPadding: this.options.tooltipXPadding,
+							yPadding: this.options.tooltipYPadding,
+							fillColor: this.options.tooltipFillColor,
+							textColor: this.options.tooltipFontColor,
+							fontFamily: this.options.tooltipFontFamily,
+							fontStyle: this.options.tooltipFontStyle,
+							fontSize: this.options.tooltipFontSize,
+							caretHeight: this.options.tooltipCaretSize,
+							cornerRadius: this.options.tooltipCornerRadius,
+							text: template(this.options.tooltipTemplate, Element),
+							chart: this.chart,
+							custom: this.options.customTooltips
+						}).draw();
+					}, this);
+				}
+			}
+			return this;
+		},
+		toBase64Image : function(){
+			return this.chart.canvas.toDataURL.apply(this.chart.canvas, arguments);
+		}
+	});
+
+	Chart.Type.extend = function(extensions){
+
+		var parent = this;
+
+		var ChartType = function(){
+			return parent.apply(this,arguments);
+		};
+
+		//Copy the prototype object of the this class
+		ChartType.prototype = clone(parent.prototype);
+		//Now overwrite some of the properties in the base class with the new extensions
+		extend(ChartType.prototype, extensions);
+
+		ChartType.extend = Chart.Type.extend;
+
+		if (extensions.name || parent.prototype.name){
+
+			var chartName = extensions.name || parent.prototype.name;
+			//Assign any potential default values of the new chart type
+
+			//If none are defined, we'll use a clone of the chart type this is being extended from.
+			//I.e. if we extend a line chart, we'll use the defaults from the line chart if our new chart
+			//doesn't define some defaults of their own.
+
+			var baseDefaults = (Chart.defaults[parent.prototype.name]) ? clone(Chart.defaults[parent.prototype.name]) : {};
+
+			Chart.defaults[chartName] = extend(baseDefaults,extensions.defaults);
+
+			Chart.types[chartName] = ChartType;
+
+			//Register this new chart type in the Chart prototype
+			Chart.prototype[chartName] = function(data,options){
+				var config = merge(Chart.defaults.global, Chart.defaults[chartName], options || {});
+				return new ChartType(data,config,this);
+			};
+		} else{
+			warn("Name not provided for this chart, so it hasn't been registered");
+		}
+		return parent;
+	};
+
+	Chart.Element = function(configuration){
+		extend(this,configuration);
+		this.initialize.apply(this,arguments);
+		this.save();
+	};
+	extend(Chart.Element.prototype,{
+		initialize : function(){},
+		restore : function(props){
+			if (!props){
+				extend(this,this._saved);
+			} else {
+				each(props,function(key){
+					this[key] = this._saved[key];
+				},this);
+			}
+			return this;
+		},
+		save : function(){
+			this._saved = clone(this);
+			delete this._saved._saved;
+			return this;
+		},
+		update : function(newProps){
+			each(newProps,function(value,key){
+				this._saved[key] = this[key];
+				this[key] = value;
+			},this);
+			return this;
+		},
+		transition : function(props,ease){
+			each(props,function(value,key){
+				this[key] = ((value - this._saved[key]) * ease) + this._saved[key];
+			},this);
+			return this;
+		},
+		tooltipPosition : function(){
+			return {
+				x : this.x,
+				y : this.y
+			};
+		},
+		hasValue: function(){
+			return isNumber(this.value);
+		}
+	});
+
+	Chart.Element.extend = inherits;
+
+
+	Chart.Point = Chart.Element.extend({
+		display: true,
+		inRange: function(chartX,chartY){
+			var hitDetectionRange = this.hitDetectionRadius + this.radius;
+			return ((Math.pow(chartX-this.x, 2)+Math.pow(chartY-this.y, 2)) < Math.pow(hitDetectionRange,2));
+		},
+		draw : function(){
+			if (this.display){
+				var ctx = this.ctx;
+				ctx.beginPath();
+
+				ctx.arc(this.x, this.y, this.radius, 0, Math.PI*2);
+				ctx.closePath();
+
+				ctx.strokeStyle = this.strokeColor;
+				ctx.lineWidth = this.strokeWidth;
+
+				ctx.fillStyle = this.fillColor;
+
+				ctx.fill();
+				ctx.stroke();
+			}
+
+
+			//Quick debug for bezier curve splining
+			//Highlights control points and the line between them.
+			//Handy for dev - stripped in the min version.
+
+			// ctx.save();
+			// ctx.fillStyle = "black";
+			// ctx.strokeStyle = "black"
+			// ctx.beginPath();
+			// ctx.arc(this.controlPoints.inner.x,this.controlPoints.inner.y, 2, 0, Math.PI*2);
+			// ctx.fill();
+
+			// ctx.beginPath();
+			// ctx.arc(this.controlPoints.outer.x,this.controlPoints.outer.y, 2, 0, Math.PI*2);
+			// ctx.fill();
+
+			// ctx.moveTo(this.controlPoints.inner.x,this.controlPoints.inner.y);
+			// ctx.lineTo(this.x, this.y);
+			// ctx.lineTo(this.controlPoints.outer.x,this.controlPoints.outer.y);
+			// ctx.stroke();
+
+			// ctx.restore();
+
+
+
+		}
+	});
+
+	Chart.Arc = Chart.Element.extend({
+		inRange : function(chartX,chartY){
+
+			var pointRelativePosition = helpers.getAngleFromPoint(this, {
+				x: chartX,
+				y: chartY
+			});
+
+			//Check if within the range of the open/close angle
+			var betweenAngles = (pointRelativePosition.angle >= this.startAngle && pointRelativePosition.angle <= this.endAngle),
+				withinRadius = (pointRelativePosition.distance >= this.innerRadius && pointRelativePosition.distance <= this.outerRadius);
+
+			return (betweenAngles && withinRadius);
+			//Ensure within the outside of the arc centre, but inside arc outer
+		},
+		tooltipPosition : function(){
+			var centreAngle = this.startAngle + ((this.endAngle - this.startAngle) / 2),
+				rangeFromCentre = (this.outerRadius - this.innerRadius) / 2 + this.innerRadius;
+			return {
+				x : this.x + (Math.cos(centreAngle) * rangeFromCentre),
+				y : this.y + (Math.sin(centreAngle) * rangeFromCentre)
+			};
+		},
+		draw : function(animationPercent){
+
+			var easingDecimal = animationPercent || 1;
+
+			var ctx = this.ctx;
+
+			ctx.beginPath();
+
+			ctx.arc(this.x, this.y, this.outerRadius, this.startAngle, this.endAngle);
+
+			ctx.arc(this.x, this.y, this.innerRadius, this.endAngle, this.startAngle, true);
+
+			ctx.closePath();
+			ctx.strokeStyle = this.strokeColor;
+			ctx.lineWidth = this.strokeWidth;
+
+			ctx.fillStyle = this.fillColor;
+
+			ctx.fill();
+			ctx.lineJoin = 'bevel';
+
+			if (this.showStroke){
+				ctx.stroke();
+			}
+		}
+	});
+
+	Chart.Rectangle = Chart.Element.extend({
+		draw : function(){
+			var ctx = this.ctx,
+				halfWidth = this.width/2,
+				leftX = this.x - halfWidth,
+				rightX = this.x + halfWidth,
+				top = this.base - (this.base - this.y),
+				halfStroke = this.strokeWidth / 2;
+
+			// Canvas doesn't allow us to stroke inside the width so we can
+			// adjust the sizes to fit if we're setting a stroke on the line
+			if (this.showStroke){
+				leftX += halfStroke;
+				rightX -= halfStroke;
+				top += halfStroke;
+			}
+
+			ctx.beginPath();
+
+			ctx.fillStyle = this.fillColor;
+			ctx.strokeStyle = this.strokeColor;
+			ctx.lineWidth = this.strokeWidth;
+
+			// It'd be nice to keep this class totally generic to any rectangle
+			// and simply specify which border to miss out.
+			ctx.moveTo(leftX, this.base);
+			ctx.lineTo(leftX, top);
+			ctx.lineTo(rightX, top);
+			ctx.lineTo(rightX, this.base);
+			ctx.fill();
+			if (this.showStroke){
+				ctx.stroke();
+			}
+		},
+		height : function(){
+			return this.base - this.y;
+		},
+		inRange : function(chartX,chartY){
+			return (chartX >= this.x - this.width/2 && chartX <= this.x + this.width/2) && (chartY >= this.y && chartY <= this.base);
+		}
+	});
+
+	Chart.Tooltip = Chart.Element.extend({
+		draw : function(){
+
+			var ctx = this.chart.ctx;
+
+			ctx.font = fontString(this.fontSize,this.fontStyle,this.fontFamily);
+
+			this.xAlign = "center";
+			this.yAlign = "above";
+
+			//Distance between the actual element.y position and the start of the tooltip caret
+			var caretPadding = this.caretPadding = 2;
+
+			var tooltipWidth = ctx.measureText(this.text).width + 2*this.xPadding,
+				tooltipRectHeight = this.fontSize + 2*this.yPadding,
+				tooltipHeight = tooltipRectHeight + this.caretHeight + caretPadding;
+
+			if (this.x + tooltipWidth/2 >this.chart.width){
+				this.xAlign = "left";
+			} else if (this.x - tooltipWidth/2 < 0){
+				this.xAlign = "right";
+			}
+
+			if (this.y - tooltipHeight < 0){
+				this.yAlign = "below";
+			}
+
+
+			var tooltipX = this.x - tooltipWidth/2,
+				tooltipY = this.y - tooltipHeight;
+
+			ctx.fillStyle = this.fillColor;
+
+			// Custom Tooltips
+			if(this.custom){
+				this.custom(this);
+			}
+			else{
+				switch(this.yAlign)
+				{
+				case "above":
+					//Draw a caret above the x/y
+					ctx.beginPath();
+					ctx.moveTo(this.x,this.y - caretPadding);
+					ctx.lineTo(this.x + this.caretHeight, this.y - (caretPadding + this.caretHeight));
+					ctx.lineTo(this.x - this.caretHeight, this.y - (caretPadding + this.caretHeight));
+					ctx.closePath();
+					ctx.fill();
+					break;
+				case "below":
+					tooltipY = this.y + caretPadding + this.caretHeight;
+					//Draw a caret below the x/y
+					ctx.beginPath();
+					ctx.moveTo(this.x, this.y + caretPadding);
+					ctx.lineTo(this.x + this.caretHeight, this.y + caretPadding + this.caretHeight);
+					ctx.lineTo(this.x - this.caretHeight, this.y + caretPadding + this.caretHeight);
+					ctx.closePath();
+					ctx.fill();
+					break;
+				}
+
+				switch(this.xAlign)
+				{
+				case "left":
+					tooltipX = this.x - tooltipWidth + (this.cornerRadius + this.caretHeight);
+					break;
+				case "right":
+					tooltipX = this.x - (this.cornerRadius + this.caretHeight);
+					break;
+				}
+
+				drawRoundedRectangle(ctx,tooltipX,tooltipY,tooltipWidth,tooltipRectHeight,this.cornerRadius);
+
+				ctx.fill();
+
+				ctx.fillStyle = this.textColor;
+				ctx.textAlign = "center";
+				ctx.textBaseline = "middle";
+				ctx.fillText(this.text, tooltipX + tooltipWidth/2, tooltipY + tooltipRectHeight/2);
+			}
+		}
+	});
+
+	Chart.MultiTooltip = Chart.Element.extend({
+		initialize : function(){
+			this.font = fontString(this.fontSize,this.fontStyle,this.fontFamily);
+
+			this.titleFont = fontString(this.titleFontSize,this.titleFontStyle,this.titleFontFamily);
+
+			this.height = (this.labels.length * this.fontSize) + ((this.labels.length-1) * (this.fontSize/2)) + (this.yPadding*2) + this.titleFontSize *1.5;
+
+			this.ctx.font = this.titleFont;
+
+			var titleWidth = this.ctx.measureText(this.title).width,
+				//Label has a legend square as well so account for this.
+				labelWidth = longestText(this.ctx,this.font,this.labels) + this.fontSize + 3,
+				longestTextWidth = max([labelWidth,titleWidth]);
+
+			this.width = longestTextWidth + (this.xPadding*2);
+
+
+			var halfHeight = this.height/2;
+
+			//Check to ensure the height will fit on the canvas
+			if (this.y - halfHeight < 0 ){
+				this.y = halfHeight;
+			} else if (this.y + halfHeight > this.chart.height){
+				this.y = this.chart.height - halfHeight;
+			}
+
+			//Decide whether to align left or right based on position on canvas
+			if (this.x > this.chart.width/2){
+				this.x -= this.xOffset + this.width;
+			} else {
+				this.x += this.xOffset;
+			}
+
+
+		},
+		getLineHeight : function(index){
+			var baseLineHeight = this.y - (this.height/2) + this.yPadding,
+				afterTitleIndex = index-1;
+
+			//If the index is zero, we're getting the title
+			if (index === 0){
+				return baseLineHeight + this.titleFontSize/2;
+			} else{
+				return baseLineHeight + ((this.fontSize*1.5*afterTitleIndex) + this.fontSize/2) + this.titleFontSize * 1.5;
+			}
+
+		},
+		draw : function(){
+			// Custom Tooltips
+			if(this.custom){
+				this.custom(this);
+			}
+			else{
+				drawRoundedRectangle(this.ctx,this.x,this.y - this.height/2,this.width,this.height,this.cornerRadius);
+				var ctx = this.ctx;
+				ctx.fillStyle = this.fillColor;
+				ctx.fill();
+				ctx.closePath();
+
+				ctx.textAlign = "left";
+				ctx.textBaseline = "middle";
+				ctx.fillStyle = this.titleTextColor;
+				ctx.font = this.titleFont;
+
+				ctx.fillText(this.title,this.x + this.xPadding, this.getLineHeight(0));
+
+				ctx.font = this.font;
+				helpers.each(this.labels,function(label,index){
+					ctx.fillStyle = this.textColor;
+					ctx.fillText(label,this.x + this.xPadding + this.fontSize + 3, this.getLineHeight(index + 1));
+
+					//A bit gnarly, but clearing this rectangle breaks when using explorercanvas (clears whole canvas)
+					//ctx.clearRect(this.x + this.xPadding, this.getLineHeight(index + 1) - this.fontSize/2, this.fontSize, this.fontSize);
+					//Instead we'll make a white filled block to put the legendColour palette over.
+
+					ctx.fillStyle = this.legendColorBackground;
+					ctx.fillRect(this.x + this.xPadding, this.getLineHeight(index + 1) - this.fontSize/2, this.fontSize, this.fontSize);
+
+					ctx.fillStyle = this.legendColors[index].fill;
+					ctx.fillRect(this.x + this.xPadding, this.getLineHeight(index + 1) - this.fontSize/2, this.fontSize, this.fontSize);
+
+
+				},this);
+			}
+		}
+	});
+
+	Chart.Scale = Chart.Element.extend({
+		initialize : function(){
+			this.fit();
+		},
+		buildYLabels : function(){
+			this.yLabels = [];
+
+			var stepDecimalPlaces = getDecimalPlaces(this.stepValue);
+
+			for (var i=0; i<=this.steps; i++){
+				this.yLabels.push(template(this.templateString,{value:(this.min + (i * this.stepValue)).toFixed(stepDecimalPlaces)}));
+			}
+			this.yLabelWidth = (this.display && this.showLabels) ? longestText(this.ctx,this.font,this.yLabels) : 0;
+		},
+		addXLabel : function(label){
+			this.xLabels.push(label);
+			this.valuesCount++;
+			this.fit();
+		},
+		removeXLabel : function(){
+			this.xLabels.shift();
+			this.valuesCount--;
+			this.fit();
+		},
+		// Fitting loop to rotate x Labels and figure out what fits there, and also calculate how many Y steps to use
+		fit: function(){
+			// First we need the width of the yLabels, assuming the xLabels aren't rotated
+
+			// To do that we need the base line at the top and base of the chart, assuming there is no x label rotation
+			this.startPoint = (this.display) ? this.fontSize : 0;
+			this.endPoint = (this.display) ? this.height - (this.fontSize * 1.5) - 5 : this.height; // -5 to pad labels
+
+			// Apply padding settings to the start and end point.
+			this.startPoint += this.padding;
+			this.endPoint -= this.padding;
+
+			// Cache the starting height, so can determine if we need to recalculate the scale yAxis
+			var cachedHeight = this.endPoint - this.startPoint,
+				cachedYLabelWidth;
+
+			// Build the current yLabels so we have an idea of what size they'll be to start
+			/*
+			 *	This sets what is returned from calculateScaleRange as static properties of this class:
+			 *
+				this.steps;
+				this.stepValue;
+				this.min;
+				this.max;
+			 *
+			 */
+			this.calculateYRange(cachedHeight);
+
+			// With these properties set we can now build the array of yLabels
+			// and also the width of the largest yLabel
+			this.buildYLabels();
+
+			this.calculateXLabelRotation();
+
+			while((cachedHeight > this.endPoint - this.startPoint)){
+				cachedHeight = this.endPoint - this.startPoint;
+				cachedYLabelWidth = this.yLabelWidth;
+
+				this.calculateYRange(cachedHeight);
+				this.buildYLabels();
+
+				// Only go through the xLabel loop again if the yLabel width has changed
+				if (cachedYLabelWidth < this.yLabelWidth){
+					this.calculateXLabelRotation();
+				}
+			}
+
+		},
+		calculateXLabelRotation : function(){
+			//Get the width of each grid by calculating the difference
+			//between x offsets between 0 and 1.
+
+			this.ctx.font = this.font;
+
+			var firstWidth = this.ctx.measureText(this.xLabels[0]).width,
+				lastWidth = this.ctx.measureText(this.xLabels[this.xLabels.length - 1]).width,
+				firstRotated,
+				lastRotated;
+
+
+			this.xScalePaddingRight = lastWidth/2 + 3;
+			this.xScalePaddingLeft = (firstWidth/2 > this.yLabelWidth + 10) ? firstWidth/2 : this.yLabelWidth + 10;
+
+			this.xLabelRotation = 0;
+			if (this.display){
+				var originalLabelWidth = longestText(this.ctx,this.font,this.xLabels),
+					cosRotation,
+					firstRotatedWidth;
+				this.xLabelWidth = originalLabelWidth;
+				//Allow 3 pixels x2 padding either side for label readability
+				var xGridWidth = Math.floor(this.calculateX(1) - this.calculateX(0)) - 6;
+
+				//Max label rotate should be 90 - also act as a loop counter
+				while ((this.xLabelWidth > xGridWidth && this.xLabelRotation === 0) || (this.xLabelWidth > xGridWidth && this.xLabelRotation <= 90 && this.xLabelRotation > 0)){
+					cosRotation = Math.cos(toRadians(this.xLabelRotation));
+
+					firstRotated = cosRotation * firstWidth;
+					lastRotated = cosRotation * lastWidth;
+
+					// We're right aligning the text now.
+					if (firstRotated + this.fontSize / 2 > this.yLabelWidth + 8){
+						this.xScalePaddingLeft = firstRotated + this.fontSize / 2;
+					}
+					this.xScalePaddingRight = this.fontSize/2;
+
+
+					this.xLabelRotation++;
+					this.xLabelWidth = cosRotation * originalLabelWidth;
+
+				}
+				if (this.xLabelRotation > 0){
+					this.endPoint -= Math.sin(toRadians(this.xLabelRotation))*originalLabelWidth + 3;
+				}
+			}
+			else{
+				this.xLabelWidth = 0;
+				this.xScalePaddingRight = this.padding;
+				this.xScalePaddingLeft = this.padding;
+			}
+
+		},
+		// Needs to be overidden in each Chart type
+		// Otherwise we need to pass all the data into the scale class
+		calculateYRange: noop,
+		drawingArea: function(){
+			return this.startPoint - this.endPoint;
+		},
+		calculateY : function(value){
+			var scalingFactor = this.drawingArea() / (this.min - this.max);
+			return this.endPoint - (scalingFactor * (value - this.min));
+		},
+		calculateX : function(index){
+			var isRotated = (this.xLabelRotation > 0),
+				// innerWidth = (this.offsetGridLines) ? this.width - offsetLeft - this.padding : this.width - (offsetLeft + halfLabelWidth * 2) - this.padding,
+				innerWidth = this.width - (this.xScalePaddingLeft + this.xScalePaddingRight),
+				valueWidth = innerWidth/Math.max((this.valuesCount - ((this.offsetGridLines) ? 0 : 1)), 1),
+				valueOffset = (valueWidth * index) + this.xScalePaddingLeft;
+
+			if (this.offsetGridLines){
+				valueOffset += (valueWidth/2);
+			}
+
+			return Math.round(valueOffset);
+		},
+		update : function(newProps){
+			helpers.extend(this, newProps);
+			this.fit();
+		},
+		draw : function(){
+			var ctx = this.ctx,
+				yLabelGap = (this.endPoint - this.startPoint) / this.steps,
+				xStart = Math.round(this.xScalePaddingLeft);
+			if (this.display){
+				ctx.fillStyle = this.textColor;
+				ctx.font = this.font;
+				each(this.yLabels,function(labelString,index){
+					var yLabelCenter = this.endPoint - (yLabelGap * index),
+						linePositionY = Math.round(yLabelCenter),
+						drawHorizontalLine = this.showHorizontalLines;
+
+					ctx.textAlign = "right";
+					ctx.textBaseline = "middle";
+					if (this.showLabels){
+						ctx.fillText(labelString,xStart - 10,yLabelCenter);
+					}
+
+					// This is X axis, so draw it
+					if (index === 0 && !drawHorizontalLine){
+						drawHorizontalLine = true;
+					}
+
+					if (drawHorizontalLine){
+						ctx.beginPath();
+					}
+
+					if (index > 0){
+						// This is a grid line in the centre, so drop that
+						ctx.lineWidth = this.gridLineWidth;
+						ctx.strokeStyle = this.gridLineColor;
+					} else {
+						// This is the first line on the scale
+						ctx.lineWidth = this.lineWidth;
+						ctx.strokeStyle = this.lineColor;
+					}
+
+					linePositionY += helpers.aliasPixel(ctx.lineWidth);
+
+					if(drawHorizontalLine){
+						ctx.moveTo(xStart, linePositionY);
+						ctx.lineTo(this.width, linePositionY);
+						ctx.stroke();
+						ctx.closePath();
+					}
+
+					ctx.lineWidth = this.lineWidth;
+					ctx.strokeStyle = this.lineColor;
+					ctx.beginPath();
+					ctx.moveTo(xStart - 5, linePositionY);
+					ctx.lineTo(xStart, linePositionY);
+					ctx.stroke();
+					ctx.closePath();
+
+				},this);
+
+				each(this.xLabels,function(label,index){
+					var xPos = this.calculateX(index) + aliasPixel(this.lineWidth),
+						// Check to see if line/bar here and decide where to place the line
+						linePos = this.calculateX(index - (this.offsetGridLines ? 0.5 : 0)) + aliasPixel(this.lineWidth),
+						isRotated = (this.xLabelRotation > 0),
+						drawVerticalLine = this.showVerticalLines;
+
+					// This is Y axis, so draw it
+					if (index === 0 && !drawVerticalLine){
+						drawVerticalLine = true;
+					}
+
+					if (drawVerticalLine){
+						ctx.beginPath();
+					}
+
+					if (index > 0){
+						// This is a grid line in the centre, so drop that
+						ctx.lineWidth = this.gridLineWidth;
+						ctx.strokeStyle = this.gridLineColor;
+					} else {
+						// This is the first line on the scale
+						ctx.lineWidth = this.lineWidth;
+						ctx.strokeStyle = this.lineColor;
+					}
+
+					if (drawVerticalLine){
+						ctx.moveTo(linePos,this.endPoint);
+						ctx.lineTo(linePos,this.startPoint - 3);
+						ctx.stroke();
+						ctx.closePath();
+					}
+
+
+					ctx.lineWidth = this.lineWidth;
+					ctx.strokeStyle = this.lineColor;
+
+
+					// Small lines at the bottom of the base grid line
+					ctx.beginPath();
+					ctx.moveTo(linePos,this.endPoint);
+					ctx.lineTo(linePos,this.endPoint + 5);
+					ctx.stroke();
+					ctx.closePath();
+
+					ctx.save();
+					ctx.translate(xPos,(isRotated) ? this.endPoint + 12 : this.endPoint + 8);
+					ctx.rotate(toRadians(this.xLabelRotation)*-1);
+					ctx.font = this.font;
+					ctx.textAlign = (isRotated) ? "right" : "center";
+					ctx.textBaseline = (isRotated) ? "middle" : "top";
+					ctx.fillText(label, 0, 0);
+					ctx.restore();
+				},this);
+
+			}
+		}
+
+	});
+
+	Chart.RadialScale = Chart.Element.extend({
+		initialize: function(){
+			this.size = min([this.height, this.width]);
+			this.drawingArea = (this.display) ? (this.size/2) - (this.fontSize/2 + this.backdropPaddingY) : (this.size/2);
+		},
+		calculateCenterOffset: function(value){
+			// Take into account half font size + the yPadding of the top value
+			var scalingFactor = this.drawingArea / (this.max - this.min);
+
+			return (value - this.min) * scalingFactor;
+		},
+		update : function(){
+			if (!this.lineArc){
+				this.setScaleSize();
+			} else {
+				this.drawingArea = (this.display) ? (this.size/2) - (this.fontSize/2 + this.backdropPaddingY) : (this.size/2);
+			}
+			this.buildYLabels();
+		},
+		buildYLabels: function(){
+			this.yLabels = [];
+
+			var stepDecimalPlaces = getDecimalPlaces(this.stepValue);
+
+			for (var i=0; i<=this.steps; i++){
+				this.yLabels.push(template(this.templateString,{value:(this.min + (i * this.stepValue)).toFixed(stepDecimalPlaces)}));
+			}
+		},
+		getCircumference : function(){
+			return ((Math.PI*2) / this.valuesCount);
+		},
+		setScaleSize: function(){
+			/*
+			 * Right, this is really confusing and there is a lot of maths going on here
+			 * The gist of the problem is here: https://gist.github.com/nnnick/696cc9c55f4b0beb8fe9
+			 *
+			 * Reaction: https://dl.dropboxusercontent.com/u/34601363/toomuchscience.gif
+			 *
+			 * Solution:
+			 *
+			 * We assume the radius of the polygon is half the size of the canvas at first
+			 * at each index we check if the text overlaps.
+			 *
+			 * Where it does, we store that angle and that index.
+			 *
+			 * After finding the largest index and angle we calculate how much we need to remove
+			 * from the shape radius to move the point inwards by that x.
+			 *
+			 * We average the left and right distances to get the maximum shape radius that can fit in the box
+			 * along with labels.
+			 *
+			 * Once we have that, we can find the centre point for the chart, by taking the x text protrusion
+			 * on each side, removing that from the size, halving it and adding the left x protrusion width.
+			 *
+			 * This will mean we have a shape fitted to the canvas, as large as it can be with the labels
+			 * and position it in the most space efficient manner
+			 *
+			 * https://dl.dropboxusercontent.com/u/34601363/yeahscience.gif
+			 */
+
+
+			// Get maximum radius of the polygon. Either half the height (minus the text width) or half the width.
+			// Use this to calculate the offset + change. - Make sure L/R protrusion is at least 0 to stop issues with centre points
+			var largestPossibleRadius = min([(this.height/2 - this.pointLabelFontSize - 5), this.width/2]),
+				pointPosition,
+				i,
+				textWidth,
+				halfTextWidth,
+				furthestRight = this.width,
+				furthestRightIndex,
+				furthestRightAngle,
+				furthestLeft = 0,
+				furthestLeftIndex,
+				furthestLeftAngle,
+				xProtrusionLeft,
+				xProtrusionRight,
+				radiusReductionRight,
+				radiusReductionLeft,
+				maxWidthRadius;
+			this.ctx.font = fontString(this.pointLabelFontSize,this.pointLabelFontStyle,this.pointLabelFontFamily);
+			for (i=0;i<this.valuesCount;i++){
+				// 5px to space the text slightly out - similar to what we do in the draw function.
+				pointPosition = this.getPointPosition(i, largestPossibleRadius);
+				textWidth = this.ctx.measureText(template(this.templateString, { value: this.labels[i] })).width + 5;
+				if (i === 0 || i === this.valuesCount/2){
+					// If we're at index zero, or exactly the middle, we're at exactly the top/bottom
+					// of the radar chart, so text will be aligned centrally, so we'll half it and compare
+					// w/left and right text sizes
+					halfTextWidth = textWidth/2;
+					if (pointPosition.x + halfTextWidth > furthestRight) {
+						furthestRight = pointPosition.x + halfTextWidth;
+						furthestRightIndex = i;
+					}
+					if (pointPosition.x - halfTextWidth < furthestLeft) {
+						furthestLeft = pointPosition.x - halfTextWidth;
+						furthestLeftIndex = i;
+					}
+				}
+				else if (i < this.valuesCount/2) {
+					// Less than half the values means we'll left align the text
+					if (pointPosition.x + textWidth > furthestRight) {
+						furthestRight = pointPosition.x + textWidth;
+						furthestRightIndex = i;
+					}
+				}
+				else if (i > this.valuesCount/2){
+					// More than half the values means we'll right align the text
+					if (pointPosition.x - textWidth < furthestLeft) {
+						furthestLeft = pointPosition.x - textWidth;
+						furthestLeftIndex = i;
+					}
+				}
+			}
+
+			xProtrusionLeft = furthestLeft;
+
+			xProtrusionRight = Math.ceil(furthestRight - this.width);
+
+			furthestRightAngle = this.getIndexAngle(furthestRightIndex);
+
+			furthestLeftAngle = this.getIndexAngle(furthestLeftIndex);
+
+			radiusReductionRight = xProtrusionRight / Math.sin(furthestRightAngle + Math.PI/2);
+
+			radiusReductionLeft = xProtrusionLeft / Math.sin(furthestLeftAngle + Math.PI/2);
+
+			// Ensure we actually need to reduce the size of the chart
+			radiusReductionRight = (isNumber(radiusReductionRight)) ? radiusReductionRight : 0;
+			radiusReductionLeft = (isNumber(radiusReductionLeft)) ? radiusReductionLeft : 0;
+
+			this.drawingArea = largestPossibleRadius - (radiusReductionLeft + radiusReductionRight)/2;
+
+			//this.drawingArea = min([maxWidthRadius, (this.height - (2 * (this.pointLabelFontSize + 5)))/2])
+			this.setCenterPoint(radiusReductionLeft, radiusReductionRight);
+
+		},
+		setCenterPoint: function(leftMovement, rightMovement){
+
+			var maxRight = this.width - rightMovement - this.drawingArea,
+				maxLeft = leftMovement + this.drawingArea;
+
+			this.xCenter = (maxLeft + maxRight)/2;
+			// Always vertically in the centre as the text height doesn't change
+			this.yCenter = (this.height/2);
+		},
+
+		getIndexAngle : function(index){
+			var angleMultiplier = (Math.PI * 2) / this.valuesCount;
+			// Start from the top instead of right, so remove a quarter of the circle
+
+			return index * angleMultiplier - (Math.PI/2);
+		},
+		getPointPosition : function(index, distanceFromCenter){
+			var thisAngle = this.getIndexAngle(index);
+			return {
+				x : (Math.cos(thisAngle) * distanceFromCenter) + this.xCenter,
+				y : (Math.sin(thisAngle) * distanceFromCenter) + this.yCenter
+			};
+		},
+		draw: function(){
+			if (this.display){
+				var ctx = this.ctx;
+				each(this.yLabels, function(label, index){
+					// Don't draw a centre value
+					if (index > 0){
+						var yCenterOffset = index * (this.drawingArea/this.steps),
+							yHeight = this.yCenter - yCenterOffset,
+							pointPosition;
+
+						// Draw circular lines around the scale
+						if (this.lineWidth > 0){
+							ctx.strokeStyle = this.lineColor;
+							ctx.lineWidth = this.lineWidth;
+
+							if(this.lineArc){
+								ctx.beginPath();
+								ctx.arc(this.xCenter, this.yCenter, yCenterOffset, 0, Math.PI*2);
+								ctx.closePath();
+								ctx.stroke();
+							} else{
+								ctx.beginPath();
+								for (var i=0;i<this.valuesCount;i++)
+								{
+									pointPosition = this.getPointPosition(i, this.calculateCenterOffset(this.min + (index * this.stepValue)));
+									if (i === 0){
+										ctx.moveTo(pointPosition.x, pointPosition.y);
+									} else {
+										ctx.lineTo(pointPosition.x, pointPosition.y);
+									}
+								}
+								ctx.closePath();
+								ctx.stroke();
+							}
+						}
+						if(this.showLabels){
+							ctx.font = fontString(this.fontSize,this.fontStyle,this.fontFamily);
+							if (this.showLabelBackdrop){
+								var labelWidth = ctx.measureText(label).width;
+								ctx.fillStyle = this.backdropColor;
+								ctx.fillRect(
+									this.xCenter - labelWidth/2 - this.backdropPaddingX,
+									yHeight - this.fontSize/2 - this.backdropPaddingY,
+									labelWidth + this.backdropPaddingX*2,
+									this.fontSize + this.backdropPaddingY*2
+								);
+							}
+							ctx.textAlign = 'center';
+							ctx.textBaseline = "middle";
+							ctx.fillStyle = this.fontColor;
+							ctx.fillText(label, this.xCenter, yHeight);
+						}
+					}
+				}, this);
+
+				if (!this.lineArc){
+					ctx.lineWidth = this.angleLineWidth;
+					ctx.strokeStyle = this.angleLineColor;
+					for (var i = this.valuesCount - 1; i >= 0; i--) {
+						if (this.angleLineWidth > 0){
+							var outerPosition = this.getPointPosition(i, this.calculateCenterOffset(this.max));
+							ctx.beginPath();
+							ctx.moveTo(this.xCenter, this.yCenter);
+							ctx.lineTo(outerPosition.x, outerPosition.y);
+							ctx.stroke();
+							ctx.closePath();
+						}
+						// Extra 3px out for some label spacing
+						var pointLabelPosition = this.getPointPosition(i, this.calculateCenterOffset(this.max) + 5);
+						ctx.font = fontString(this.pointLabelFontSize,this.pointLabelFontStyle,this.pointLabelFontFamily);
+						ctx.fillStyle = this.pointLabelFontColor;
+
+						var labelsCount = this.labels.length,
+							halfLabelsCount = this.labels.length/2,
+							quarterLabelsCount = halfLabelsCount/2,
+							upperHalf = (i < quarterLabelsCount || i > labelsCount - quarterLabelsCount),
+							exactQuarter = (i === quarterLabelsCount || i === labelsCount - quarterLabelsCount);
+						if (i === 0){
+							ctx.textAlign = 'center';
+						} else if(i === halfLabelsCount){
+							ctx.textAlign = 'center';
+						} else if (i < halfLabelsCount){
+							ctx.textAlign = 'left';
+						} else {
+							ctx.textAlign = 'right';
+						}
+
+						// Set the correct text baseline based on outer positioning
+						if (exactQuarter){
+							ctx.textBaseline = 'middle';
+						} else if (upperHalf){
+							ctx.textBaseline = 'bottom';
+						} else {
+							ctx.textBaseline = 'top';
+						}
+
+						ctx.fillText(this.labels[i], pointLabelPosition.x, pointLabelPosition.y);
+					}
+				}
+			}
+		}
+	});
+
+	// Attach global event to resize each chart instance when the browser resizes
+	helpers.addEvent(window, "resize", (function(){
+		// Basic debounce of resize function so it doesn't hurt performance when resizing browser.
+		var timeout;
+		return function(){
+			clearTimeout(timeout);
+			timeout = setTimeout(function(){
+				each(Chart.instances,function(instance){
+					// If the responsive flag is set in the chart instance config
+					// Cascade the resize event down to the chart.
+					if (instance.options.responsive){
+						instance.resize(instance.render, true);
+					}
+				});
+			}, 50);
+		};
+	})());
+
+
+	if (amd) {
+		define(function(){
+			return Chart;
+		});
+	} else if (typeof module === 'object' && module.exports) {
+		module.exports = Chart;
+	}
+
+	root.Chart = Chart;
+
+	Chart.noConflict = function(){
+		root.Chart = previous;
+		return Chart;
+	};
+
+}).call(this);
+
+(function(){
+	"use strict";
+
+	var root = this,
+		Chart = root.Chart,
+		helpers = Chart.helpers;
+
+
+	var defaultConfig = {
+		//Boolean - Whether the scale should start at zero, or an order of magnitude down from the lowest value
+		scaleBeginAtZero : true,
+
+		//Boolean - Whether grid lines are shown across the chart
+		scaleShowGridLines : true,
+
+		//String - Colour of the grid lines
+		scaleGridLineColor : "rgba(0,0,0,.05)",
+
+		//Number - Width of the grid lines
+		scaleGridLineWidth : 1,
+
+		//Boolean - Whether to show horizontal lines (except X axis)
+		scaleShowHorizontalLines: true,
+
+		//Boolean - Whether to show vertical lines (except Y axis)
+		scaleShowVerticalLines: true,
+
+		//Boolean - If there is a stroke on each bar
+		barShowStroke : true,
+
+		//Number - Pixel width of the bar stroke
+		barStrokeWidth : 2,
+
+		//Number - Spacing between each of the X value sets
+		barValueSpacing : 5,
+
+		//Number - Spacing between data sets within X values
+		barDatasetSpacing : 1,
+
+		//String - A legend template
+		legendTemplate : "<ul class=\"<%=name.toLowerCase()%>-legend\"><% for (var i=0; i<datasets.length; i++){%><li><span style=\"background-color:<%=datasets[i].fillColor%>\"></span><%if(datasets[i].label){%><%=datasets[i].label%><%}%></li><%}%></ul>"
+
+	};
+
+
+	Chart.Type.extend({
+		name: "Bar",
+		defaults : defaultConfig,
+		initialize:  function(data){
+
+			//Expose options as a scope variable here so we can access it in the ScaleClass
+			var options = this.options;
+
+			this.ScaleClass = Chart.Scale.extend({
+				offsetGridLines : true,
+				calculateBarX : function(datasetCount, datasetIndex, barIndex){
+					//Reusable method for calculating the xPosition of a given bar based on datasetIndex & width of the bar
+					var xWidth = this.calculateBaseWidth(),
+						xAbsolute = this.calculateX(barIndex) - (xWidth/2),
+						barWidth = this.calculateBarWidth(datasetCount);
+
+					return xAbsolute + (barWidth * datasetIndex) + (datasetIndex * options.barDatasetSpacing) + barWidth/2;
+				},
+				calculateBaseWidth : function(){
+					return (this.calculateX(1) - this.calculateX(0)) - (2*options.barValueSpacing);
+				},
+				calculateBarWidth : function(datasetCount){
+					//The padding between datasets is to the right of each bar, providing that there are more than 1 dataset
+					var baseWidth = this.calculateBaseWidth() - ((datasetCount - 1) * options.barDatasetSpacing);
+
+					return (baseWidth / datasetCount);
+				}
+			});
+
+			this.datasets = [];
+
+			//Set up tooltip events on the chart
+			if (this.options.showTooltips){
+				helpers.bindEvents(this, this.options.tooltipEvents, function(evt){
+					var activeBars = (evt.type !== 'mouseout') ? this.getBarsAtEvent(evt) : [];
+
+					this.eachBars(function(bar){
+						bar.restore(['fillColor', 'strokeColor']);
+					});
+					helpers.each(activeBars, function(activeBar){
+						activeBar.fillColor = activeBar.highlightFill;
+						activeBar.strokeColor = activeBar.highlightStroke;
+					});
+					this.showTooltip(activeBars);
+				});
+			}
+
+			//Declare the extension of the default point, to cater for the options passed in to the constructor
+			this.BarClass = Chart.Rectangle.extend({
+				strokeWidth : this.options.barStrokeWidth,
+				showStroke : this.options.barShowStroke,
+				ctx : this.chart.ctx
+			});
+
+			//Iterate through each of the datasets, and build this into a property of the chart
+			helpers.each(data.datasets,function(dataset,datasetIndex){
+
+				var datasetObject = {
+					label : dataset.label || null,
+					fillColor : dataset.fillColor,
+					strokeColor : dataset.strokeColor,
+					bars : []
+				};
+
+				this.datasets.push(datasetObject);
+
+				helpers.each(dataset.data,function(dataPoint,index){
+					//Add a new point for each piece of data, passing any required data to draw.
+					datasetObject.bars.push(new this.BarClass({
+						value : dataPoint,
+						label : data.labels[index],
+						datasetLabel: dataset.label,
+						strokeColor : dataset.strokeColor,
+						fillColor : dataset.fillColor,
+						highlightFill : dataset.highlightFill || dataset.fillColor,
+						highlightStroke : dataset.highlightStroke || dataset.strokeColor
+					}));
+				},this);
+
+			},this);
+
+			this.buildScale(data.labels);
+
+			this.BarClass.prototype.base = this.scale.endPoint;
+
+			this.eachBars(function(bar, index, datasetIndex){
+				helpers.extend(bar, {
+					width : this.scale.calculateBarWidth(this.datasets.length),
+					x: this.scale.calculateBarX(this.datasets.length, datasetIndex, index),
+					y: this.scale.endPoint
+				});
+				bar.save();
+			}, this);
+
+			this.render();
+		},
+		update : function(){
+			this.scale.update();
+			// Reset any highlight colours before updating.
+			helpers.each(this.activeElements, function(activeElement){
+				activeElement.restore(['fillColor', 'strokeColor']);
+			});
+
+			this.eachBars(function(bar){
+				bar.save();
+			});
+			this.render();
+		},
+		eachBars : function(callback){
+			helpers.each(this.datasets,function(dataset, datasetIndex){
+				helpers.each(dataset.bars, callback, this, datasetIndex);
+			},this);
+		},
+		getBarsAtEvent : function(e){
+			var barsArray = [],
+				eventPosition = helpers.getRelativePosition(e),
+				datasetIterator = function(dataset){
+					barsArray.push(dataset.bars[barIndex]);
+				},
+				barIndex;
+
+			for (var datasetIndex = 0; datasetIndex < this.datasets.length; datasetIndex++) {
+				for (barIndex = 0; barIndex < this.datasets[datasetIndex].bars.length; barIndex++) {
+					if (this.datasets[datasetIndex].bars[barIndex].inRange(eventPosition.x,eventPosition.y)){
+						helpers.each(this.datasets, datasetIterator);
+						return barsArray;
+					}
+				}
+			}
+
+			return barsArray;
+		},
+		buildScale : function(labels){
+			var self = this;
+
+			var dataTotal = function(){
+				var values = [];
+				self.eachBars(function(bar){
+					values.push(bar.value);
+				});
+				return values;
+			};
+
+			var scaleOptions = {
+				templateString : this.options.scaleLabel,
+				height : this.chart.height,
+				width : this.chart.width,
+				ctx : this.chart.ctx,
+				textColor : this.options.scaleFontColor,
+				fontSize : this.options.scaleFontSize,
+				fontStyle : this.options.scaleFontStyle,
+				fontFamily : this.options.scaleFontFamily,
+				valuesCount : labels.length,
+				beginAtZero : this.options.scaleBeginAtZero,
+				integersOnly : this.options.scaleIntegersOnly,
+				calculateYRange: function(currentHeight){
+					var updatedRanges = helpers.calculateScaleRange(
+						dataTotal(),
+						currentHeight,
+						this.fontSize,
+						this.beginAtZero,
+						this.integersOnly
+					);
+					helpers.extend(this, updatedRanges);
+				},
+				xLabels : labels,
+				font : helpers.fontString(this.options.scaleFontSize, this.options.scaleFontStyle, this.options.scaleFontFamily),
+				lineWidth : this.options.scaleLineWidth,
+				lineColor : this.options.scaleLineColor,
+				showHorizontalLines : this.options.scaleShowHorizontalLines,
+				showVerticalLines : this.options.scaleShowVerticalLines,
+				gridLineWidth : (this.options.scaleShowGridLines) ? this.options.scaleGridLineWidth : 0,
+				gridLineColor : (this.options.scaleShowGridLines) ? this.options.scaleGridLineColor : "rgba(0,0,0,0)",
+				padding : (this.options.showScale) ? 0 : (this.options.barShowStroke) ? this.options.barStrokeWidth : 0,
+				showLabels : this.options.scaleShowLabels,
+				display : this.options.showScale
+			};
+
+			if (this.options.scaleOverride){
+				helpers.extend(scaleOptions, {
+					calculateYRange: helpers.noop,
+					steps: this.options.scaleSteps,
+					stepValue: this.options.scaleStepWidth,
+					min: this.options.scaleStartValue,
+					max: this.options.scaleStartValue + (this.options.scaleSteps * this.options.scaleStepWidth)
+				});
+			}
+
+			this.scale = new this.ScaleClass(scaleOptions);
+		},
+		addData : function(valuesArray,label){
+			//Map the values array for each of the datasets
+			helpers.each(valuesArray,function(value,datasetIndex){
+				//Add a new point for each piece of data, passing any required data to draw.
+				this.datasets[datasetIndex].bars.push(new this.BarClass({
+					value : value,
+					label : label,
+					x: this.scale.calculateBarX(this.datasets.length, datasetIndex, this.scale.valuesCount+1),
+					y: this.scale.endPoint,
+					width : this.scale.calculateBarWidth(this.datasets.length),
+					base : this.scale.endPoint,
+					strokeColor : this.datasets[datasetIndex].strokeColor,
+					fillColor : this.datasets[datasetIndex].fillColor
+				}));
+			},this);
+
+			this.scale.addXLabel(label);
+			//Then re-render the chart.
+			this.update();
+		},
+		removeData : function(){
+			this.scale.removeXLabel();
+			//Then re-render the chart.
+			helpers.each(this.datasets,function(dataset){
+				dataset.bars.shift();
+			},this);
+			this.update();
+		},
+		reflow : function(){
+			helpers.extend(this.BarClass.prototype,{
+				y: this.scale.endPoint,
+				base : this.scale.endPoint
+			});
+			var newScaleProps = helpers.extend({
+				height : this.chart.height,
+				width : this.chart.width
+			});
+			this.scale.update(newScaleProps);
+		},
+		draw : function(ease){
+			var easingDecimal = ease || 1;
+			this.clear();
+
+			var ctx = this.chart.ctx;
+
+			this.scale.draw(easingDecimal);
+
+			//Draw all the bars for each dataset
+			helpers.each(this.datasets,function(dataset,datasetIndex){
+				helpers.each(dataset.bars,function(bar,index){
+					if (bar.hasValue()){
+						bar.base = this.scale.endPoint;
+						//Transition then draw
+						bar.transition({
+							x : this.scale.calculateBarX(this.datasets.length, datasetIndex, index),
+							y : this.scale.calculateY(bar.value),
+							width : this.scale.calculateBarWidth(this.datasets.length)
+						}, easingDecimal).draw();
+					}
+				},this);
+
+			},this);
+		}
+	});
+
+
+}).call(this);
+
+(function(){
+	"use strict";
+
+	var root = this,
+		Chart = root.Chart,
+		//Cache a local reference to Chart.helpers
+		helpers = Chart.helpers;
+
+	var defaultConfig = {
+		//Boolean - Whether we should show a stroke on each segment
+		segmentShowStroke : true,
+
+		//String - The colour of each segment stroke
+		segmentStrokeColor : "#fff",
+
+		//Number - The width of each segment stroke
+		segmentStrokeWidth : 2,
+
+		//The percentage of the chart that we cut out of the middle.
+		percentageInnerCutout : 50,
+
+		//Number - Amount of animation steps
+		animationSteps : 100,
+
+		//String - Animation easing effect
+		animationEasing : "easeOutBounce",
+
+		//Boolean - Whether we animate the rotation of the Doughnut
+		animateRotate : true,
+
+		//Boolean - Whether we animate scaling the Doughnut from the centre
+		animateScale : false,
+
+		//String - A legend template
+		legendTemplate : "<ul class=\"<%=name.toLowerCase()%>-legend\"><% for (var i=0; i<segments.length; i++){%><li><span style=\"background-color:<%=segments[i].fillColor%>\"></span><%if(segments[i].label){%><%=segments[i].label%><%}%></li><%}%></ul>"
+
+	};
+
+
+	Chart.Type.extend({
+		//Passing in a name registers this chart in the Chart namespace
+		name: "Doughnut",
+		//Providing a defaults will also register the deafults in the chart namespace
+		defaults : defaultConfig,
+		//Initialize is fired when the chart is initialized - Data is passed in as a parameter
+		//Config is automatically merged by the core of Chart.js, and is available at this.options
+		initialize:  function(data){
+
+			//Declare segments as a static property to prevent inheriting across the Chart type prototype
+			this.segments = [];
+			this.outerRadius = (helpers.min([this.chart.width,this.chart.height]) -	this.options.segmentStrokeWidth/2)/2;
+
+			this.SegmentArc = Chart.Arc.extend({
+				ctx : this.chart.ctx,
+				x : this.chart.width/2,
+				y : this.chart.height/2
+			});
+
+			//Set up tooltip events on the chart
+			if (this.options.showTooltips){
+				helpers.bindEvents(this, this.options.tooltipEvents, function(evt){
+					var activeSegments = (evt.type !== 'mouseout') ? this.getSegmentsAtEvent(evt) : [];
+
+					helpers.each(this.segments,function(segment){
+						segment.restore(["fillColor"]);
+					});
+					helpers.each(activeSegments,function(activeSegment){
+						activeSegment.fillColor = activeSegment.highlightColor;
+					});
+					this.showTooltip(activeSegments);
+				});
+			}
+			this.calculateTotal(data);
+
+			helpers.each(data,function(datapoint, index){
+				this.addData(datapoint, index, true);
+			},this);
+
+			this.render();
+		},
+		getSegmentsAtEvent : function(e){
+			var segmentsArray = [];
+
+			var location = helpers.getRelativePosition(e);
+
+			helpers.each(this.segments,function(segment){
+				if (segment.inRange(location.x,location.y)) segmentsArray.push(segment);
+			},this);
+			return segmentsArray;
+		},
+		addData : function(segment, atIndex, silent){
+			var index = atIndex || this.segments.length;
+			this.segments.splice(index, 0, new this.SegmentArc({
+				value : segment.value,
+				outerRadius : (this.options.animateScale) ? 0 : this.outerRadius,
+				innerRadius : (this.options.animateScale) ? 0 : (this.outerRadius/100) * this.options.percentageInnerCutout,
+				fillColor : segment.color,
+				highlightColor : segment.highlight || segment.color,
+				showStroke : this.options.segmentShowStroke,
+				strokeWidth : this.options.segmentStrokeWidth,
+				strokeColor : this.options.segmentStrokeColor,
+				startAngle : Math.PI * 1.5,
+				circumference : (this.options.animateRotate) ? 0 : this.calculateCircumference(segment.value),
+				label : segment.label
+			}));
+			if (!silent){
+				this.reflow();
+				this.update();
+			}
+		},
+		calculateCircumference : function(value){
+			return (Math.PI*2)*(Math.abs(value) / this.total);
+		},
+		calculateTotal : function(data){
+			this.total = 0;
+			helpers.each(data,function(segment){
+				this.total += Math.abs(segment.value);
+			},this);
+		},
+		update : function(){
+			this.calculateTotal(this.segments);
+
+			// Reset any highlight colours before updating.
+			helpers.each(this.activeElements, function(activeElement){
+				activeElement.restore(['fillColor']);
+			});
+
+			helpers.each(this.segments,function(segment){
+				segment.save();
+			});
+			this.render();
+		},
+
+		removeData: function(atIndex){
+			var indexToDelete = (helpers.isNumber(atIndex)) ? atIndex : this.segments.length-1;
+			this.segments.splice(indexToDelete, 1);
+			this.reflow();
+			this.update();
+		},
+
+		reflow : function(){
+			helpers.extend(this.SegmentArc.prototype,{
+				x : this.chart.width/2,
+				y : this.chart.height/2
+			});
+			this.outerRadius = (helpers.min([this.chart.width,this.chart.height]) -	this.options.segmentStrokeWidth/2)/2;
+			helpers.each(this.segments, function(segment){
+				segment.update({
+					outerRadius : this.outerRadius,
+					innerRadius : (this.outerRadius/100) * this.options.percentageInnerCutout
+				});
+			}, this);
+		},
+		draw : function(easeDecimal){
+			var animDecimal = (easeDecimal) ? easeDecimal : 1;
+			this.clear();
+			helpers.each(this.segments,function(segment,index){
+				segment.transition({
+					circumference : this.calculateCircumference(segment.value),
+					outerRadius : this.outerRadius,
+					innerRadius : (this.outerRadius/100) * this.options.percentageInnerCutout
+				},animDecimal);
+
+				segment.endAngle = segment.startAngle + segment.circumference;
+
+				segment.draw();
+				if (index === 0){
+					segment.startAngle = Math.PI * 1.5;
+				}
+				//Check to see if it's the last segment, if not get the next and update the start angle
+				if (index < this.segments.length-1){
+					this.segments[index+1].startAngle = segment.endAngle;
+				}
+			},this);
+
+		}
+	});
+
+	Chart.types.Doughnut.extend({
+		name : "Pie",
+		defaults : helpers.merge(defaultConfig,{percentageInnerCutout : 0})
+	});
+
+}).call(this);
+(function(){
+	"use strict";
+
+	var root = this,
+		Chart = root.Chart,
+		helpers = Chart.helpers;
+
+	var defaultConfig = {
+
+		///Boolean - Whether grid lines are shown across the chart
+		scaleShowGridLines : true,
+
+		//String - Colour of the grid lines
+		scaleGridLineColor : "rgba(0,0,0,.05)",
+
+		//Number - Width of the grid lines
+		scaleGridLineWidth : 1,
+
+		//Boolean - Whether to show horizontal lines (except X axis)
+		scaleShowHorizontalLines: true,
+
+		//Boolean - Whether to show vertical lines (except Y axis)
+		scaleShowVerticalLines: true,
+
+		//Boolean - Whether the line is curved between points
+		bezierCurve : true,
+
+		//Number - Tension of the bezier curve between points
+		bezierCurveTension : 0.4,
+
+		//Boolean - Whether to show a dot for each point
+		pointDot : true,
+
+		//Number - Radius of each point dot in pixels
+		pointDotRadius : 4,
+
+		//Number - Pixel width of point dot stroke
+		pointDotStrokeWidth : 1,
+
+		//Number - amount extra to add to the radius to cater for hit detection outside the drawn point
+		pointHitDetectionRadius : 20,
+
+		//Boolean - Whether to show a stroke for datasets
+		datasetStroke : true,
+
+		//Number - Pixel width of dataset stroke
+		datasetStrokeWidth : 2,
+
+		//Boolean - Whether to fill the dataset with a colour
+		datasetFill : true,
+
+		//String - A legend template
+		legendTemplate : "<ul class=\"<%=name.toLowerCase()%>-legend\"><% for (var i=0; i<datasets.length; i++){%><li><span style=\"background-color:<%=datasets[i].strokeColor%>\"></span><%if(datasets[i].label){%><%=datasets[i].label%><%}%></li><%}%></ul>"
+
+	};
+
+
+	Chart.Type.extend({
+		name: "Line",
+		defaults : defaultConfig,
+		initialize:  function(data){
+			//Declare the extension of the default point, to cater for the options passed in to the constructor
+			this.PointClass = Chart.Point.extend({
+				strokeWidth : this.options.pointDotStrokeWidth,
+				radius : this.options.pointDotRadius,
+				display: this.options.pointDot,
+				hitDetectionRadius : this.options.pointHitDetectionRadius,
+				ctx : this.chart.ctx,
+				inRange : function(mouseX){
+					return (Math.pow(mouseX-this.x, 2) < Math.pow(this.radius + this.hitDetectionRadius,2));
+				}
+			});
+
+			this.datasets = [];
+
+			//Set up tooltip events on the chart
+			if (this.options.showTooltips){
+				helpers.bindEvents(this, this.options.tooltipEvents, function(evt){
+					var activePoints = (evt.type !== 'mouseout') ? this.getPointsAtEvent(evt) : [];
+					this.eachPoints(function(point){
+						point.restore(['fillColor', 'strokeColor']);
+					});
+					helpers.each(activePoints, function(activePoint){
+						activePoint.fillColor = activePoint.highlightFill;
+						activePoint.strokeColor = activePoint.highlightStroke;
+					});
+					this.showTooltip(activePoints);
+				});
+			}
+
+			//Iterate through each of the datasets, and build this into a property of the chart
+			helpers.each(data.datasets,function(dataset){
+
+				var datasetObject = {
+					label : dataset.label || null,
+					fillColor : dataset.fillColor,
+					strokeColor : dataset.strokeColor,
+					pointColor : dataset.pointColor,
+					pointStrokeColor : dataset.pointStrokeColor,
+					points : []
+				};
+
+				this.datasets.push(datasetObject);
+
+
+				helpers.each(dataset.data,function(dataPoint,index){
+					//Add a new point for each piece of data, passing any required data to draw.
+					datasetObject.points.push(new this.PointClass({
+						value : dataPoint,
+						label : data.labels[index],
+						datasetLabel: dataset.label,
+						strokeColor : dataset.pointStrokeColor,
+						fillColor : dataset.pointColor,
+						highlightFill : dataset.pointHighlightFill || dataset.pointColor,
+						highlightStroke : dataset.pointHighlightStroke || dataset.pointStrokeColor
+					}));
+				},this);
+
+				this.buildScale(data.labels);
+
+
+				this.eachPoints(function(point, index){
+					helpers.extend(point, {
+						x: this.scale.calculateX(index),
+						y: this.scale.endPoint
+					});
+					point.save();
+				}, this);
+
+			},this);
+
+
+			this.render();
+		},
+		update : function(){
+			this.scale.update();
+			// Reset any highlight colours before updating.
+			helpers.each(this.activeElements, function(activeElement){
+				activeElement.restore(['fillColor', 'strokeColor']);
+			});
+			this.eachPoints(function(point){
+				point.save();
+			});
+			this.render();
+		},
+		eachPoints : function(callback){
+			helpers.each(this.datasets,function(dataset){
+				helpers.each(dataset.points,callback,this);
+			},this);
+		},
+		getPointsAtEvent : function(e){
+			var pointsArray = [],
+				eventPosition = helpers.getRelativePosition(e);
+			helpers.each(this.datasets,function(dataset){
+				helpers.each(dataset.points,function(point){
+					if (point.inRange(eventPosition.x,eventPosition.y)) pointsArray.push(point);
+				});
+			},this);
+			return pointsArray;
+		},
+		buildScale : function(labels){
+			var self = this;
+
+			var dataTotal = function(){
+				var values = [];
+				self.eachPoints(function(point){
+					values.push(point.value);
+				});
+
+				return values;
+			};
+
+			var scaleOptions = {
+				templateString : this.options.scaleLabel,
+				height : this.chart.height,
+				width : this.chart.width,
+				ctx : this.chart.ctx,
+				textColor : this.options.scaleFontColor,
+				fontSize : this.options.scaleFontSize,
+				fontStyle : this.options.scaleFontStyle,
+				fontFamily : this.options.scaleFontFamily,
+				valuesCount : labels.length,
+				beginAtZero : this.options.scaleBeginAtZero,
+				integersOnly : this.options.scaleIntegersOnly,
+				calculateYRange : function(currentHeight){
+					var updatedRanges = helpers.calculateScaleRange(
+						dataTotal(),
+						currentHeight,
+						this.fontSize,
+						this.beginAtZero,
+						this.integersOnly
+					);
+					helpers.extend(this, updatedRanges);
+				},
+				xLabels : labels,
+				font : helpers.fontString(this.options.scaleFontSize, this.options.scaleFontStyle, this.options.scaleFontFamily),
+				lineWidth : this.options.scaleLineWidth,
+				lineColor : this.options.scaleLineColor,
+				showHorizontalLines : this.options.scaleShowHorizontalLines,
+				showVerticalLines : this.options.scaleShowVerticalLines,
+				gridLineWidth : (this.options.scaleShowGridLines) ? this.options.scaleGridLineWidth : 0,
+				gridLineColor : (this.options.scaleShowGridLines) ? this.options.scaleGridLineColor : "rgba(0,0,0,0)",
+				padding: (this.options.showScale) ? 0 : this.options.pointDotRadius + this.options.pointDotStrokeWidth,
+				showLabels : this.options.scaleShowLabels,
+				display : this.options.showScale
+			};
+
+			if (this.options.scaleOverride){
+				helpers.extend(scaleOptions, {
+					calculateYRange: helpers.noop,
+					steps: this.options.scaleSteps,
+					stepValue: this.options.scaleStepWidth,
+					min: this.options.scaleStartValue,
+					max: this.options.scaleStartValue + (this.options.scaleSteps * this.options.scaleStepWidth)
+				});
+			}
+
+
+			this.scale = new Chart.Scale(scaleOptions);
+		},
+		addData : function(valuesArray,label){
+			//Map the values array for each of the datasets
+
+			helpers.each(valuesArray,function(value,datasetIndex){
+				//Add a new point for each piece of data, passing any required data to draw.
+				this.datasets[datasetIndex].points.push(new this.PointClass({
+					value : value,
+					label : label,
+					x: this.scale.calculateX(this.scale.valuesCount+1),
+					y: this.scale.endPoint,
+					strokeColor : this.datasets[datasetIndex].pointStrokeColor,
+					fillColor : this.datasets[datasetIndex].pointColor
+				}));
+			},this);
+
+			this.scale.addXLabel(label);
+			//Then re-render the chart.
+			this.update();
+		},
+		removeData : function(){
+			this.scale.removeXLabel();
+			//Then re-render the chart.
+			helpers.each(this.datasets,function(dataset){
+				dataset.points.shift();
+			},this);
+			this.update();
+		},
+		reflow : function(){
+			var newScaleProps = helpers.extend({
+				height : this.chart.height,
+				width : this.chart.width
+			});
+			this.scale.update(newScaleProps);
+		},
+		draw : function(ease){
+			var easingDecimal = ease || 1;
+			this.clear();
+
+			var ctx = this.chart.ctx;
+
+			// Some helper methods for getting the next/prev points
+			var hasValue = function(item){
+				return item.value !== null;
+			},
+			nextPoint = function(point, collection, index){
+				return helpers.findNextWhere(collection, hasValue, index) || point;
+			},
+			previousPoint = function(point, collection, index){
+				return helpers.findPreviousWhere(collection, hasValue, index) || point;
+			};
+
+			this.scale.draw(easingDecimal);
+
+
+			helpers.each(this.datasets,function(dataset){
+				var pointsWithValues = helpers.where(dataset.points, hasValue);
+
+				//Transition each point first so that the line and point drawing isn't out of sync
+				//We can use this extra loop to calculate the control points of this dataset also in this loop
+
+				helpers.each(dataset.points, function(point, index){
+					if (point.hasValue()){
+						point.transition({
+							y : this.scale.calculateY(point.value),
+							x : this.scale.calculateX(index)
+						}, easingDecimal);
+					}
+				},this);
+
+
+				// Control points need to be calculated in a seperate loop, because we need to know the current x/y of the point
+				// This would cause issues when there is no animation, because the y of the next point would be 0, so beziers would be skewed
+				if (this.options.bezierCurve){
+					helpers.each(pointsWithValues, function(point, index){
+						var tension = (index > 0 && index < pointsWithValues.length - 1) ? this.options.bezierCurveTension : 0;
+						point.controlPoints = helpers.splineCurve(
+							previousPoint(point, pointsWithValues, index),
+							point,
+							nextPoint(point, pointsWithValues, index),
+							tension
+						);
+
+						// Prevent the bezier going outside of the bounds of the graph
+
+						// Cap puter bezier handles to the upper/lower scale bounds
+						if (point.controlPoints.outer.y > this.scale.endPoint){
+							point.controlPoints.outer.y = this.scale.endPoint;
+						}
+						else if (point.controlPoints.outer.y < this.scale.startPoint){
+							point.controlPoints.outer.y = this.scale.startPoint;
+						}
+
+						// Cap inner bezier handles to the upper/lower scale bounds
+						if (point.controlPoints.inner.y > this.scale.endPoint){
+							point.controlPoints.inner.y = this.scale.endPoint;
+						}
+						else if (point.controlPoints.inner.y < this.scale.startPoint){
+							point.controlPoints.inner.y = this.scale.startPoint;
+						}
+					},this);
+				}
+
+
+				//Draw the line between all the points
+				ctx.lineWidth = this.options.datasetStrokeWidth;
+				ctx.strokeStyle = dataset.strokeColor;
+				ctx.beginPath();
+
+				helpers.each(pointsWithValues, function(point, index){
+					if (index === 0){
+						ctx.moveTo(point.x, point.y);
+					}
+					else{
+						if(this.options.bezierCurve){
+							var previous = previousPoint(point, pointsWithValues, index);
+
+							ctx.bezierCurveTo(
+								previous.controlPoints.outer.x,
+								previous.controlPoints.outer.y,
+								point.controlPoints.inner.x,
+								point.controlPoints.inner.y,
+								point.x,
+								point.y
+							);
+						}
+						else{
+							ctx.lineTo(point.x,point.y);
+						}
+					}
+				}, this);
+
+				ctx.stroke();
+
+				if (this.options.datasetFill && pointsWithValues.length > 0){
+					//Round off the line by going to the base of the chart, back to the start, then fill.
+					ctx.lineTo(pointsWithValues[pointsWithValues.length - 1].x, this.scale.endPoint);
+					ctx.lineTo(pointsWithValues[0].x, this.scale.endPoint);
+					ctx.fillStyle = dataset.fillColor;
+					ctx.closePath();
+					ctx.fill();
+				}
+
+				//Now draw the points over the line
+				//A little inefficient double looping, but better than the line
+				//lagging behind the point positions
+				helpers.each(pointsWithValues,function(point){
+					point.draw();
+				});
+			},this);
+		}
+	});
+
+
+}).call(this);
+
+(function(){
+	"use strict";
+
+	var root = this,
+		Chart = root.Chart,
+		//Cache a local reference to Chart.helpers
+		helpers = Chart.helpers;
+
+	var defaultConfig = {
+		//Boolean - Show a backdrop to the scale label
+		scaleShowLabelBackdrop : true,
+
+		//String - The colour of the label backdrop
+		scaleBackdropColor : "rgba(255,255,255,0.75)",
+
+		// Boolean - Whether the scale should begin at zero
+		scaleBeginAtZero : true,
+
+		//Number - The backdrop padding above & below the label in pixels
+		scaleBackdropPaddingY : 2,
+
+		//Number - The backdrop padding to the side of the label in pixels
+		scaleBackdropPaddingX : 2,
+
+		//Boolean - Show line for each value in the scale
+		scaleShowLine : true,
+
+		//Boolean - Stroke a line around each segment in the chart
+		segmentShowStroke : true,
+
+		//String - The colour of the stroke on each segement.
+		segmentStrokeColor : "#fff",
+
+		//Number - The width of the stroke value in pixels
+		segmentStrokeWidth : 2,
+
+		//Number - Amount of animation steps
+		animationSteps : 100,
+
+		//String - Animation easing effect.
+		animationEasing : "easeOutBounce",
+
+		//Boolean - Whether to animate the rotation of the chart
+		animateRotate : true,
+
+		//Boolean - Whether to animate scaling the chart from the centre
+		animateScale : false,
+
+		//String - A legend template
+		legendTemplate : "<ul class=\"<%=name.toLowerCase()%>-legend\"><% for (var i=0; i<segments.length; i++){%><li><span style=\"background-color:<%=segments[i].fillColor%>\"></span><%if(segments[i].label){%><%=segments[i].label%><%}%></li><%}%></ul>"
+	};
+
+
+	Chart.Type.extend({
+		//Passing in a name registers this chart in the Chart namespace
+		name: "PolarArea",
+		//Providing a defaults will also register the deafults in the chart namespace
+		defaults : defaultConfig,
+		//Initialize is fired when the chart is initialized - Data is passed in as a parameter
+		//Config is automatically merged by the core of Chart.js, and is available at this.options
+		initialize:  function(data){
+			this.segments = [];
+			//Declare segment class as a chart instance specific class, so it can share props for this instance
+			this.SegmentArc = Chart.Arc.extend({
+				showStroke : this.options.segmentShowStroke,
+				strokeWidth : this.options.segmentStrokeWidth,
+				strokeColor : this.options.segmentStrokeColor,
+				ctx : this.chart.ctx,
+				innerRadius : 0,
+				x : this.chart.width/2,
+				y : this.chart.height/2
+			});
+			this.scale = new Chart.RadialScale({
+				display: this.options.showScale,
+				fontStyle: this.options.scaleFontStyle,
+				fontSize: this.options.scaleFontSize,
+				fontFamily: this.options.scaleFontFamily,
+				fontColor: this.options.scaleFontColor,
+				showLabels: this.options.scaleShowLabels,
+				showLabelBackdrop: this.options.scaleShowLabelBackdrop,
+				backdropColor: this.options.scaleBackdropColor,
+				backdropPaddingY : this.options.scaleBackdropPaddingY,
+				backdropPaddingX: this.options.scaleBackdropPaddingX,
+				lineWidth: (this.options.scaleShowLine) ? this.options.scaleLineWidth : 0,
+				lineColor: this.options.scaleLineColor,
+				lineArc: true,
+				width: this.chart.width,
+				height: this.chart.height,
+				xCenter: this.chart.width/2,
+				yCenter: this.chart.height/2,
+				ctx : this.chart.ctx,
+				templateString: this.options.scaleLabel,
+				valuesCount: data.length
+			});
+
+			this.updateScaleRange(data);
+
+			this.scale.update();
+
+			helpers.each(data,function(segment,index){
+				this.addData(segment,index,true);
+			},this);
+
+			//Set up tooltip events on the chart
+			if (this.options.showTooltips){
+				helpers.bindEvents(this, this.options.tooltipEvents, function(evt){
+					var activeSegments = (evt.type !== 'mouseout') ? this.getSegmentsAtEvent(evt) : [];
+					helpers.each(this.segments,function(segment){
+						segment.restore(["fillColor"]);
+					});
+					helpers.each(activeSegments,function(activeSegment){
+						activeSegment.fillColor = activeSegment.highlightColor;
+					});
+					this.showTooltip(activeSegments);
+				});
+			}
+
+			this.render();
+		},
+		getSegmentsAtEvent : function(e){
+			var segmentsArray = [];
+
+			var location = helpers.getRelativePosition(e);
+
+			helpers.each(this.segments,function(segment){
+				if (segment.inRange(location.x,location.y)) segmentsArray.push(segment);
+			},this);
+			return segmentsArray;
+		},
+		addData : function(segment, atIndex, silent){
+			var index = atIndex || this.segments.length;
+
+			this.segments.splice(index, 0, new this.SegmentArc({
+				fillColor: segment.color,
+				highlightColor: segment.highlight || segment.color,
+				label: segment.label,
+				value: segment.value,
+				outerRadius: (this.options.animateScale) ? 0 : this.scale.calculateCenterOffset(segment.value),
+				circumference: (this.options.animateRotate) ? 0 : this.scale.getCircumference(),
+				startAngle: Math.PI * 1.5
+			}));
+			if (!silent){
+				this.reflow();
+				this.update();
+			}
+		},
+		removeData: function(atIndex){
+			var indexToDelete = (helpers.isNumber(atIndex)) ? atIndex : this.segments.length-1;
+			this.segments.splice(indexToDelete, 1);
+			this.reflow();
+			this.update();
+		},
+		calculateTotal: function(data){
+			this.total = 0;
+			helpers.each(data,function(segment){
+				this.total += segment.value;
+			},this);
+			this.scale.valuesCount = this.segments.length;
+		},
+		updateScaleRange: function(datapoints){
+			var valuesArray = [];
+			helpers.each(datapoints,function(segment){
+				valuesArray.push(segment.value);
+			});
+
+			var scaleSizes = (this.options.scaleOverride) ?
+				{
+					steps: this.options.scaleSteps,
+					stepValue: this.options.scaleStepWidth,
+					min: this.options.scaleStartValue,
+					max: this.options.scaleStartValue + (this.options.scaleSteps * this.options.scaleStepWidth)
+				} :
+				helpers.calculateScaleRange(
+					valuesArray,
+					helpers.min([this.chart.width, this.chart.height])/2,
+					this.options.scaleFontSize,
+					this.options.scaleBeginAtZero,
+					this.options.scaleIntegersOnly
+				);
+
+			helpers.extend(
+				this.scale,
+				scaleSizes,
+				{
+					size: helpers.min([this.chart.width, this.chart.height]),
+					xCenter: this.chart.width/2,
+					yCenter: this.chart.height/2
+				}
+			);
+
+		},
+		update : function(){
+			this.calculateTotal(this.segments);
+
+			helpers.each(this.segments,function(segment){
+				segment.save();
+			});
+			
+			this.reflow();
+			this.render();
+		},
+		reflow : function(){
+			helpers.extend(this.SegmentArc.prototype,{
+				x : this.chart.width/2,
+				y : this.chart.height/2
+			});
+			this.updateScaleRange(this.segments);
+			this.scale.update();
+
+			helpers.extend(this.scale,{
+				xCenter: this.chart.width/2,
+				yCenter: this.chart.height/2
+			});
+
+			helpers.each(this.segments, function(segment){
+				segment.update({
+					outerRadius : this.scale.calculateCenterOffset(segment.value)
+				});
+			}, this);
+
+		},
+		draw : function(ease){
+			var easingDecimal = ease || 1;
+			//Clear & draw the canvas
+			this.clear();
+			helpers.each(this.segments,function(segment, index){
+				segment.transition({
+					circumference : this.scale.getCircumference(),
+					outerRadius : this.scale.calculateCenterOffset(segment.value)
+				},easingDecimal);
+
+				segment.endAngle = segment.startAngle + segment.circumference;
+
+				// If we've removed the first segment we need to set the first one to
+				// start at the top.
+				if (index === 0){
+					segment.startAngle = Math.PI * 1.5;
+				}
+
+				//Check to see if it's the last segment, if not get the next and update the start angle
+				if (index < this.segments.length - 1){
+					this.segments[index+1].startAngle = segment.endAngle;
+				}
+				segment.draw();
+			}, this);
+			this.scale.draw();
+		}
+	});
+
+}).call(this);
+(function(){
+	"use strict";
+
+	var root = this,
+		Chart = root.Chart,
+		helpers = Chart.helpers;
+
+
+
+	Chart.Type.extend({
+		name: "Radar",
+		defaults:{
+			//Boolean - Whether to show lines for each scale point
+			scaleShowLine : true,
+
+			//Boolean - Whether we show the angle lines out of the radar
+			angleShowLineOut : true,
+
+			//Boolean - Whether to show labels on the scale
+			scaleShowLabels : false,
+
+			// Boolean - Whether the scale should begin at zero
+			scaleBeginAtZero : true,
+
+			//String - Colour of the angle line
+			angleLineColor : "rgba(0,0,0,.1)",
+
+			//Number - Pixel width of the angle line
+			angleLineWidth : 1,
+
+			//String - Point label font declaration
+			pointLabelFontFamily : "'Arial'",
+
+			//String - Point label font weight
+			pointLabelFontStyle : "normal",
+
+			//Number - Point label font size in pixels
+			pointLabelFontSize : 10,
+
+			//String - Point label font colour
+			pointLabelFontColor : "#666",
+
+			//Boolean - Whether to show a dot for each point
+			pointDot : true,
+
+			//Number - Radius of each point dot in pixels
+			pointDotRadius : 3,
+
+			//Number - Pixel width of point dot stroke
+			pointDotStrokeWidth : 1,
+
+			//Number - amount extra to add to the radius to cater for hit detection outside the drawn point
+			pointHitDetectionRadius : 20,
+
+			//Boolean - Whether to show a stroke for datasets
+			datasetStroke : true,
+
+			//Number - Pixel width of dataset stroke
+			datasetStrokeWidth : 2,
+
+			//Boolean - Whether to fill the dataset with a colour
+			datasetFill : true,
+
+			//String - A legend template
+			legendTemplate : "<ul class=\"<%=name.toLowerCase()%>-legend\"><% for (var i=0; i<datasets.length; i++){%><li><span style=\"background-color:<%=datasets[i].strokeColor%>\"></span><%if(datasets[i].label){%><%=datasets[i].label%><%}%></li><%}%></ul>"
+
+		},
+
+		initialize: function(data){
+			this.PointClass = Chart.Point.extend({
+				strokeWidth : this.options.pointDotStrokeWidth,
+				radius : this.options.pointDotRadius,
+				display: this.options.pointDot,
+				hitDetectionRadius : this.options.pointHitDetectionRadius,
+				ctx : this.chart.ctx
+			});
+
+			this.datasets = [];
+
+			this.buildScale(data);
+
+			//Set up tooltip events on the chart
+			if (this.options.showTooltips){
+				helpers.bindEvents(this, this.options.tooltipEvents, function(evt){
+					var activePointsCollection = (evt.type !== 'mouseout') ? this.getPointsAtEvent(evt) : [];
+
+					this.eachPoints(function(point){
+						point.restore(['fillColor', 'strokeColor']);
+					});
+					helpers.each(activePointsCollection, function(activePoint){
+						activePoint.fillColor = activePoint.highlightFill;
+						activePoint.strokeColor = activePoint.highlightStroke;
+					});
+
+					this.showTooltip(activePointsCollection);
+				});
+			}
+
+			//Iterate through each of the datasets, and build this into a property of the chart
+			helpers.each(data.datasets,function(dataset){
+
+				var datasetObject = {
+					label: dataset.label || null,
+					fillColor : dataset.fillColor,
+					strokeColor : dataset.strokeColor,
+					pointColor : dataset.pointColor,
+					pointStrokeColor : dataset.pointStrokeColor,
+					points : []
+				};
+
+				this.datasets.push(datasetObject);
+
+				helpers.each(dataset.data,function(dataPoint,index){
+					//Add a new point for each piece of data, passing any required data to draw.
+					var pointPosition;
+					if (!this.scale.animation){
+						pointPosition = this.scale.getPointPosition(index, this.scale.calculateCenterOffset(dataPoint));
+					}
+					datasetObject.points.push(new this.PointClass({
+						value : dataPoint,
+						label : data.labels[index],
+						datasetLabel: dataset.label,
+						x: (this.options.animation) ? this.scale.xCenter : pointPosition.x,
+						y: (this.options.animation) ? this.scale.yCenter : pointPosition.y,
+						strokeColor : dataset.pointStrokeColor,
+						fillColor : dataset.pointColor,
+						highlightFill : dataset.pointHighlightFill || dataset.pointColor,
+						highlightStroke : dataset.pointHighlightStroke || dataset.pointStrokeColor
+					}));
+				},this);
+
+			},this);
+
+			this.render();
+		},
+		eachPoints : function(callback){
+			helpers.each(this.datasets,function(dataset){
+				helpers.each(dataset.points,callback,this);
+			},this);
+		},
+
+		getPointsAtEvent : function(evt){
+			var mousePosition = helpers.getRelativePosition(evt),
+				fromCenter = helpers.getAngleFromPoint({
+					x: this.scale.xCenter,
+					y: this.scale.yCenter
+				}, mousePosition);
+
+			var anglePerIndex = (Math.PI * 2) /this.scale.valuesCount,
+				pointIndex = Math.round((fromCenter.angle - Math.PI * 1.5) / anglePerIndex),
+				activePointsCollection = [];
+
+			// If we're at the top, make the pointIndex 0 to get the first of the array.
+			if (pointIndex >= this.scale.valuesCount || pointIndex < 0){
+				pointIndex = 0;
+			}
+
+			if (fromCenter.distance <= this.scale.drawingArea){
+				helpers.each(this.datasets, function(dataset){
+					activePointsCollection.push(dataset.points[pointIndex]);
+				});
+			}
+
+			return activePointsCollection;
+		},
+
+		buildScale : function(data){
+			this.scale = new Chart.RadialScale({
+				display: this.options.showScale,
+				fontStyle: this.options.scaleFontStyle,
+				fontSize: this.options.scaleFontSize,
+				fontFamily: this.options.scaleFontFamily,
+				fontColor: this.options.scaleFontColor,
+				showLabels: this.options.scaleShowLabels,
+				showLabelBackdrop: this.options.scaleShowLabelBackdrop,
+				backdropColor: this.options.scaleBackdropColor,
+				backdropPaddingY : this.options.scaleBackdropPaddingY,
+				backdropPaddingX: this.options.scaleBackdropPaddingX,
+				lineWidth: (this.options.scaleShowLine) ? this.options.scaleLineWidth : 0,
+				lineColor: this.options.scaleLineColor,
+				angleLineColor : this.options.angleLineColor,
+				angleLineWidth : (this.options.angleShowLineOut) ? this.options.angleLineWidth : 0,
+				// Point labels at the edge of each line
+				pointLabelFontColor : this.options.pointLabelFontColor,
+				pointLabelFontSize : this.options.pointLabelFontSize,
+				pointLabelFontFamily : this.options.pointLabelFontFamily,
+				pointLabelFontStyle : this.options.pointLabelFontStyle,
+				height : this.chart.height,
+				width: this.chart.width,
+				xCenter: this.chart.width/2,
+				yCenter: this.chart.height/2,
+				ctx : this.chart.ctx,
+				templateString: this.options.scaleLabel,
+				labels: data.labels,
+				valuesCount: data.datasets[0].data.length
+			});
+
+			this.scale.setScaleSize();
+			this.updateScaleRange(data.datasets);
+			this.scale.buildYLabels();
+		},
+		updateScaleRange: function(datasets){
+			var valuesArray = (function(){
+				var totalDataArray = [];
+				helpers.each(datasets,function(dataset){
+					if (dataset.data){
+						totalDataArray = totalDataArray.concat(dataset.data);
+					}
+					else {
+						helpers.each(dataset.points, function(point){
+							totalDataArray.push(point.value);
+						});
+					}
+				});
+				return totalDataArray;
+			})();
+
+
+			var scaleSizes = (this.options.scaleOverride) ?
+				{
+					steps: this.options.scaleSteps,
+					stepValue: this.options.scaleStepWidth,
+					min: this.options.scaleStartValue,
+					max: this.options.scaleStartValue + (this.options.scaleSteps * this.options.scaleStepWidth)
+				} :
+				helpers.calculateScaleRange(
+					valuesArray,
+					helpers.min([this.chart.width, this.chart.height])/2,
+					this.options.scaleFontSize,
+					this.options.scaleBeginAtZero,
+					this.options.scaleIntegersOnly
+				);
+
+			helpers.extend(
+				this.scale,
+				scaleSizes
+			);
+
+		},
+		addData : function(valuesArray,label){
+			//Map the values array for each of the datasets
+			this.scale.valuesCount++;
+			helpers.each(valuesArray,function(value,datasetIndex){
+				var pointPosition = this.scale.getPointPosition(this.scale.valuesCount, this.scale.calculateCenterOffset(value));
+				this.datasets[datasetIndex].points.push(new this.PointClass({
+					value : value,
+					label : label,
+					x: pointPosition.x,
+					y: pointPosition.y,
+					strokeColor : this.datasets[datasetIndex].pointStrokeColor,
+					fillColor : this.datasets[datasetIndex].pointColor
+				}));
+			},this);
+
+			this.scale.labels.push(label);
+
+			this.reflow();
+
+			this.update();
+		},
+		removeData : function(){
+			this.scale.valuesCount--;
+			this.scale.labels.shift();
+			helpers.each(this.datasets,function(dataset){
+				dataset.points.shift();
+			},this);
+			this.reflow();
+			this.update();
+		},
+		update : function(){
+			this.eachPoints(function(point){
+				point.save();
+			});
+			this.reflow();
+			this.render();
+		},
+		reflow: function(){
+			helpers.extend(this.scale, {
+				width : this.chart.width,
+				height: this.chart.height,
+				size : helpers.min([this.chart.width, this.chart.height]),
+				xCenter: this.chart.width/2,
+				yCenter: this.chart.height/2
+			});
+			this.updateScaleRange(this.datasets);
+			this.scale.setScaleSize();
+			this.scale.buildYLabels();
+		},
+		draw : function(ease){
+			var easeDecimal = ease || 1,
+				ctx = this.chart.ctx;
+			this.clear();
+			this.scale.draw();
+
+			helpers.each(this.datasets,function(dataset){
+
+				//Transition each point first so that the line and point drawing isn't out of sync
+				helpers.each(dataset.points,function(point,index){
+					if (point.hasValue()){
+						point.transition(this.scale.getPointPosition(index, this.scale.calculateCenterOffset(point.value)), easeDecimal);
+					}
+				},this);
+
+
+
+				//Draw the line between all the points
+				ctx.lineWidth = this.options.datasetStrokeWidth;
+				ctx.strokeStyle = dataset.strokeColor;
+				ctx.beginPath();
+				helpers.each(dataset.points,function(point,index){
+					if (index === 0){
+						ctx.moveTo(point.x,point.y);
+					}
+					else{
+						ctx.lineTo(point.x,point.y);
+					}
+				},this);
+				ctx.closePath();
+				ctx.stroke();
+
+				ctx.fillStyle = dataset.fillColor;
+				ctx.fill();
+
+				//Now draw the points over the line
+				//A little inefficient double looping, but better than the line
+				//lagging behind the point positions
+				helpers.each(dataset.points,function(point){
+					if (point.hasValue()){
+						point.draw();
+					}
+				});
+
+			},this);
+
+		}
+
+	});
+
+
+
+
+
+}).call(this);
+
+/*!
  * Bootstrap v3.3.6 (http://getbootstrap.com)
  * Copyright 2011-2015 Twitter, Inc.
  * Licensed under the MIT license
@@ -3126,215 +6604,279 @@ function _init() {
   };
 }(jQuery));
 
-/*
- * Author: Abdullah A Almsaeed
- * Date: 4 Jan 2014
- * Description:
- *      This is a demo file used only for the main dashboard (index.html)
- **/
-
 $(function () {
 
-  "use strict";
+  'use strict';
 
-  //Make the dashboard widgets sortable Using jquery UI
-  $(".connectedSortable").sortable({
-    placeholder: "sort-highlight",
-    connectWith: ".connectedSortable",
-    handle: ".box-header, .nav-tabs",
-    forcePlaceholderSize: true,
-    zIndex: 999999
-  });
-  $(".connectedSortable .box-header, .connectedSortable .nav-tabs-custom").css("cursor", "move");
+  /* ChartJS
+   * -------
+   * Here we will create a few charts using ChartJS
+   */
 
-  //jQuery UI sortable for the todo list
-  $(".todo-list").sortable({
-    placeholder: "sort-highlight",
-    handle: ".handle",
-    forcePlaceholderSize: true,
-    zIndex: 999999
-  });
+  //-----------------------
+  //- MONTHLY SALES CHART -
+  //-----------------------
+console.info('chartss');
+  // Get context with jQuery - using jQuery's .get() method.
+  var salesChartCanvas = $("#salesChart").get(0).getContext("2d");
+  // This will get the first returned node in the jQuery collection.
+  var salesChart = new Chart(salesChartCanvas);
 
-  //bootstrap WYSIHTML5 - text editor
-  $(".textarea").wysihtml5();
-
-  $('.daterange').daterangepicker({
-    ranges: {
-      'Today': [moment(), moment()],
-      'Yesterday': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
-      'Last 7 Days': [moment().subtract(6, 'days'), moment()],
-      'Last 30 Days': [moment().subtract(29, 'days'), moment()],
-      'This Month': [moment().startOf('month'), moment().endOf('month')],
-      'Last Month': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
-    },
-    startDate: moment().subtract(29, 'days'),
-    endDate: moment()
-  }, function (start, end) {
-    window.alert("You chose: " + start.format('MMMM D, YYYY') + ' - ' + end.format('MMMM D, YYYY'));
-  });
-
-  /* jQueryKnob */
-  $(".knob").knob();
-
-  //jvectormap data
-  var visitorsData = {
-    "US": 398, //USA
-    "SA": 400, //Saudi Arabia
-    "CA": 1000, //Canada
-    "DE": 500, //Germany
-    "FR": 760, //France
-    "CN": 300, //China
-    "AU": 700, //Australia
-    "BR": 600, //Brazil
-    "IN": 800, //India
-    "GB": 320, //Great Britain
-    "RU": 3000 //Russia
+  var salesChartData = {
+    labels: ["January", "February", "March", "April", "May", "June", "July"],
+    datasets: [
+      {
+        label: "Electronics",
+        fillColor: "rgb(210, 214, 222)",
+        strokeColor: "rgb(210, 214, 222)",
+        pointColor: "rgb(210, 214, 222)",
+        pointStrokeColor: "#c1c7d1",
+        pointHighlightFill: "#fff",
+        pointHighlightStroke: "rgb(220,220,220)",
+        data: [65, 59, 80, 81, 56, 55, 40]
+      },
+      {
+        label: "Digital Goods",
+        fillColor: "rgba(60,141,188,0.9)",
+        strokeColor: "rgba(60,141,188,0.8)",
+        pointColor: "#3b8bba",
+        pointStrokeColor: "rgba(60,141,188,1)",
+        pointHighlightFill: "#fff",
+        pointHighlightStroke: "rgba(60,141,188,1)",
+        data: [28, 48, 40, 19, 86, 27, 90]
+      }
+    ]
   };
-  //World map by jvectormap
-  $('#world-map').vectorMap({
+
+  var salesChartOptions = {
+    //Boolean - If we should show the scale at all
+    showScale: true,
+    //Boolean - Whether grid lines are shown across the chart
+    scaleShowGridLines: false,
+    //String - Colour of the grid lines
+    scaleGridLineColor: "rgba(0,0,0,.05)",
+    //Number - Width of the grid lines
+    scaleGridLineWidth: 1,
+    //Boolean - Whether to show horizontal lines (except X axis)
+    scaleShowHorizontalLines: true,
+    //Boolean - Whether to show vertical lines (except Y axis)
+    scaleShowVerticalLines: true,
+    //Boolean - Whether the line is curved between points
+    bezierCurve: true,
+    //Number - Tension of the bezier curve between points
+    bezierCurveTension: 0.3,
+    //Boolean - Whether to show a dot for each point
+    pointDot: false,
+    //Number - Radius of each point dot in pixels
+    pointDotRadius: 4,
+    //Number - Pixel width of point dot stroke
+    pointDotStrokeWidth: 1,
+    //Number - amount extra to add to the radius to cater for hit detection outside the drawn point
+    pointHitDetectionRadius: 20,
+    //Boolean - Whether to show a stroke for datasets
+    datasetStroke: true,
+    //Number - Pixel width of dataset stroke
+    datasetStrokeWidth: 2,
+    //Boolean - Whether to fill the dataset with a color
+    datasetFill: true,
+    //String - A legend template
+    legendTemplate: "<ul class=\"<%=name.toLowerCase()%>-legend\"><% for (var i=0; i<datasets.length; i++){%><li><span style=\"background-color:<%=datasets[i].lineColor%>\"></span><%=datasets[i].label%></li><%}%></ul>",
+    //Boolean - whether to maintain the starting aspect ratio or not when responsive, if set to false, will take up entire container
+    maintainAspectRatio: true,
+    //Boolean - whether to make the chart responsive to window resizing
+    responsive: true
+  };
+
+  //Create the line chart
+  salesChart.Line(salesChartData, salesChartOptions);
+
+  //---------------------------
+  //- END MONTHLY SALES CHART -
+  //---------------------------
+
+  //-------------
+  //- PIE CHART -
+  //-------------
+  // Get context with jQuery - using jQuery's .get() method.
+  var pieChartCanvas = $("#pieChart").get(0).getContext("2d");
+  var pieChart = new Chart(pieChartCanvas);
+  var PieData = [
+    {
+      value: 700,
+      color: "#f56954",
+      highlight: "#f56954",
+      label: "Chrome"
+    },
+    {
+      value: 500,
+      color: "#00a65a",
+      highlight: "#00a65a",
+      label: "IE"
+    },
+    {
+      value: 400,
+      color: "#f39c12",
+      highlight: "#f39c12",
+      label: "FireFox"
+    },
+    {
+      value: 600,
+      color: "#00c0ef",
+      highlight: "#00c0ef",
+      label: "Safari"
+    },
+    {
+      value: 300,
+      color: "#3c8dbc",
+      highlight: "#3c8dbc",
+      label: "Opera"
+    },
+    {
+      value: 100,
+      color: "#d2d6de",
+      highlight: "#d2d6de",
+      label: "Navigator"
+    }
+  ];
+  var pieOptions = {
+    //Boolean - Whether we should show a stroke on each segment
+    segmentShowStroke: true,
+    //String - The colour of each segment stroke
+    segmentStrokeColor: "#fff",
+    //Number - The width of each segment stroke
+    segmentStrokeWidth: 1,
+    //Number - The percentage of the chart that we cut out of the middle
+    percentageInnerCutout: 50, // This is 0 for Pie charts
+    //Number - Amount of animation steps
+    animationSteps: 100,
+    //String - Animation easing effect
+    animationEasing: "easeOutBounce",
+    //Boolean - Whether we animate the rotation of the Doughnut
+    animateRotate: true,
+    //Boolean - Whether we animate scaling the Doughnut from the centre
+    animateScale: false,
+    //Boolean - whether to make the chart responsive to window resizing
+    responsive: true,
+    // Boolean - whether to maintain the starting aspect ratio or not when responsive, if set to false, will take up entire container
+    maintainAspectRatio: false,
+    //String - A legend template
+    legendTemplate: "<ul class=\"<%=name.toLowerCase()%>-legend\"><% for (var i=0; i<segments.length; i++){%><li><span style=\"background-color:<%=segments[i].fillColor%>\"></span><%if(segments[i].label){%><%=segments[i].label%><%}%></li><%}%></ul>",
+    //String - A tooltip template
+    tooltipTemplate: "<%=value %> <%=label%> users"
+  };
+  //Create pie or douhnut chart
+  // You can switch between pie and douhnut using the method below.
+  pieChart.Doughnut(PieData, pieOptions);
+  //-----------------
+  //- END PIE CHART -
+  //-----------------
+
+  /* jVector Maps
+   * ------------
+   * Create a world map with markers
+   */
+  $('#world-map-markers').vectorMap({
     map: 'world_mill_en',
-    backgroundColor: "transparent",
+    normalizeFunction: 'polynomial',
+    hoverOpacity: 0.7,
+    hoverColor: false,
+    backgroundColor: 'transparent',
     regionStyle: {
       initial: {
-        fill: '#e4e4e4',
+        fill: 'rgba(210, 214, 222, 1)',
         "fill-opacity": 1,
         stroke: 'none',
         "stroke-width": 0,
         "stroke-opacity": 1
+      },
+      hover: {
+        "fill-opacity": 0.7,
+        cursor: 'pointer'
+      },
+      selected: {
+        fill: 'yellow'
+      },
+      selectedHover: {}
+    },
+    markerStyle: {
+      initial: {
+        fill: '#00a65a',
+        stroke: '#111'
       }
     },
-    series: {
-      regions: [{
-        values: visitorsData,
-        scale: ["#92c1dc", "#ebf4f9"],
-        normalizeFunction: 'polynomial'
-      }]
-    },
-    onRegionLabelShow: function (e, el, code) {
-      if (typeof visitorsData[code] != "undefined")
-        el.html(el.html() + ': ' + visitorsData[code] + ' new visitors');
-    }
+    markers: [
+      {latLng: [41.90, 12.45], name: 'Vatican City'},
+      {latLng: [43.73, 7.41], name: 'Monaco'},
+      {latLng: [-0.52, 166.93], name: 'Nauru'},
+      {latLng: [-8.51, 179.21], name: 'Tuvalu'},
+      {latLng: [43.93, 12.46], name: 'San Marino'},
+      {latLng: [47.14, 9.52], name: 'Liechtenstein'},
+      {latLng: [7.11, 171.06], name: 'Marshall Islands'},
+      {latLng: [17.3, -62.73], name: 'Saint Kitts and Nevis'},
+      {latLng: [3.2, 73.22], name: 'Maldives'},
+      {latLng: [35.88, 14.5], name: 'Malta'},
+      {latLng: [12.05, -61.75], name: 'Grenada'},
+      {latLng: [13.16, -61.23], name: 'Saint Vincent and the Grenadines'},
+      {latLng: [13.16, -59.55], name: 'Barbados'},
+      {latLng: [17.11, -61.85], name: 'Antigua and Barbuda'},
+      {latLng: [-4.61, 55.45], name: 'Seychelles'},
+      {latLng: [7.35, 134.46], name: 'Palau'},
+      {latLng: [42.5, 1.51], name: 'Andorra'},
+      {latLng: [14.01, -60.98], name: 'Saint Lucia'},
+      {latLng: [6.91, 158.18], name: 'Federated States of Micronesia'},
+      {latLng: [1.3, 103.8], name: 'Singapore'},
+      {latLng: [1.46, 173.03], name: 'Kiribati'},
+      {latLng: [-21.13, -175.2], name: 'Tonga'},
+      {latLng: [15.3, -61.38], name: 'Dominica'},
+      {latLng: [-20.2, 57.5], name: 'Mauritius'},
+      {latLng: [26.02, 50.55], name: 'Bahrain'},
+      {latLng: [0.33, 6.73], name: 'São Tomé and Príncipe'}
+    ]
   });
 
-  //Sparkline charts
-  var myvalues = [1000, 1200, 920, 927, 931, 1027, 819, 930, 1021];
-  $('#sparkline-1').sparkline(myvalues, {
-    type: 'line',
-    lineColor: '#92c1dc',
-    fillColor: "#ebf4f9",
-    height: '50',
-    width: '80'
-  });
-  myvalues = [515, 519, 520, 522, 652, 810, 370, 627, 319, 630, 921];
-  $('#sparkline-2').sparkline(myvalues, {
-    type: 'line',
-    lineColor: '#92c1dc',
-    fillColor: "#ebf4f9",
-    height: '50',
-    width: '80'
-  });
-  myvalues = [15, 19, 20, 22, 33, 27, 31, 27, 19, 30, 21];
-  $('#sparkline-3').sparkline(myvalues, {
-    type: 'line',
-    lineColor: '#92c1dc',
-    fillColor: "#ebf4f9",
-    height: '50',
-    width: '80'
+  /* SPARKLINE CHARTS
+   * ----------------
+   * Create a inline charts with spark line
+   */
+
+  //-----------------
+  //- SPARKLINE BAR -
+  //-----------------
+  $('.sparkbar').each(function () {
+    var $this = $(this);
+    $this.sparkline('html', {
+      type: 'bar',
+      height: $this.data('height') ? $this.data('height') : '30',
+      barColor: $this.data('color')
+    });
   });
 
-  //The Calender
-  $("#calendar").datepicker();
-
-  //SLIMSCROLL FOR CHAT WIDGET
-  $('#chat-box').slimScroll({
-    height: '250px'
+  //-----------------
+  //- SPARKLINE PIE -
+  //-----------------
+  $('.sparkpie').each(function () {
+    var $this = $(this);
+    $this.sparkline('html', {
+      type: 'pie',
+      height: $this.data('height') ? $this.data('height') : '90',
+      sliceColors: $this.data('color')
+    });
   });
 
-  /* Morris.js Charts */
-  // Sales chart
-  var area = new Morris.Area({
-    element: 'revenue-chart',
-    resize: true,
-    data: [
-      {y: '2011 Q1', item1: 2666, item2: 2666},
-      {y: '2011 Q2', item1: 2778, item2: 2294},
-      {y: '2011 Q3', item1: 4912, item2: 1969},
-      {y: '2011 Q4', item1: 3767, item2: 3597},
-      {y: '2012 Q1', item1: 6810, item2: 1914},
-      {y: '2012 Q2', item1: 5670, item2: 4293},
-      {y: '2012 Q3', item1: 4820, item2: 3795},
-      {y: '2012 Q4', item1: 15073, item2: 5967},
-      {y: '2013 Q1', item1: 10687, item2: 4460},
-      {y: '2013 Q2', item1: 8432, item2: 5713}
-    ],
-    xkey: 'y',
-    ykeys: ['item1', 'item2'],
-    labels: ['Item 1', 'Item 2'],
-    lineColors: ['#a0d0e0', '#3c8dbc'],
-    hideHover: 'auto'
+  //------------------
+  //- SPARKLINE LINE -
+  //------------------
+  $('.sparkline').each(function () {
+    var $this = $(this);
+    $this.sparkline('html', {
+      type: 'line',
+      height: $this.data('height') ? $this.data('height') : '90',
+      width: '100%',
+      lineColor: $this.data('linecolor'),
+      fillColor: $this.data('fillcolor'),
+      spotColor: $this.data('spotcolor')
+    });
   });
-  var line = new Morris.Line({
-    element: 'line-chart',
-    resize: true,
-    data: [
-      {y: '2011 Q1', item1: 2666},
-      {y: '2011 Q2', item1: 2778},
-      {y: '2011 Q3', item1: 4912},
-      {y: '2011 Q4', item1: 3767},
-      {y: '2012 Q1', item1: 6810},
-      {y: '2012 Q2', item1: 5670},
-      {y: '2012 Q3', item1: 4820},
-      {y: '2012 Q4', item1: 15073},
-      {y: '2013 Q1', item1: 10687},
-      {y: '2013 Q2', item1: 8432}
-    ],
-    xkey: 'y',
-    ykeys: ['item1'],
-    labels: ['Item 1'],
-    lineColors: ['#efefef'],
-    lineWidth: 2,
-    hideHover: 'auto',
-    gridTextColor: "#fff",
-    gridStrokeWidth: 0.4,
-    pointSize: 4,
-    pointStrokeColors: ["#efefef"],
-    gridLineColor: "#efefef",
-    gridTextFamily: "Open Sans",
-    gridTextSize: 10
-  });
-
-  //Donut Chart
-  var donut = new Morris.Donut({
-    element: 'sales-chart',
-    resize: true,
-    colors: ["#3c8dbc", "#f56954", "#00a65a"],
-    data: [
-      {label: "Download Sales", value: 12},
-      {label: "In-Store Sales", value: 30},
-      {label: "Mail-Order Sales", value: 20}
-    ],
-    hideHover: 'auto'
-  });
-
-  //Fix for charts under tabs
-  $('.box ul.nav a').on('shown.bs.tab', function () {
-    area.redraw();
-    donut.redraw();
-    line.redraw();
-  });
-
-  /* The todo list plugin */
-  $(".todo-list").todolist({
-    onCheck: function (ele) {
-      window.console.log("The element has been checked");
-      return ele;
-    },
-    onUncheck: function (ele) {
-      window.console.log("The element has been unchecked");
-      return ele;
-    }
-  });
-
 });
 
 /**
@@ -3689,279 +7231,4 @@ $(function () {
  * @license MIT <http://opensource.org/licenses/MIT>
  */
 function _init(){"use strict";$.AdminLTE.layout={activate:function(){var a=this;a.fix(),a.fixSidebar(),$(window,".wrapper").resize(function(){a.fix(),a.fixSidebar()})},fix:function(){var a=$(".main-header").outerHeight()+$(".main-footer").outerHeight(),b=$(window).height(),c=$(".sidebar").height();if($("body").hasClass("fixed"))$(".content-wrapper, .right-side").css("min-height",b-$(".main-footer").outerHeight());else{var d;b>=c?($(".content-wrapper, .right-side").css("min-height",b-a),d=b-a):($(".content-wrapper, .right-side").css("min-height",c),d=c);var e=$($.AdminLTE.options.controlSidebarOptions.selector);"undefined"!=typeof e&&e.height()>d&&$(".content-wrapper, .right-side").css("min-height",e.height())}},fixSidebar:function(){return $("body").hasClass("fixed")?("undefined"==typeof $.fn.slimScroll&&window.console&&window.console.error("Error: the fixed layout requires the slimscroll plugin!"),void($.AdminLTE.options.sidebarSlimScroll&&"undefined"!=typeof $.fn.slimScroll&&($(".sidebar").slimScroll({destroy:!0}).height("auto"),$(".sidebar").slimscroll({height:$(window).height()-$(".main-header").height()+"px",color:"rgba(0,0,0,0.2)",size:"3px"})))):void("undefined"!=typeof $.fn.slimScroll&&$(".sidebar").slimScroll({destroy:!0}).height("auto"))}},$.AdminLTE.pushMenu={activate:function(a){var b=$.AdminLTE.options.screenSizes;$(document).on("click",a,function(a){a.preventDefault(),$(window).width()>b.sm-1?$("body").hasClass("sidebar-collapse")?$("body").removeClass("sidebar-collapse").trigger("expanded.pushMenu"):$("body").addClass("sidebar-collapse").trigger("collapsed.pushMenu"):$("body").hasClass("sidebar-open")?$("body").removeClass("sidebar-open").removeClass("sidebar-collapse").trigger("collapsed.pushMenu"):$("body").addClass("sidebar-open").trigger("expanded.pushMenu")}),$(".content-wrapper").click(function(){$(window).width()<=b.sm-1&&$("body").hasClass("sidebar-open")&&$("body").removeClass("sidebar-open")}),($.AdminLTE.options.sidebarExpandOnHover||$("body").hasClass("fixed")&&$("body").hasClass("sidebar-mini"))&&this.expandOnHover()},expandOnHover:function(){var a=this,b=$.AdminLTE.options.screenSizes.sm-1;$(".main-sidebar").hover(function(){$("body").hasClass("sidebar-mini")&&$("body").hasClass("sidebar-collapse")&&$(window).width()>b&&a.expand()},function(){$("body").hasClass("sidebar-mini")&&$("body").hasClass("sidebar-expanded-on-hover")&&$(window).width()>b&&a.collapse()})},expand:function(){$("body").removeClass("sidebar-collapse").addClass("sidebar-expanded-on-hover")},collapse:function(){$("body").hasClass("sidebar-expanded-on-hover")&&$("body").removeClass("sidebar-expanded-on-hover").addClass("sidebar-collapse")}},$.AdminLTE.tree=function(a){var b=this,c=$.AdminLTE.options.animationSpeed;$(document).on("click",a+" li a",function(a){var d=$(this),e=d.next();if(e.is(".treeview-menu")&&e.is(":visible")&&!$("body").hasClass("sidebar-collapse"))e.slideUp(c,function(){e.removeClass("menu-open")}),e.parent("li").removeClass("active");else if(e.is(".treeview-menu")&&!e.is(":visible")){var f=d.parents("ul").first(),g=f.find("ul:visible").slideUp(c);g.removeClass("menu-open");var h=d.parent("li");e.slideDown(c,function(){e.addClass("menu-open"),f.find("li.active").removeClass("active"),h.addClass("active"),b.layout.fix()})}e.is(".treeview-menu")&&a.preventDefault()})},$.AdminLTE.controlSidebar={activate:function(){var a=this,b=$.AdminLTE.options.controlSidebarOptions,c=$(b.selector),d=$(b.toggleBtnSelector);d.on("click",function(d){d.preventDefault(),c.hasClass("control-sidebar-open")||$("body").hasClass("control-sidebar-open")?a.close(c,b.slide):a.open(c,b.slide)});var e=$(".control-sidebar-bg");a._fix(e),$("body").hasClass("fixed")?a._fixForFixed(c):$(".content-wrapper, .right-side").height()<c.height()&&a._fixForContent(c)},open:function(a,b){b?a.addClass("control-sidebar-open"):$("body").addClass("control-sidebar-open")},close:function(a,b){b?a.removeClass("control-sidebar-open"):$("body").removeClass("control-sidebar-open")},_fix:function(a){var b=this;$("body").hasClass("layout-boxed")?(a.css("position","absolute"),a.height($(".wrapper").height()),$(window).resize(function(){b._fix(a)})):a.css({position:"fixed",height:"auto"})},_fixForFixed:function(a){a.css({position:"fixed","max-height":"100%",overflow:"auto","padding-bottom":"50px"})},_fixForContent:function(a){$(".content-wrapper, .right-side").css("min-height",a.height())}},$.AdminLTE.boxWidget={selectors:$.AdminLTE.options.boxWidgetOptions.boxWidgetSelectors,icons:$.AdminLTE.options.boxWidgetOptions.boxWidgetIcons,animationSpeed:$.AdminLTE.options.animationSpeed,activate:function(a){var b=this;a||(a=document),$(a).on("click",b.selectors.collapse,function(a){a.preventDefault(),b.collapse($(this))}),$(a).on("click",b.selectors.remove,function(a){a.preventDefault(),b.remove($(this))})},collapse:function(a){var b=this,c=a.parents(".box").first(),d=c.find("> .box-body, > .box-footer, > form  >.box-body, > form > .box-footer");c.hasClass("collapsed-box")?(a.children(":first").removeClass(b.icons.open).addClass(b.icons.collapse),d.slideDown(b.animationSpeed,function(){c.removeClass("collapsed-box")})):(a.children(":first").removeClass(b.icons.collapse).addClass(b.icons.open),d.slideUp(b.animationSpeed,function(){c.addClass("collapsed-box")}))},remove:function(a){var b=a.parents(".box").first();b.slideUp(this.animationSpeed)}}}if("undefined"==typeof jQuery)throw new Error("AdminLTE requires jQuery");$.AdminLTE={},$.AdminLTE.options={navbarMenuSlimscroll:!0,navbarMenuSlimscrollWidth:"3px",navbarMenuHeight:"200px",animationSpeed:500,sidebarToggleSelector:"[data-toggle='offcanvas']",sidebarPushMenu:!0,sidebarSlimScroll:!0,sidebarExpandOnHover:!1,enableBoxRefresh:!0,enableBSToppltip:!0,BSTooltipSelector:"[data-toggle='tooltip']",enableFastclick:!0,enableControlSidebar:!0,controlSidebarOptions:{toggleBtnSelector:"[data-toggle='control-sidebar']",selector:".control-sidebar",slide:!0},enableBoxWidget:!0,boxWidgetOptions:{boxWidgetIcons:{collapse:"fa-minus",open:"fa-plus",remove:"fa-times"},boxWidgetSelectors:{remove:'[data-widget="remove"]',collapse:'[data-widget="collapse"]'}},directChat:{enable:!0,contactToggleSelector:'[data-widget="chat-pane-toggle"]'},colors:{lightBlue:"#3c8dbc",red:"#f56954",green:"#00a65a",aqua:"#00c0ef",yellow:"#f39c12",blue:"#0073b7",navy:"#001F3F",teal:"#39CCCC",olive:"#3D9970",lime:"#01FF70",orange:"#FF851B",fuchsia:"#F012BE",purple:"#8E24AA",maroon:"#D81B60",black:"#222222",gray:"#d2d6de"},screenSizes:{xs:480,sm:768,md:992,lg:1200}},$(function(){"use strict";$("body").removeClass("hold-transition"),"undefined"!=typeof AdminLTEOptions&&$.extend(!0,$.AdminLTE.options,AdminLTEOptions);var a=$.AdminLTE.options;_init(),$.AdminLTE.layout.activate(),$.AdminLTE.tree(".sidebar"),a.enableControlSidebar&&$.AdminLTE.controlSidebar.activate(),a.navbarMenuSlimscroll&&"undefined"!=typeof $.fn.slimscroll&&$(".navbar .menu").slimscroll({height:a.navbarMenuHeight,alwaysVisible:!1,size:a.navbarMenuSlimscrollWidth}).css("width","100%"),a.sidebarPushMenu&&$.AdminLTE.pushMenu.activate(a.sidebarToggleSelector),a.enableBSToppltip&&$("body").tooltip({selector:a.BSTooltipSelector}),a.enableBoxWidget&&$.AdminLTE.boxWidget.activate(),a.enableFastclick&&"undefined"!=typeof FastClick&&FastClick.attach(document.body),a.directChat.enable&&$(document).on("click",a.directChat.contactToggleSelector,function(){var a=$(this).parents(".direct-chat").first();a.toggleClass("direct-chat-contacts-open")}),$('.btn-group[data-toggle="btn-toggle"]').each(function(){var a=$(this);$(this).find(".btn").on("click",function(b){a.find(".btn.active").removeClass("active"),$(this).addClass("active"),b.preventDefault()})})}),function(a){"use strict";a.fn.boxRefresh=function(b){function c(a){a.append(f),e.onLoadStart.call(a)}function d(a){a.find(f).remove(),e.onLoadDone.call(a)}var e=a.extend({trigger:".refresh-btn",source:"",onLoadStart:function(a){return a},onLoadDone:function(a){return a}},b),f=a('<div class="overlay"><div class="fa fa-refresh fa-spin"></div></div>');return this.each(function(){if(""===e.source)return void(window.console&&window.console.log("Please specify a source first - boxRefresh()"));var b=a(this),f=b.find(e.trigger).first();f.on("click",function(a){a.preventDefault(),c(b),b.find(".box-body").load(e.source,function(){d(b)})})})}}(jQuery),function(a){"use strict";a.fn.activateBox=function(){a.AdminLTE.boxWidget.activate(this)},a.fn.toggleBox=function(){var b=a(a.AdminLTE.boxWidget.selectors.collapse,this);a.AdminLTE.boxWidget.collapse(b)},a.fn.removeBox=function(){var b=a(a.AdminLTE.boxWidget.selectors.remove,this);a.AdminLTE.boxWidget.remove(b)}}(jQuery),function(a){"use strict";a.fn.todolist=function(b){var c=a.extend({onCheck:function(a){return a},onUncheck:function(a){return a}},b);return this.each(function(){"undefined"!=typeof a.fn.iCheck?(a("input",this).on("ifChecked",function(){var b=a(this).parents("li").first();b.toggleClass("done"),c.onCheck.call(b)}),a("input",this).on("ifUnchecked",function(){var b=a(this).parents("li").first();b.toggleClass("done"),c.onUncheck.call(b)})):a("input",this).on("change",function(){var b=a(this).parents("li").first();b.toggleClass("done"),a("input",b).is(":checked")?c.onCheck.call(b):c.onUncheck.call(b)})})}}(jQuery);
-$(function () {
-
-  'use strict';
-
-  /* ChartJS
-   * -------
-   * Here we will create a few charts using ChartJS
-   */
-
-  //-----------------------
-  //- MONTHLY SALES CHART -
-  //-----------------------
-
-  // Get context with jQuery - using jQuery's .get() method.
-  var salesChartCanvas = $("#salesChart").get(0).getContext("2d");
-  // This will get the first returned node in the jQuery collection.
-  var salesChart = new Chart(salesChartCanvas);
-
-  var salesChartData = {
-    labels: ["January", "February", "March", "April", "May", "June", "July"],
-    datasets: [
-      {
-        label: "Electronics",
-        fillColor: "rgb(210, 214, 222)",
-        strokeColor: "rgb(210, 214, 222)",
-        pointColor: "rgb(210, 214, 222)",
-        pointStrokeColor: "#c1c7d1",
-        pointHighlightFill: "#fff",
-        pointHighlightStroke: "rgb(220,220,220)",
-        data: [65, 59, 80, 81, 56, 55, 40]
-      },
-      {
-        label: "Digital Goods",
-        fillColor: "rgba(60,141,188,0.9)",
-        strokeColor: "rgba(60,141,188,0.8)",
-        pointColor: "#3b8bba",
-        pointStrokeColor: "rgba(60,141,188,1)",
-        pointHighlightFill: "#fff",
-        pointHighlightStroke: "rgba(60,141,188,1)",
-        data: [28, 48, 40, 19, 86, 27, 90]
-      }
-    ]
-  };
-
-  var salesChartOptions = {
-    //Boolean - If we should show the scale at all
-    showScale: true,
-    //Boolean - Whether grid lines are shown across the chart
-    scaleShowGridLines: false,
-    //String - Colour of the grid lines
-    scaleGridLineColor: "rgba(0,0,0,.05)",
-    //Number - Width of the grid lines
-    scaleGridLineWidth: 1,
-    //Boolean - Whether to show horizontal lines (except X axis)
-    scaleShowHorizontalLines: true,
-    //Boolean - Whether to show vertical lines (except Y axis)
-    scaleShowVerticalLines: true,
-    //Boolean - Whether the line is curved between points
-    bezierCurve: true,
-    //Number - Tension of the bezier curve between points
-    bezierCurveTension: 0.3,
-    //Boolean - Whether to show a dot for each point
-    pointDot: false,
-    //Number - Radius of each point dot in pixels
-    pointDotRadius: 4,
-    //Number - Pixel width of point dot stroke
-    pointDotStrokeWidth: 1,
-    //Number - amount extra to add to the radius to cater for hit detection outside the drawn point
-    pointHitDetectionRadius: 20,
-    //Boolean - Whether to show a stroke for datasets
-    datasetStroke: true,
-    //Number - Pixel width of dataset stroke
-    datasetStrokeWidth: 2,
-    //Boolean - Whether to fill the dataset with a color
-    datasetFill: true,
-    //String - A legend template
-    legendTemplate: "<ul class=\"<%=name.toLowerCase()%>-legend\"><% for (var i=0; i<datasets.length; i++){%><li><span style=\"background-color:<%=datasets[i].lineColor%>\"></span><%=datasets[i].label%></li><%}%></ul>",
-    //Boolean - whether to maintain the starting aspect ratio or not when responsive, if set to false, will take up entire container
-    maintainAspectRatio: true,
-    //Boolean - whether to make the chart responsive to window resizing
-    responsive: true
-  };
-
-  //Create the line chart
-  salesChart.Line(salesChartData, salesChartOptions);
-
-  //---------------------------
-  //- END MONTHLY SALES CHART -
-  //---------------------------
-
-  //-------------
-  //- PIE CHART -
-  //-------------
-  // Get context with jQuery - using jQuery's .get() method.
-  var pieChartCanvas = $("#pieChart").get(0).getContext("2d");
-  var pieChart = new Chart(pieChartCanvas);
-  var PieData = [
-    {
-      value: 700,
-      color: "#f56954",
-      highlight: "#f56954",
-      label: "Chrome"
-    },
-    {
-      value: 500,
-      color: "#00a65a",
-      highlight: "#00a65a",
-      label: "IE"
-    },
-    {
-      value: 400,
-      color: "#f39c12",
-      highlight: "#f39c12",
-      label: "FireFox"
-    },
-    {
-      value: 600,
-      color: "#00c0ef",
-      highlight: "#00c0ef",
-      label: "Safari"
-    },
-    {
-      value: 300,
-      color: "#3c8dbc",
-      highlight: "#3c8dbc",
-      label: "Opera"
-    },
-    {
-      value: 100,
-      color: "#d2d6de",
-      highlight: "#d2d6de",
-      label: "Navigator"
-    }
-  ];
-  var pieOptions = {
-    //Boolean - Whether we should show a stroke on each segment
-    segmentShowStroke: true,
-    //String - The colour of each segment stroke
-    segmentStrokeColor: "#fff",
-    //Number - The width of each segment stroke
-    segmentStrokeWidth: 1,
-    //Number - The percentage of the chart that we cut out of the middle
-    percentageInnerCutout: 50, // This is 0 for Pie charts
-    //Number - Amount of animation steps
-    animationSteps: 100,
-    //String - Animation easing effect
-    animationEasing: "easeOutBounce",
-    //Boolean - Whether we animate the rotation of the Doughnut
-    animateRotate: true,
-    //Boolean - Whether we animate scaling the Doughnut from the centre
-    animateScale: false,
-    //Boolean - whether to make the chart responsive to window resizing
-    responsive: true,
-    // Boolean - whether to maintain the starting aspect ratio or not when responsive, if set to false, will take up entire container
-    maintainAspectRatio: false,
-    //String - A legend template
-    legendTemplate: "<ul class=\"<%=name.toLowerCase()%>-legend\"><% for (var i=0; i<segments.length; i++){%><li><span style=\"background-color:<%=segments[i].fillColor%>\"></span><%if(segments[i].label){%><%=segments[i].label%><%}%></li><%}%></ul>",
-    //String - A tooltip template
-    tooltipTemplate: "<%=value %> <%=label%> users"
-  };
-  //Create pie or douhnut chart
-  // You can switch between pie and douhnut using the method below.
-  pieChart.Doughnut(PieData, pieOptions);
-  //-----------------
-  //- END PIE CHART -
-  //-----------------
-
-  /* jVector Maps
-   * ------------
-   * Create a world map with markers
-   */
-  $('#world-map-markers').vectorMap({
-    map: 'world_mill_en',
-    normalizeFunction: 'polynomial',
-    hoverOpacity: 0.7,
-    hoverColor: false,
-    backgroundColor: 'transparent',
-    regionStyle: {
-      initial: {
-        fill: 'rgba(210, 214, 222, 1)',
-        "fill-opacity": 1,
-        stroke: 'none',
-        "stroke-width": 0,
-        "stroke-opacity": 1
-      },
-      hover: {
-        "fill-opacity": 0.7,
-        cursor: 'pointer'
-      },
-      selected: {
-        fill: 'yellow'
-      },
-      selectedHover: {}
-    },
-    markerStyle: {
-      initial: {
-        fill: '#00a65a',
-        stroke: '#111'
-      }
-    },
-    markers: [
-      {latLng: [41.90, 12.45], name: 'Vatican City'},
-      {latLng: [43.73, 7.41], name: 'Monaco'},
-      {latLng: [-0.52, 166.93], name: 'Nauru'},
-      {latLng: [-8.51, 179.21], name: 'Tuvalu'},
-      {latLng: [43.93, 12.46], name: 'San Marino'},
-      {latLng: [47.14, 9.52], name: 'Liechtenstein'},
-      {latLng: [7.11, 171.06], name: 'Marshall Islands'},
-      {latLng: [17.3, -62.73], name: 'Saint Kitts and Nevis'},
-      {latLng: [3.2, 73.22], name: 'Maldives'},
-      {latLng: [35.88, 14.5], name: 'Malta'},
-      {latLng: [12.05, -61.75], name: 'Grenada'},
-      {latLng: [13.16, -61.23], name: 'Saint Vincent and the Grenadines'},
-      {latLng: [13.16, -59.55], name: 'Barbados'},
-      {latLng: [17.11, -61.85], name: 'Antigua and Barbuda'},
-      {latLng: [-4.61, 55.45], name: 'Seychelles'},
-      {latLng: [7.35, 134.46], name: 'Palau'},
-      {latLng: [42.5, 1.51], name: 'Andorra'},
-      {latLng: [14.01, -60.98], name: 'Saint Lucia'},
-      {latLng: [6.91, 158.18], name: 'Federated States of Micronesia'},
-      {latLng: [1.3, 103.8], name: 'Singapore'},
-      {latLng: [1.46, 173.03], name: 'Kiribati'},
-      {latLng: [-21.13, -175.2], name: 'Tonga'},
-      {latLng: [15.3, -61.38], name: 'Dominica'},
-      {latLng: [-20.2, 57.5], name: 'Mauritius'},
-      {latLng: [26.02, 50.55], name: 'Bahrain'},
-      {latLng: [0.33, 6.73], name: 'São Tomé and Príncipe'}
-    ]
-  });
-
-  /* SPARKLINE CHARTS
-   * ----------------
-   * Create a inline charts with spark line
-   */
-
-  //-----------------
-  //- SPARKLINE BAR -
-  //-----------------
-  $('.sparkbar').each(function () {
-    var $this = $(this);
-    $this.sparkline('html', {
-      type: 'bar',
-      height: $this.data('height') ? $this.data('height') : '30',
-      barColor: $this.data('color')
-    });
-  });
-
-  //-----------------
-  //- SPARKLINE PIE -
-  //-----------------
-  $('.sparkpie').each(function () {
-    var $this = $(this);
-    $this.sparkline('html', {
-      type: 'pie',
-      height: $this.data('height') ? $this.data('height') : '90',
-      sliceColors: $this.data('color')
-    });
-  });
-
-  //------------------
-  //- SPARKLINE LINE -
-  //------------------
-  $('.sparkline').each(function () {
-    var $this = $(this);
-    $this.sparkline('html', {
-      type: 'line',
-      height: $this.data('height') ? $this.data('height') : '90',
-      width: '100%',
-      lineColor: $this.data('linecolor'),
-      fillColor: $this.data('fillcolor'),
-      spotColor: $this.data('spotcolor')
-    });
-  });
-});
-
 //# sourceMappingURL=app.js.map

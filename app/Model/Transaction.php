@@ -75,10 +75,36 @@ class Transaction extends Model
             ;
     }
 
+    public static function getBySubCategory($id_category)
+    {
+        return DB::table('transaction')
+            ->select('transaction.id'
+                ,'transaction.value'
+                ,'transaction.description'
+                , 'transaction.date'
+                , 'c2.name as category'
+                , 'c1.name as subcategory'
+
+            )
+            ->join('category AS c1', 'transaction.id_category', '=', 'c1.id')
+            ->join('category AS c2', 'c1.id_category', '=', 'c2.id')
+            ->where('transaction.id_category',$id_category)
+            ->get();
+    }
+
     public static function getByCategory($id_category)
     {
         return DB::table('transaction')
-            ->where('id_category',$id_category)
+            ->select('transaction.id'
+                ,'transaction.value'
+                ,'transaction.description'
+                , 'transaction.date'
+                , 'c2.name as category'
+                , 'c1.name as subcategory'
+            )
+            ->join('category AS c1', 'transaction.id_category', '=', 'c1.id')
+            ->join('category AS c2', 'c1.id_category', '=', 'c2.id')
+            ->where('c2.id',$id_category)
             ->get();
     }
 }

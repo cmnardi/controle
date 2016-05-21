@@ -51,11 +51,15 @@ class CategoryController extends Controller
     {
         //
         $category = Category::find($id);
-        $transactions = Transaction::getByCategory($id);
+        if ( is_null($category->id_category)) {
+            $transactions = Transaction::getByCategory($id);
+        }else {
+            $transactions = Transaction::getBySubCategory($id);
+        }
         return view('category/show', [
             'category'=>$category
             ,'transactions' => $transactions
-            ]);
+        ]);
     }
 
     /**

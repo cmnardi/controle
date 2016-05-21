@@ -143,7 +143,7 @@
 
 			<div class="info-box-content">
 				<span class="info-box-text">Total</span>
-				<span class="info-box-number">{{$total}}</span>
+				<span class="info-box-number text-right">R$ {{$total}}</span>
 			</div>
 			<!-- /.info-box-content -->
 		</div>
@@ -156,13 +156,14 @@
 
 			<div class="info-box-content">
 				<span class="info-box-text">Total (mês)</span>
-				<span class="info-box-number">{{$monthTotal}}</span>
+				<span class="info-box-number text-right">R$ {{$monthTotal}}</span>
 			</div>
 			<!-- /.info-box-content -->
 		</div>
 		<!-- /.info-box -->
 	</div>
 </div>
+
 <div class="row">
 	<div class="col-md-6 col-sm-12">
 		<div class="box box-info">
@@ -174,7 +175,7 @@
 				@foreach ($categoryData as $row)
 				    <tr>
 				    	<td><a href="/category/{{$row->id}}">{{$row->name}}</a></td>
-				    	<td>{{$row->value}}</td>
+				    	<td class="text-right">R$ {{$row->value}}</td>
 				    </tr>
 				@endforeach
 			</table>
@@ -192,9 +193,9 @@
 				    <tr>
 				    	<td><a href="#">{{$row->category}}</a></td>
 				    	<td><a href="/category/{{$row->id}}">{{$row->name}}</a></td>
-				    	<td>{{$row->value}}</td>
+				    	<td class="text-right">R$ {{$row->value}}</td>
 				    </tr>
-				@endforeach
+                @endforeach
 			</table>
 		</tr>
 	</div>

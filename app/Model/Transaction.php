@@ -77,6 +77,8 @@ class Transaction extends Model
 
     public static function getByCategory($id_category)
     {
-        return self::where('id_category',$id_category);
+        return DB::table('transaction')
+            ->where('id_category',$id_category)
+            ->get();
     }
 }

@@ -54,6 +54,7 @@ class CategoryController extends Controller
         $transactions = Transaction::getByCategory($id);
         return view('category/show', [
             'category'=>$category
+            ,'transactions' => $transactions
             ]);
     }
 

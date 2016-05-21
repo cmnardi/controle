@@ -41,6 +41,7 @@ class Transaction extends Model
             ->join('category', 'transaction.id_category', '=', 'category.id')
             ->join('category AS c2', 'category.id_category', '=', 'c2.id')
             ->groupBy('category.name')
+            ->orderBy('c2.name')
             ->orderBy('category.name')
             //->select('category.id', 'category.name','transaction.value')
             ->select(\DB::raw('category.id, SUM(transaction.value) as value, category.name, 
@@ -91,6 +92,7 @@ class Transaction extends Model
             ->join('category AS c1', 'transaction.id_category', '=', 'c1.id')
             ->join('category AS c2', 'c1.id_category', '=', 'c2.id')
             ->where('transaction.id_category',$id_category)
+            ->orderBy('transaction.date')
             ->get();
     }
 
@@ -107,6 +109,7 @@ class Transaction extends Model
             ->join('category AS c1', 'transaction.id_category', '=', 'c1.id')
             ->join('category AS c2', 'c1.id_category', '=', 'c2.id')
             ->where('c2.id',$id_category)
+            ->orderBy('transaction.date')
             ->get();
     }
 }

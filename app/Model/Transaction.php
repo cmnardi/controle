@@ -41,6 +41,7 @@ class Transaction extends Model
             ->join('category', 'transaction.id_category', '=', 'category.id')
             ->join('category AS c2', 'category.id_category', '=', 'c2.id')
             ->groupBy('category.name')
+            ->orderBy('category.name')
             //->select('category.id', 'category.name','transaction.value')
             ->select(\DB::raw('category.id, SUM(transaction.value) as value, category.name, 
                 c2.name as category'))
@@ -56,6 +57,7 @@ class Transaction extends Model
             ->groupBy('c2.id')
             //->select('c2.id', 'c2.name','transaction.value')
             ->select(\DB::raw('c2.id, SUM(transaction.value) as value, c2.name'))
+            ->orderBy('c2.name')
             ->get();
 		return $rows;
     }

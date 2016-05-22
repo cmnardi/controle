@@ -12,9 +12,10 @@
 */
 
 Route::get('/', 'HomeController@index');
-Route::get('/{mount}/{year}', 'HomeController@index');
 
 Route::resource('api_category', 'ApiCategoryController');
 Route::resource('import', 'ImportController');
 
 Route::resource('category', 'CategoryController');
+Route::get('category/{id}/{mount}/{year}', 'CategoryController@show');
+Route::get('/{mount}/{year}', 'HomeController@index');

@@ -47,14 +47,14 @@ class CategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($id, $month=null, $year = null)
     {
         //
         $category = Category::find($id);
         if ( is_null($category->id_category)) {
-            $transactions = Transaction::getByCategory($id);
+            $transactions = Transaction::getByCategory($id, $month, $year);
         }else {
-            $transactions = Transaction::getBySubCategory($id);
+            $transactions = Transaction::getBySubCategory($id, $month, $year);
         }
         return view('category/show', [
             'category'=>$category

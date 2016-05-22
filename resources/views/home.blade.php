@@ -99,7 +99,7 @@
 				@foreach ($subCategoryData as $row)
 				    <tr>
 				    	<td><a href="#">{{$row->category}}</a></td>
-				    	<td><a href="/category/{{$row->id}}">{{$row->name}}</a></td>
+				    	<td><a href="/category/{{$row->id}}/{{$date}}">{{$row->name}}</a></td>
                         <td class="text-right">R$ {{number_format($row->value,2, ',', '.')}}</td>
 				    </tr>
                 @endforeach

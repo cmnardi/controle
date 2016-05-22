@@ -106,9 +106,9 @@ class Transaction extends Model
             ;
     }
 
-    public static function getBySubCategory($id_category)
+    public static function getBySubCategory($id_category, $month, $year)
     {
-        return DB::table('transaction')
+        $rows = DB::table('transaction')
             ->select('transaction.id'
                 ,'transaction.value'
                 ,'transaction.description'
@@ -120,13 +120,21 @@ class Transaction extends Model
             ->join('category AS c1', 'transaction.id_category', '=', 'c1.id')
             ->join('category AS c2', 'c1.id_category', '=', 'c2.id')
             ->where('transaction.id_category',$id_category)
+            ;
+        if ( !is_null($year)) {
+            $rows->where(DB::raw('year(date)'),$year);
+        }
+        if ( !is_null($month)) {
+            $rows->where(DB::raw('month(date)'),$month);
+        }
+        return $rows
             ->orderBy('transaction.date')
             ->get();
     }
 
-    public static function getByCategory($id_category)
+    public static function getByCategory($id_category, $month = null, $year = null)
     {
-        return DB::table('transaction')
+        $rows = DB::table('transaction')
             ->select('transaction.id'
                 ,'transaction.value'
                 ,'transaction.description'
@@ -137,6 +145,14 @@ class Transaction extends Model
             ->join('category AS c1', 'transaction.id_category', '=', 'c1.id')
             ->join('category AS c2', 'c1.id_category', '=', 'c2.id')
             ->where('c2.id',$id_category)
+            ;
+        if ( !is_null($year)) {
+            $rows->where(DB::raw('year(date)'),$year);
+        }
+        if ( !is_null($month)) {
+            $rows->where(DB::raw('month(date)'),$month);
+        }
+        return $rows
             ->orderBy('transaction.date')
             ->get();
     }

@@ -63,6 +63,18 @@ class Transaction extends Model
 		return $rows;
     }
 
+    public static function getAgregateDataByMonth()
+    {
+        return
+            DB::table('transaction')
+                ->select(DB::raw('SUM(value) as value, month(date) as month, year(date) as year'))
+                ->groupBy(DB::raw('month(date), year(date)'))
+                ->orderBy(DB::raw('year(date), month(date)'))
+                ->get()
+                //->sum('value')
+                ;
+    }
+
     public static function getTotal()
     {
         return DB::table('transaction')

@@ -165,6 +165,31 @@
 </div>
 
 <div class="row">
+  <div class="col-md-6 col-sm-12">
+    <div class="box box-info">
+      <table class="table table-striped table-bordered">
+        <tr>
+          <th>Mêss</th>
+          <th>Valor</th>
+        <tr>
+        @foreach ($months as $row)
+            <tr>
+              <td>{{$row->month}}/{{$row->year}}</td>
+              <td class="text-right">
+                @if($row->value < 0)
+                  <p class="text-danger">
+                @endif
+                R$ {{number_format($row->value,2, ',', '.')}}
+                @if($row->value < 0)
+                  </p>
+                @endif
+              </td>
+            </tr>
+        @endforeach
+      </table>
+    </div>
+  </div>
+
 	<div class="col-md-6 col-sm-12">
 		<div class="box box-info">
 			<table class="table table-striped table-bordered">

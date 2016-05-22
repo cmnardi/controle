@@ -9,21 +9,24 @@ use App\Model\Transaction;
 class HomeController extends Controller
 {
     //
-    public function index()
+    public function index($month = null, $year = null)
     {
-    	$categoryData = Transaction::getAgregateDataByCategory();
-    	$subCategoryData = Transaction::getAgregateDataBySubCategory();
+    	$categoryData = Transaction::getAgregateDataByCategory($year, $month);
+    	$subCategoryData = Transaction::getAgregateDataBySubCategory($year, $month);
 		$total = Transaction::getTotal();
-		$monthTotal = Transaction::getMonthTotal(date('m'));
-
-        $months = Transaction::getAgregateDataByMonth();
+		$monthTotal = Transaction::getMonthTotal($year, $month);
+        $months = null;
+        if ( is_null($month) ) {
+            $months = Transaction::getAgregateDataByMonth();
+        }
 
     	return view('home', [
 			'total' => $total,
 			'monthTotal' => $monthTotal,
             'months' => $months,
     		'categoryData'=>$categoryData,
-    		'subCategoryData' => $subCategoryData
+    		'subCategoryData' => $subCategoryData,
+            'date' => $month.'/'.$year
 		]);
     }
 }

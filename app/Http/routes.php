@@ -12,6 +12,7 @@
 */
 
 Route::get('/', 'HomeController@index');
+Route::get('/{mount}/{year}', 'HomeController@index');
 
 Route::resource('api_category', 'ApiCategoryController');
 Route::resource('import', 'ImportController');

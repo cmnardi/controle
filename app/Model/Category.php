@@ -23,7 +23,6 @@ class Category extends Model
         $patterns = $patternsCons->get();
 
         foreach($patterns as $p) {
-            
             if ( !is_null($p->pattern) && $p->pattern != "" ) {
                 $res = preg_match($p->pattern, $str);
                 if ($res == 1) {

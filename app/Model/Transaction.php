@@ -18,7 +18,7 @@ class Transaction extends Model
 
     public static function testTransaction($transaction) 
     {
-        $p1 = Category::testPattern($transaction->memo, (float)$transaction->value);
+        $p1 = Category::testPattern($transaction->memo, (float)$transaction->amount);
         if ($p1){
             //echo "\t#".$p1->id_category."[".$p1->description."]";
             $uniqueId = $transaction->uniqueId;

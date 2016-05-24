@@ -32,7 +32,6 @@ class ImportTest extends TestCase
     public function testSum()
     {
     	$res = Transaction::getAgregateDataByCategory();
-    	print_r($res);
     	//$res = Transaction::getAgregateDataBySubCategory();
     	//print_r($res);
     	$this->assertEquals($res[5]->id, 6);

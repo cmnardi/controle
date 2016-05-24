@@ -22,15 +22,27 @@ class Transaction extends Model
         if ($p1){
             //echo "\t#".$p1->id_category."[".$p1->description."]";
             $uniqueId = $transaction->uniqueId;
+            //echo " #".$uniqueId;
             //print_r($transaction);
-            $t = self::findByUniqueId($uniqueId);
-            $t->description = $transaction->memo;
-            $t->fitid = $transaction->uniqueId;
-            $t->id_category = $p1->id;
-            $t->value = $transaction->amount;
-            $t->date = $transaction->date;
-            $t->save();
-            return $t;
+            try{
+                $t = new Transaction();
+                $t->description = $transaction->memo;
+                $t->fitid = $transaction->uniqueId;
+                $t->id_category = $p1->id;
+                $t->value = $transaction->amount;
+                $t->date = $transaction->date;
+                $t->save();
+                return $t;
+            } catch (\Illuminate\Database\QueryException $ex ) {
+                $t2 = self::findByUniqueId($uniqueId);
+                $t2->description = $transaction->memo;
+                $t2->fitid = $transaction->uniqueId;
+                $t2->id_category = $p1->id;
+                $t2->value = $transaction->amount;
+                $t2->date = $transaction->date;
+                $t2->save();
+                return $t2;
+            }
         }
         return false;
     }

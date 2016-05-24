@@ -18,10 +18,12 @@ class CategoryPatternTest extends TestCase
         $p1 = Category::testPattern('Posto');
         $p2 = Category::testPattern('Teste');
         $p3 = Category::testPattern('WEUY');
-
+        $p4 = Category::testPattern('Entrada',112);
+        
         $this->assertNotNull($p1);
         $this->assertEquals($p2->id_category, 8);//outros
         $this->assertEquals($p3->id_category, 8);//outros
+        $this->assertEquals($p4->id_category, 9);//entrada
     }
 
     public function testTransporte()

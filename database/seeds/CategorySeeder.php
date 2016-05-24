@@ -44,5 +44,10 @@ class CategorySeeder extends Seeder
             'name' => 'Não Sei',
             'id' => 8
         ]);
+        DB::table('category')->insert([
+            'name' => 'Entrada',
+            'id' => 9,
+            'debit' => false
+        ]);
     }
 }

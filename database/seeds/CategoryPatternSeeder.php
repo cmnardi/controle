@@ -16,6 +16,13 @@ class CategoryPatternSeeder extends Seeder
             'name' => 'Outros',
             'id_category' => 8,
             'pattern' => '/.*/',
+            'order' => 9999
+        ]);
+        DB::table('category')->insert([
+            'name' => 'Entradas',
+            'id_category' => 9,
+            'pattern' => '/.*/',
+            'debit' => false,
             'order' => 99999
         ]);
         //casa

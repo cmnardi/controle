@@ -29,7 +29,10 @@
 			<div class="info-box-content">
 				<span class="info-box-text">Total (mês) {{$date}}</span>
                 <span class="info-box-number text-right">
-                R$ {{number_format($monthTotal,2, ',', '.')}}
+                  R$ {{number_format($monthTotalOut,2, ',', '.')}}
+                </span>
+                <span class="info-box-number text-right">
+                  R$ {{number_format($monthTotalIn,2, ',', '.')}}
                 </span>
 			</div>
 			<!-- /.info-box-content -->
@@ -81,7 +84,7 @@
 				<tr>
 				@foreach ($categoryData as $row)
 				    <tr>
-				    	<td><a href="/category/{{$row->id}}">{{$row->name}}</a></td>
+				    	<td><a href="/category/{{$row->id}}/{{$date}}">{{$row->name}}</a></td>
                         <td class="text-right">R$ {{number_format($row->value,2, ',', '.')}}</td>
 				    </tr>
 				@endforeach

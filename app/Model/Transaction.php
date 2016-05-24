@@ -93,17 +93,24 @@ class Transaction extends Model
     public static function getTotal()
     {
         return DB::table('transaction')
+
             ->sum('value')
+
             ;
     }
 
-    public static function getMonthTotal($year, $month)
+    public static function getMonthTotal($year, $month, $debt = true)
     {
+        if ( $debt ) {
+            $compare = '<';
+        }else{
+            $compare = '>';
+        }
         return DB::table('transaction')
+            ->where('value',$compare, 0)
             ->whereMonth('date', '=', $month)
             ->whereYear('date', '=', $year)
-            ->sum('value')
-            ;
+            ->sum('value');
     }
 
     public static function getBySubCategory($id_category, $month, $year)

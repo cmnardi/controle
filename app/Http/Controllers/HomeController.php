@@ -14,7 +14,8 @@ class HomeController extends Controller
     	$categoryData = Transaction::getAgregateDataByCategory($year, $month);
     	$subCategoryData = Transaction::getAgregateDataBySubCategory($year, $month);
 		$total = Transaction::getTotal();
-		$monthTotal = Transaction::getMonthTotal($year, $month);
+		$monthTotalOut = Transaction::getMonthTotal($year, $month);
+        $monthTotalIn = Transaction::getMonthTotal($year, $month, false);
         $months = null;
         if ( is_null($month) ) {
             $months = Transaction::getAgregateDataByMonth();
@@ -22,7 +23,8 @@ class HomeController extends Controller
 
     	return view('home', [
 			'total' => $total,
-			'monthTotal' => $monthTotal,
+			'monthTotalOut' => $monthTotalOut,
+            'monthTotalIn' => $monthTotalIn,
             'months' => $months,
     		'categoryData'=>$categoryData,
     		'subCategoryData' => $subCategoryData,

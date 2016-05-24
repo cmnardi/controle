@@ -81,11 +81,17 @@
 				<tr>
 					<th>Categoria</th>
 					<th>Valor</th>
+          <th></th>
 				<tr>
 				@foreach ($categoryData as $row)
 				    <tr>
 				    	<td><a href="/category/{{$row->id}}/{{$date}}">{{$row->name}}</a></td>
-                        <td class="text-right">R$ {{number_format($row->value,2, ',', '.')}}</td>
+              <td class="text-right">R$ {{number_format($row->value,2, ',', '.')}}</td>
+              <td class="text-right">
+                @if($monthTotalOut != 0 )
+                  {{number_format($row->value*100/$monthTotalOut,2,',','.')}}%
+                @endif
+              </td>
 				    </tr>
 				@endforeach
 			</table>
@@ -98,12 +104,18 @@
 					<th>Categoria</th>
 					<th>Sub-Categoria</th>
 					<th>Valor</th>
+          <th></th>
 				<tr>
 				@foreach ($subCategoryData as $row)
 				    <tr>
 				    	<td><a href="#">{{$row->category}}</a></td>
 				    	<td><a href="/category/{{$row->id}}/{{$date}}">{{$row->name}}</a></td>
-                        <td class="text-right">R$ {{number_format($row->value,2, ',', '.')}}</td>
+              <td class="text-right">R$ {{number_format($row->value,2, ',', '.')}}</td>
+              <td class="text-right">
+                @if($monthTotalOut != 0 )
+                  {{number_format($row->value*100/$monthTotalOut,2,',','.')}}%
+                @endif
+              </td>
 				    </tr>
                 @endforeach
 			</table>

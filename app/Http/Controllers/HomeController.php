@@ -21,10 +21,12 @@ class HomeController extends Controller
             $months = Transaction::getAgregateDataByMonth();
         }
 
+        $diference = ($monthTotalIn-(-$monthTotalOut));
     	return view('home', [
 			'total' => $total,
 			'monthTotalOut' => $monthTotalOut,
             'monthTotalIn' => $monthTotalIn,
+            'diference' => $diference,
             'months' => $months,
     		'categoryData'=>$categoryData,
     		'subCategoryData' => $subCategoryData,

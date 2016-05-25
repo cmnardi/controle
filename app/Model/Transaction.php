@@ -118,11 +118,12 @@ class Transaction extends Model
         }else{
             $compare = '>';
         }
-        return DB::table('transaction')
+        $return =  DB::table('transaction')
             ->where('value',$compare, 0)
             ->whereMonth('date', '=', $month)
             ->whereYear('date', '=', $year)
             ->sum('value');
+        return (float)$return;
     }
 
     public static function getBySubCategory($id_category, $month, $year)

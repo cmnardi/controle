@@ -21,26 +21,37 @@
   		<!-- /.info-box -->
 	 </div>
    @else 
-	<div class="col-md-3 col-sm-6 col-xs-12">
-		<div class="info-box">
-			<span class="info-box-icon bg-blue">
-				<i class="fa fa-calendar"></i></span>
-
-			<div class="info-box-content">
-				<span class="info-box-text">Total (mês) {{$date}}</span>
-                <span class="info-box-number text-right">
-                  R$ {{number_format($monthTotalOut,2, ',', '.')}}
-                </span>
-                <span class="info-box-number text-right">
-                  R$ {{number_format($monthTotalIn,2, ',', '.')}}
-                </span>
-			</div>
-			<!-- /.info-box-content -->
-		</div>
-		<!-- /.info-box -->
-	</div>
+  	 <div class="col-md-3 col-sm-6 col-xs-12">
+  		<div class="info-box">
+  			<span class="info-box-icon bg-blue">
+  			<i class="fa fa-exchange"></i></span>
+  			<div class="info-box-content">
+  				<span class="info-box-text">Total (mês) {{$date}}</span>
+            <span class="info-box-number text-right">
+              R$ {{number_format($monthTotalIn,2, ',', '.')}}<br>
+              R$ {{number_format($monthTotalOut,2, ',', '.')}}
+            </span>
+  			</div>
+  			<!-- /.info-box-content -->
+  		</div>
+  		<!-- /.info-box -->
+  	</div>
+    <div class="col-md-3 col-sm-6 col-xs-12">
+      <div class="info-box">
+        <span class="info-box-icon bg-red">
+        <i class="fa fa-money"></i></span>
+        <div class="info-box-content">
+          <span class="info-box-text">Total (mês) {{$date}}</span>
+            <span class="info-box-number text-right">
+              R$ {{number_format($diference,2, ',', '.')}}
+            </span>
+        </div>
+        <!-- /.info-box-content -->
+      </div>
+    <!-- /.info-box -->
+  </div>
   @endif
-</div>
+</div> 
 
 <div class="row">
   

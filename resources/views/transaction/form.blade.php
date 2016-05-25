@@ -12,7 +12,9 @@
 			</div>
 			<!-- /.box-header -->
 			<!-- form start -->
-			<form role="form">
+			<form role="form" method="post" action="/transaction">
+				<input type="hidden" name="_token" value="{{ csrf_token() }}">
+				<input type="hidden" name="id" value="{{$transaction->id}}">
 				<div class="box-body">
 					<div class="form-group">
 						<label for="description">ID</label>
@@ -20,13 +22,13 @@
 					</div>
 					<div class="form-group">
 						<label for="description">Descrição</label>
-						<input type="text" placeholder="Descrição" class="form-control" name="descricao" value="{{$transaction->description}}">
+						<input type="text" placeholder="Descrição" class="form-control" name="description" value="{{$transaction->description}}">
 					</div>
 					<div class="form-group">
 						<label for="value">Valor</label>
 						<div class="input-group">
 							<span class="input-group-addon">R$</span>
-							<input type="number" placeholder="Valor" class="form-control" name="value" value="{{$transaction->value}}"  step="0.01">
+							<input type="number" placeholder="Valor" class="form-control" readonly value="{{$transaction->value}}"  step="0.01">
 						</div>
 					</div>
 					<div class="form-group">
@@ -44,7 +46,7 @@
 					</div>
 					<div class="form-group">
 						<label for="exampleInputFile">SubCategoria</label>
-						<select class="form-control" >
+						<select class="form-control" name="id_category">
 							<option></option>
 							@foreach($categories as $category)
 								<option value="{{$category->id}}" 

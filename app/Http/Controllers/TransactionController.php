@@ -48,6 +48,21 @@ class TransactionController extends Controller
     public function store(Request $request)
     {
         //
+        if ( $request->has('id')){
+            $transaction = Transaction::find($request->id);
+            $transaction->description = $request->description;
+            $transaction->id_category = $request->id_category;
+        }else {
+            $transaction = new Transaction($request->all()) ;
+        }
+        $transaction->save();
+        $rootCategories = Category::listByIdCategory(null);
+        $categories = Category::listByIdCategory($transaction->category->id_category);
+        return view('transaction/form', [
+            'transaction'=>$transaction
+            ,'rootCategories'=>$rootCategories
+            ,'categories'=>$categories
+        ]);
     }
 
     /**
@@ -76,18 +91,6 @@ class TransactionController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
     {
         //
     }

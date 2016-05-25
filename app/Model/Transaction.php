@@ -10,6 +10,8 @@ class Transaction extends Model
     //
     protected $table = 'transaction';
 
+    protected $fillable = ['id', 'description','value', 'id_category'];
+
     public function category()
     {
         return $this->hasOne(Category::class, 'id', 'id_category');

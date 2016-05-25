@@ -32,4 +32,8 @@ class Category extends Model
         }
         return false;
     }
+
+    public static function listByIdCategory($id_category){
+        return self::where('id_category', $id_category)->get();
+    }
 }

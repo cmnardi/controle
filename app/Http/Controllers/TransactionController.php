@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 
 use App\Model\Transaction;
+use App\Model\Category;
 
 class TransactionController extends Controller
 {
@@ -31,6 +32,11 @@ class TransactionController extends Controller
     public function create()
     {
         //
+        $rootCategories = Category::listByIdCategory(null);
+        return view('transaction/form', [
+            'transaction'=>new Transaction()
+            ,'categories'=>$rootCategories
+        ]);
     }
 
     /**
@@ -53,6 +59,14 @@ class TransactionController extends Controller
     public function show($id)
     {
         //
+        $transaction = Transaction::find($id);
+        $rootCategories = Category::listByIdCategory(null);
+        $categories = Category::listByIdCategory($transaction->category->id_category);
+        return view('transaction/form', [
+            'transaction'=>$transaction
+            ,'rootCategories'=>$rootCategories
+            ,'categories'=>$categories
+        ]);
     }
 
     /**

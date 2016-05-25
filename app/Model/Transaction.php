@@ -10,6 +10,12 @@ class Transaction extends Model
     //
     protected $table = 'transaction';
 
+    public function category()
+    {
+        return $this->hasOne(Category::class, 'id', 'id_category');
+    }
+
+
     public static function findByUniqueId($uniqueId)
     {
     	$t = self::where('fitid', $uniqueId)->first();

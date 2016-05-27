@@ -11,12 +11,20 @@
 |
 */
 
-Route::get('/', 'HomeController@index');
+Route::get('/', ['middleware' => 'auth','uses'=>'HomeController@index']);
 
 Route::resource('api_category', 'ApiCategoryController');
 Route::resource('import', 'ImportController');
 
 Route::resource('category', 'CategoryController');
 Route::resource('transaction', 'TransactionController');
-Route::get('category/{id}/{mount}/{year}', 'CategoryController@show');
-Route::get('/{mount}/{year}', 'HomeController@index');
+Route::get('category/{id}/{mount}/{year}', ['middleware' => 'auth','uses'=>'CategoryController@show']);
+Route::get('/{mount}/{year}', ['middleware' => 'auth','uses'=>'HomeController@index']);
+
+// Authentication routes...
+Route::get('login', 'Auth\AuthController@getLogin');
+Route::post('login', 'Auth\AuthController@postLogin');
+Route::get('logout', 'Auth\AuthController@getLogout');
+// Registration routes...
+//Route::get('auth/register', 'Auth\AuthController@getRegister');
+//Route::post('auth/register', 'Auth\AuthController@postRegister');

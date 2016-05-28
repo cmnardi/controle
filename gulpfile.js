@@ -11,6 +11,7 @@ var elixir = require('laravel-elixir');
  |
  */
 var paths = {
+    'modules' : './resources/assets/modules',
     'bootstrap'	: './resources/assets/vendor/admin-lte',
     'plugins'	: './resources/assets/vendor/admin-lte/plugins',
     'fonts'		: './resources/assets/vendor/admin-lte/bootstrap/fonts'
@@ -38,16 +39,16 @@ elixir(function(mix) {
     	.copy(paths.fonts + '/**', 'public/assets/fonts')
         .copy(paths.bootstrap + '/dist/img/**', 'public/dist/img')
     	.scripts([
-		    paths.plugins + '/.*',
             paths.plugins + "/jQuery/jQuery-2.2.0.min.js",
+            //paths.plugins + '/.*',
             paths.plugins + "/chartjs/Chart.js",
             paths.bootstrap + "/bootstrap/js/bootstrap.js",
 		    paths.bootstrap + "/dist/js/app.js",
             //paths.bootstrap + "/dist/js/pages/dashboard.js",
-            paths.bootstrap + "/dist/js/pages/dashboard2.js",
-            paths.bootstrap + "/dist/js/demo.js",
-		    paths.bootstrap + "/dist/js/*.*js",
-            
+            //paths.bootstrap + "/dist/js/pages/dashboard2.js",
+            //paths.bootstrap + "/dist/js/demo.js",
+		    //paths.bootstrap + "/dist/js/*.*js",
+            paths.modules + '/category/main.js',
 		    //paths.bootstrap + "/dist/js/pages/*.*js",
             
 		], 'public/assets/js/app.js');

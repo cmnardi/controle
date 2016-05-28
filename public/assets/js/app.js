@@ -6616,7 +6616,7 @@ $(function () {
   //-----------------------
   //- MONTHLY SALES CHART -
   //-----------------------
-console.info('chartss');
+
   // Get context with jQuery - using jQuery's .get() method.
   var salesChartCanvas = $("#salesChart").get(0).getContext("2d");
   // This will get the first returned node in the jQuery collection.
@@ -6630,10 +6630,10 @@ console.info('chartss');
         fillColor: "rgb(210, 214, 222)",
         strokeColor: "rgb(210, 214, 222)",
         pointColor: "rgb(210, 214, 222)",
-        pointStrokeColor: "#01c7d1",
+        pointStrokeColor: "#c1c7d1",
         pointHighlightFill: "#fff",
         pointHighlightStroke: "rgb(220,220,220)",
-        data: [65, 59, 80, 81, 10, 55, 40]
+        data: [65, 59, 80, 81, 56, 55, 40]
       },
       {
         label: "Digital Goods",

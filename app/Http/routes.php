@@ -18,5 +18,6 @@ Route::resource('import', 'ImportController');
 
 Route::resource('category', 'CategoryController');
 Route::resource('transaction', 'TransactionController');
+Route::get('api_category/sub_categories/{id}', 'ApiCategoryController@getSubCategories');
 Route::get('category/{id}/{mount}/{year}', 'CategoryController@show');
 Route::get('/{mount}/{year}', 'HomeController@index');

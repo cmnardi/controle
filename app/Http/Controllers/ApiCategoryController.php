@@ -19,6 +19,11 @@ class ApiCategoryController extends Controller
         return Category::all();
     }
 
+    public function getSubCategories($id)
+    {
+        return Category::listByIdCategory($id);
+    }
+
     /**
      * Show the form for creating a new resource.
      *

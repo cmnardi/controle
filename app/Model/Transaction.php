@@ -10,7 +10,7 @@ class Transaction extends Model
     //
     protected $table = 'transaction';
 
-    protected $fillable = ['id', 'description','value', 'id_category'];
+    protected $fillable = ['id', 'description','value', 'id_category', 'fitid'];
 
     public function category()
     {

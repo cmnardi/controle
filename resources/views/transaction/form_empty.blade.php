@@ -3,8 +3,12 @@
 	<div class="col-md-12">
 		<!-- general form elements -->
 		<div class="box box-primary">
+			<div class="alert alert-success" role="alert" id="alert" style="display:none">
+				<strong>Sucesso!</strong> 
+				Registro editado
+			</div>
 			<!-- form start -->
-			<form role="form" method="post" action="/transaction">
+			<form role="form" method="post" action="/transaction" id="transaction_form">
 				<input type="hidden" name="_token" id="token" value="{{ csrf_token() }}">
 				<input type="hidden" name="id" id="id" value="">
 				<div class="box-body">

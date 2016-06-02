@@ -6623,7 +6623,7 @@ $(document).ready(function(){
     $('#myModal').on('show.bs.modal', function (event) {
 		var button = $(event.relatedTarget) // Button that triggered the modal
       	var id = button.data('id') // Extract info from data-* attributes
-      	console.info("id #"+id);
+      	//console.info("id #"+id);
       	$.getJSON("/api_transaction/"+id, function ( result ){
       		var transaction = result.row;
       		$('#id').val(transaction.id);
@@ -6645,19 +6645,20 @@ $(document).ready(function(){
     });
 
     $('#gravar').click(function(){
-    	console.info('grava!');
+    	//console.info('grava!');
     	var transaction = {
     		"_token": $('#token').val(),
     		'id':$('#id').val(),
     		'id_category':$('#id_sub_category').val()
     	};
-    	console.info(transaction);
+    	//console.info(transaction);
     	$.ajax({
 			type: "POST",
 			url: "/api_transaction",
 			data: transaction,
 		  	success: function(response){
-		  		console.info(response);
+		  		$("#transaction_form").hide();
+		  		$("#alert").show();
 		  	},
 		  	dataType: 'json'
 		});

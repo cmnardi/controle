@@ -45,13 +45,14 @@ $(document).ready(function(){
     		'id':$('#id').val(),
     		'id_category':$('#id_sub_category').val()
     	};
-    	console.info(transaction);
+    	//console.info(transaction);
     	$.ajax({
 			type: "POST",
 			url: "/api_transaction",
 			data: transaction,
 		  	success: function(response){
-		  		console.info(response);
+		  		$("#transaction_form").hide();
+		  		$("#alert").show();
 		  	},
 		  	dataType: 'json'
 		});

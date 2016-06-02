@@ -54,6 +54,7 @@ class CategoryController extends Controller
     {
         //
         $category = Category::find($id);
+        $categories = Category::listByIdCategory(null);
         if ( is_null($category->id_category)) {
             $transactions = Transaction::getByCategory($id, $month, $year);
         }else {
@@ -62,6 +63,7 @@ class CategoryController extends Controller
         return view('category/show', [
             'category'=>$category
             ,'transactions' => $transactions
+            ,'rootCategories' => $categories
         ]);
     }
 

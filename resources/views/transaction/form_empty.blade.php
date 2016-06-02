@@ -3,13 +3,9 @@
 	<div class="col-md-12">
 		<!-- general form elements -->
 		<div class="box box-primary">
-			<div class="box-header with-border">
-				<h3 class="box-title">Transaction </h3>
-			</div>
-			<!-- /.box-header -->
 			<!-- form start -->
 			<form role="form" method="post" action="/transaction">
-				<input type="hidden" name="_token" value="{{ csrf_token() }}">
+				<input type="hidden" name="_token" id="token" value="{{ csrf_token() }}">
 				<input type="hidden" name="id" id="id" value="">
 				<div class="box-body">
 					<div class="form-group">
@@ -31,7 +27,11 @@
 						<label for="exampleInputFile">Categoria</label>
 						<select class="form-control" id="id_category">
 							<option></option>
-							
+							@foreach($rootCategories as $category)
+								<option value="{{$category->id}}">
+								{{$category->name}}
+								</option>
+							@endforeach
 						</select>
 					</div>
 					<div class="form-group">
@@ -43,10 +43,6 @@
 					</div>
 				</div>
 				<!-- /.box-body -->
-
-				<div class="box-footer">
-					<button class="btn btn-primary" type="submit">Gravar</button>
-				</div>
 			</form>
 		</div>
 		<!-- /.box -->

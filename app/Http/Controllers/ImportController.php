@@ -41,6 +41,9 @@ class ImportController extends Controller
         $Statement = $Account->Statement;
         $Transactions = $Statement->transactions;
         foreach( $Transactions as $i => $transaction ){
+            $uniqueId = explode(":",$transaction->uniqueId);
+            unset($uniqueId[0]);
+            $transaction->uniqueId = implode(":",$uniqueId);
             $result = Transaction::testTransaction($transaction);
         }
         //return response()->json(['success' => true], 200);

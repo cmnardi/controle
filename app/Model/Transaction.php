@@ -97,14 +97,20 @@ class Transaction extends Model
             ->get();
     }
 
-    public static function getAgregateDataByMonth()
+    public static function getAgregateDataByMonth( $in = null )
     {
-        return
+        $return =
             DB::table('transaction')
                 ->select(DB::raw('SUM(value) as value, month(date) as month, year(date) as year'))
                 ->groupBy(DB::raw('month(date), year(date)'))
                 ->orderBy(DB::raw('year(date)'), 'DESC')
                 ->orderBy(DB::raw('month(date)'),'DESC')
+        ;
+        if ( !is_null($in) ){ 
+            $return->where('value', $in , 0);
+        }
+        return 
+            $return
                 ->get()
                 //->sum('value')
                 ;

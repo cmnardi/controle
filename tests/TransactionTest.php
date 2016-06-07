@@ -29,6 +29,7 @@ class TransactionTest extends TestCase
         $transaction2->id_category = 1;
         $transaction2 = Transaction::testTransaction($transaction2);
 
+echo "\n".$transaction2->id." => ".$transaction1->id;
 		$this->assertEquals($transaction2->id, $transaction1->id);
     }
 

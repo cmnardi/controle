@@ -6621,6 +6621,8 @@ $(document).ready(function(){
 
 
     $('#myModal').on('show.bs.modal', function (event) {
+	  	$("#transaction_form").show();
+  		$("#alert").hide();
 		var button = $(event.relatedTarget) // Button that triggered the modal
       	var id = button.data('id') // Extract info from data-* attributes
       	//console.info("id #"+id);

@@ -13,6 +13,10 @@
 
 Route::get('/', 'HomeController@index');
 
+
+Route::get('report', 'ReportController@index');
+Route::get('report/data', 'ReportController@data');
+
 Route::resource('api_category', 'ApiCategoryController');
 Route::resource('api_transaction', 'ApiTransactionController');
 Route::resource('import', 'ImportController');
@@ -22,5 +26,3 @@ Route::resource('transaction', 'TransactionController');
 Route::get('api_category/sub_categories/{id}', 'ApiCategoryController@getSubCategories');
 Route::get('category/{id}/{mount}/{year}', 'CategoryController@show');
 Route::get('/{mount}/{year}', 'HomeController@index');
-
-Route::get('report', 'ReportController@index');

@@ -46,9 +46,10 @@ elixir(function(mix) {
 		    paths.bootstrap + "/dist/js/app.js",
             //paths.bootstrap + "/dist/js/pages/dashboard.js",
             //paths.bootstrap + "/dist/js/pages/dashboard2.js",
-            //paths.bootstrap + "/dist/js/demo.js",
+            paths.bootstrap + "/dist/js/demo.js",
 		    //paths.bootstrap + "/dist/js/*.*js",
             paths.modules + '/category/main.js',
+            paths.modules + '/report.js',
 		    //paths.bootstrap + "/dist/js/pages/*.*js",
             
 		], 'public/assets/js/app.js');

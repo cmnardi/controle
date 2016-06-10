@@ -11,6 +11,11 @@ class ReportController extends Controller
     //
     public function index()
     {
+        return view('grafico');
+    }
+
+    public function data()
+    {
     	return 
     	[
     	Transaction::getAgregateDataByMonth()

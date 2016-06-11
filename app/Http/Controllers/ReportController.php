@@ -11,7 +11,7 @@ class ReportController extends Controller
     //
     public function index()
     {
-        return view('grafico');
+        return view('graph');
     }
 
     public function data()

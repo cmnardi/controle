@@ -227,8 +227,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
           <ul class="sidebar-menu">
             <li class="header">HEADER</li>
             <!-- Optionally, you can add icons to the links -->
-            <li><a href="import"><i class="fa fa-link"></i> <span>Importar</span></a></li>
-            
+            <li><a href="/import"><i class="fa fa-link"></i> <span>Importar</span></a></li>
+            <li><a href="/report"><i class="fa fa-area-chart"></i> <span>Gráfico</span></a></li>
           </ul><!-- /.sidebar-menu -->
         </section>
         <!-- /.sidebar -->

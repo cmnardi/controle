@@ -17,8 +17,9 @@ $(function () {
       datasets: [
         {
           label: "In",
-          strokeColor: "#0F0",
-          pointColor: "#0F0",
+          fillColor: "rgb(0, 166, 90)",
+          strokeColor: "rgb(0, 166, 90)",
+          pointColor: "rgb(0, 100, 90)",
           pointStrokeColor: "#c1c7d1",
           pointHighlightFill: "#fff",
           pointHighlightStroke: "rgb(220,220,220)",
@@ -26,7 +27,8 @@ $(function () {
         },
         {
           label: "Out",
-          strokeColor: "#F00",
+          fillColor: "#dd4b39",
+          strokeColor: "#dd4b39",
           pointColor: "#F00",
           pointStrokeColor: "rgba(60,141,188,1)",
           pointHighlightFill: "#fff",
@@ -67,8 +69,6 @@ $(function () {
       datasetStrokeWidth: 2,
       //Boolean - Whether to fill the dataset with a color
       datasetFill: false,
-      //String - A legend template
-     // legendTemplate: "<ul class=\"<%=name.toLowerCase()%>-legend\"><% for (var i=0; i<datasets.length; i++){%><li><span style=\"background-color:<%=datasets[i].lineColor%>\"></span><%=datasets[i].label%></li><%}%></ul>",
       //Boolean - whether to maintain the starting aspect ratio or not when responsive, if set to false, will take up entire container
       maintainAspectRatio: false,
       //Boolean - whether to make the chart responsive to window resizing

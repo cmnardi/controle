@@ -7020,54 +7020,26 @@ $(function () {
   var salesChart = new Chart(salesChartCanvas);
 
   $.getJSON('/report/data', function (data){
-    console.info(data[0]);
-    console.info(data[1]);
-    console.info(data[2]);
-  
     var salesChartData = {
-      labels: ["January", "February", "March", "April", "May", "June", "July"],
+      labels: data.labels,
       datasets: [
         {
           label: "In",
-          fillColor: "rgb(140, 210, 100)",
-          strokeColor: "rgb(210, 214, 222)",
-          pointColor: "rgb(210, 214, 222)",
+          strokeColor: "#0F0",
+          pointColor: "#0F0",
           pointStrokeColor: "#c1c7d1",
           pointHighlightFill: "#fff",
           pointHighlightStroke: "rgb(220,220,220)",
-          data: 
-          [data[0][0].value,
-          data[0][1].value,
-          data[0][2].value
-          ]
+          data: data.in
         },
         {
           label: "Out",
-          fillColor: "rgb(200, 0, 0)",
-          strokeColor: "rgba(60,141,188,0.8)",
-          pointColor: "#3b8bba",
+          strokeColor: "#F00",
+          pointColor: "#F00",
           pointStrokeColor: "rgba(60,141,188,1)",
           pointHighlightFill: "#fff",
           pointHighlightStroke: "rgba(60,141,188,1)",
-          data: 
-          [data[1][0].value,
-          data[1][1].value,
-          data[1][2].value
-          ]
-        },
-        {
-          label: "Mean",
-          fillColor: "rgba(60,141,188,0.9)",
-          strokeColor: "rgba(60,141,188,0.8)",
-          pointColor: "#3b8bba",
-          pointStrokeColor: "rgba(60,141,188,1)",
-          pointHighlightFill: "#fff",
-          pointHighlightStroke: "rgba(60,141,188,1)",
-          data: 
-          [data[2][0].value,
-          data[2][1].value,
-          data[2][2].value
-          ]
+          data: data.out
         }
       ]
     };
@@ -7076,7 +7048,7 @@ $(function () {
       //Boolean - If we should show the scale at all
       showScale: true,
       //Boolean - Whether grid lines are shown across the chart
-      scaleShowGridLines: false,
+      scaleShowGridLines: true,
       //String - Colour of the grid lines
       scaleGridLineColor: "rgba(0,0,0,.05)",
       //Number - Width of the grid lines
@@ -7090,7 +7062,7 @@ $(function () {
       //Number - Tension of the bezier curve between points
       bezierCurveTension: 0.3,
       //Boolean - Whether to show a dot for each point
-      pointDot: false,
+      pointDot: true,
       //Number - Radius of each point dot in pixels
       pointDotRadius: 4,
       //Number - Pixel width of point dot stroke
@@ -7102,11 +7074,11 @@ $(function () {
       //Number - Pixel width of dataset stroke
       datasetStrokeWidth: 2,
       //Boolean - Whether to fill the dataset with a color
-      datasetFill: true,
+      datasetFill: false,
       //String - A legend template
-      legendTemplate: "<ul class=\"<%=name.toLowerCase()%>-legend\"><% for (var i=0; i<datasets.length; i++){%><li><span style=\"background-color:<%=datasets[i].lineColor%>\"></span><%=datasets[i].label%></li><%}%></ul>",
+     // legendTemplate: "<ul class=\"<%=name.toLowerCase()%>-legend\"><% for (var i=0; i<datasets.length; i++){%><li><span style=\"background-color:<%=datasets[i].lineColor%>\"></span><%=datasets[i].label%></li><%}%></ul>",
       //Boolean - whether to maintain the starting aspect ratio or not when responsive, if set to false, will take up entire container
-      maintainAspectRatio: true,
+      maintainAspectRatio: false,
       //Boolean - whether to make the chart responsive to window resizing
       responsive: true
     };

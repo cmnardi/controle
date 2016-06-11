@@ -97,23 +97,29 @@ class Transaction extends Model
             ->get();
     }
 
-    public static function getAgregateDataByMonth( $in = null )
+    public static function getAgregateDataByMonth( $compare = null )
     {
         $return =
             DB::table('transaction')
                 ->select(DB::raw('SUM(value) as value, month(date) as month, year(date) as year'))
                 ->groupBy(DB::raw('month(date), year(date)'))
-                ->orderBy(DB::raw('year(date)'), 'DESC')
-                ->orderBy(DB::raw('month(date)'),'DESC')
+                ->orderBy(DB::raw('year(date)'), 'ASC')
+                ->orderBy(DB::raw('month(date)'),'ASC')
         ;
-        if ( !is_null($in) ){ 
-            $return->where('value', $in , 0);
+        if ( !is_null($compare) ){ 
+            $return->where('value', $compare , 0);
         }
-        return 
-            $return
-                ->get()
-                //->sum('value')
-                ;
+        return $return->get();
+    }
+
+    public static function getValuesToReportList( $list )
+    {
+        $result = [];
+        foreach( $list as $item){
+            $value = ($item->value < 0 )?$item->value*-1:$item->value;
+            $result[$item->month . "-" . $item->year] = $value;
+        }
+        return $result;
     }
 
     public static function getTotal()

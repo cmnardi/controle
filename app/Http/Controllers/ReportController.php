@@ -16,11 +16,18 @@ class ReportController extends Controller
 
     public function data()
     {
-    	return 
-    	[
-    	Transaction::getAgregateDataByMonth()
-    	,Transaction::getAgregateDataByMonth('>')
-    	,Transaction::getAgregateDataByMonth('<')
+        $in = Transaction::getAgregateDataByMonth('>');
+        $out = Transaction::getAgregateDataByMonth('<');
+        //$diff = Transaction::getAgregateDataByMonth();
+
+        $inValues = Transaction::getValuesToReportList($in);
+        $outValues = Transaction::getValuesToReportList($out);
+        //$diffValues = Transaction::getValuesToReportList($diff);
+    	return [
+            'labels' => array_keys($inValues),
+            'in' => $inValues,
+            'out' => $outValues,
+          //  'diff' => $diffValues,
     	];
     }
 }

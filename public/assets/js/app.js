@@ -7009,18 +7009,17 @@ $(function () {
   'use strict';
   /* ChartJS
    * -------
-   * Here we will create a few charts using ChartJS
    */
   //-----------------------
   //- MONTHLY SALES CHART -
   //-----------------------
   // Get context with jQuery - using jQuery's .get() method.
-  var salesChartCanvas = $("#salesChart").get(0).getContext("2d");
+  var expensesChartCanvas = $("#expensesChart").get(0).getContext("2d");
   // This will get the first returned node in the jQuery collection.
-  var salesChart = new Chart(salesChartCanvas);
+  var expensesChart = new Chart(expensesChartCanvas);
 
   $.getJSON('/report/data', function (data){
-    var salesChartData = {
+    var expensesChartData = {
       labels: data.labels,
       datasets: [
         {
@@ -7044,7 +7043,7 @@ $(function () {
       ]
     };
 
-    var salesChartOptions = {
+    var expensesChartOptions = {
       //Boolean - If we should show the scale at all
       showScale: true,
       //Boolean - Whether grid lines are shown across the chart
@@ -7084,11 +7083,7 @@ $(function () {
     };
 
     //Create the line chart
-    salesChart.Line(salesChartData, salesChartOptions);
+    expensesChart.Line(expensesChartData, expensesChartOptions);
     });
-  //---------------------------
-  //- END MONTHLY SALES CHART -
-  //---------------------------
-
 });
 //# sourceMappingURL=app.js.map

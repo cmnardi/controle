@@ -13,6 +13,10 @@
 
 Route::get('/', 'HomeController@index');
 
+
+Route::get('report', 'ReportController@index');
+Route::get('report/data', 'ReportController@data');
+
 Route::resource('api_category', 'ApiCategoryController');
 Route::resource('api_transaction', 'ApiTransactionController');
 Route::resource('import', 'ImportController');

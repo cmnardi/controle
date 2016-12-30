@@ -2,7 +2,408 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="27e3e82e-a3c1-468d-9f88-0ad185edb21f" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/COMMIT_EDITMSG" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/FETCH_HEAD" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/HEAD" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/ORIG_HEAD" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/config" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/description" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/hooks/applypatch-msg.sample" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/hooks/commit-msg.sample" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/hooks/post-update.sample" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/hooks/pre-applypatch.sample" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/hooks/pre-commit.sample" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/hooks/pre-push.sample" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/hooks/pre-rebase.sample" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/hooks/prepare-commit-msg.sample" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/hooks/update.sample" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/index" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/info/exclude" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/logs/HEAD" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/logs/refs/heads/master" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/logs/refs/remotes/origin/HEAD" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/logs/refs/remotes/origin/master" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/00/79a7a307707cf2b997f6c8c73ec2795bdb4aa0" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/00/a750730c2e2777402f68ef2781df5dcfbef4d4" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/01/5cbb4de698f73756ca0b64169ab4b56a420e2e" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/02/6bf2487f3f816dc0ffa3404b5d38a35237cb26" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/02/ff46788a61852a6e84c9e011a2db9e57695904" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/03/a38bec8a2debd6675e5471c8244dcfb99651a6" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/05/27bef825e034c5c7fa4ec3577526e481e5220a" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/05/33eb799001b3c56cc34cd36a2670b76c675bbe" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/05/bdeb237a34dd67efea7e58e7c57d5c96471b39" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/06/1fbb7911394f284ef99e07bfc265be17aab418" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/07/b0471dd71dc6c8638e6071e7f3a4fd331deb41" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/08/d94ff2f4a178db331b18674f14155fd1f1845e" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/09/6049a3e5158ff9ed5584b053d58b67b635a703" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/09/ed48a4c73c9a286faa12cb6049af97acf383df" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/0b/73bc418282c957840d00391a567395298fdff5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/0b/a020a3e7d23ec851abb378e7b5c7aa204b3753" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/0d/34494bb3d71b2c0cbeca0ab8045921f7f59e70" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/0d/4f9dbac825937b790be1d4bf33b054c72b8bec" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/0d/567635425404b2000a7c745d468a9615821646" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/0e/11277c4abe2b8789979a478df2e2d3be475e2f" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/0e/11c11b0eb97412bba6638d958ae9235c7bea3a" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/0e/e630e93114919a7cee610fa4a9a0988aca3250" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/0f/0b11ddb83b0f61db7e356e1ddfcf1646725f9b" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/10/b6a1c11e09820ec25151c9417142834ea0ff53" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/11/1fdeca2b01b8abb421b304360deaa767b459bd" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/11/c9f30dcdd55d2f69b8c8410169335962f83135" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/13/33f09a229735bba3af20a2411f5ceae8f79357" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/13/61f2f9b3f2861754b2a2c2cfa57b29f27ea4d0" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/14/03d2b584235bc8675c6e190fd18d76a89ccc32" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/14/d3a8b9cc2483795e6cb10307866d1cee79dc27" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/15/f282b8db2a34597c26b2e9f10ae89aaeaf7add" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/16/76e912792883d3fdf6ca72292219b6b9882be7" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/16/9d58ea493412082a527c50026462e414e4c5b4" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/16/c764f1fb9ac215ac12cef55abb5bef58daf8a7" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/17/bf1d2d71f9546a1558c78fdc201f6921f72aad" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/18/f1c8f9e7af1aaafeef6ed85445a15ee69e11c6" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/19/57869c83f44494a53a59b9c31ccf008f6f9e28" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/1a/0ddb0ded65e60e1ee6a407c7b83332005d01ea" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/1a/b36c42f74c5a7f9f250f24d8fe92ffe352876a" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/1b/abe28b98e912179c64e006cb21bbfc03a344a0" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/1c/22d7b7b1a8131a0fb429f649c9cf472fbfd4f3" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/1c/7639fbf66a7d66f5d39352a0e667d75b7d0f1d" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/1d/58e269b969d72854f8269821004fa76c834024" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/1f/079c3181626caa14d07ff199d4af6c42b1dc11" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/1f/cf54337421ccc326ceae804cd7d18dbf03809d" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/20/2950dc6abecab263a45081af7e018f9761299b" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/20/4b5154a262b6780d31149864ae1ee9ed5fab89" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/20/fda9b85c73851e9f718db5942ad93b1cde1ef3" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/22/02a9034b3456ee3a009617c9917fc3f0f06cd3" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/22/5c474f96f4a058767fc687aee79c71b236f944" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/22/c15665f1a9ee843b1d660fe8928310c1bfda67" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/22/fba7a88ef4ea7e069d13143102731b06a07508" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/23/7b70717c38463c5a9fa7f29f63903657d76c72" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/24/fb77049c64f33c5570537916412943639b901f" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/26/8ec5bcc5d2f0028524e54691f1916653f20aea" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/26/f371b6e63ab6d4c5992a00db784f93f95f7822" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/28/793a45e063bdf71e356bdf6475306b9666b618" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/29/1a0019f0658d9f7e86290d0fb69c9ac836dece" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/29/76db5882429a05707c896df7cf99710119af4e" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/2a/2c142b9c6e75a6606fdb8652484746095f2ce4" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/2a/79022d1acf9e12b7f623ca452bdec1da023d95" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/2a/8451d62711e420fcf1ea7192b37c162ec5fbb8" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/2a/e7e8a02fb2284ecdeed35b535e7c8fcb225cf4" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/2b/6c2f37eac5b0ba623284da9651435fbede5b73" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/2b/80b72dfb08020f78535a61380a9eabafefe364" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/2b/d834c3b32b6bc69431f04ea8cffbb9ec2a2283" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/2c/27eacefe3d7c8a8cc912b3ed6d01c6ee7e3c0d" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/2e/103f234d6f761f90007c92f7daf06e1d6df07b" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/2e/1626af6afd669514b073ce7fc6d7d3a5c3590d" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/2e/e1bf498a7bb3097eb624de2ce45f7573967123" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/2e/e711adfa3a03789df865125fa54ff5d6a817e5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/2f/10e38f4f2deac54e87f8d1c73fa7013789f741" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/30/8b675eed54375841f57906226a7ae833d87838" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/30/a983b4ad9895be567d241549a2247a77e4339e" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/34/8540e5a411f5b76dfafb3da62b71b2533b3275" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/34/a04ddcced3df9b1ea8f92bbe37f1f91f3474df" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/35/2f694c099149bbb781eef7d4ab868d55b8361a" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/35/d75f16a56933e4b3bfbb4dbe5e25f22fa4c2ad" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/35/ddadd406d604ea04f07b974cb51e927f7a745d" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/36/3ec4f8b83799cf54d3e93d85563c0bb0090c2b" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/39/84bd4e3512da1b358b48a18e95f488e545f236" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/39/a26e637470b4e5254d4aa573d3c26d56de89c5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/3a/050945b5a3a8eb635dc3a26db49eef84bcfde5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/3a/fde8e29a827091a249c3a811f1ee19b9e56630" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/3c/4fd65b4ef3e9c4e5a5fb90548825bb53f9eca5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/3c/b8f47fa24b10c0a955cc2d121f37511ab26459" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/3d/bb14ea9c64d6881c52d11b5878098e2db7a664" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/3d/f41807d99e6c7ec9dbdfdb25a430a1fae92728" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/3f/049cd480887c44b3fface71b92f8f5ee5fdfd8" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/3f/98a298cd0edc7c77689069a295c37e5ec5d96f" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/40/1799e938297968db3abcb54dfbadfdf1c8e824" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/40/ad34a7865b130dfb911044d6a76f41f8178cda" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/41/81189fe1d523e782dd46794ac8da6af3daccb5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/41/8c064ea2ceb7f42a41748ba2a9bfff82e7cebe" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/41/903cb3d80e4d37fc0f91834d854f8266875666" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/43/4e7a3b7ece295fe2b764f756cce1f74ab1dabc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/43/5f830f922ff9b668fb110f60ba7a91cd4c1477" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/43/8ad9d156dd4f02865880583f50d3dd4a0014eb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/43/c5782fb707925d3559be565796b26cfdff8eda" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/44/1a03cfb58a9066cdb9d0a90daa7b59e0433ea5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/45/74f442ccf9ea5dac92a7cf26c1e19870ff527c" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/45/7f0f43f5551603f8a55cee76b60d6e47542356" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/47/2e7f26e2687f0126759006c46982c9a358cd51" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/49/905146fd727ea507f8c5eadff2fe41b6aeb28a" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/4a/74af9c6a66f2d1faff4f630443046a29275ccb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/4a/eb4f7b2db77ea24b9e213c40ddc6ff0715b7d0" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/4c/0047f8e72bc623a9db9a940ab2aebdf578459b" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/4c/e755abf0bfb42d11b84cff213eb613f4024fb7" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/4e/3917b691891df92011a52ced0c0456aa3dd659" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/4e/6c9d6452ac6d648500d60bf04849396190e22d" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/4f/352b14233c16f2a26bb962602ff165c0a49ee0" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/4f/9cdf220e17878036d5165666ff01257352fe10" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/50/1ea02cf84ec82ff3831ad16d1178ad80bb5ab2" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/50/999280f87ccc178d7095a3f33209d58eb7f6dc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/50/dae9c92b345d15fa9b0a7d40786b76fe0e503f" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/51/4fc5108f0a5f4687c5e84dae678e4289c003a3" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/51/af76cc6b37d23dd5a30ddbd0bb831bc5fefab5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/51/da54a5bb369cf269b526d098a667bb9ad3bf60" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/51/e12b76b03ce295dba260fb3d58e80e7f0175c1" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/52/1f2210fe8ac126730fbadc2e00ea0ea9479ea7" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/52/8830715321b9cbf5a304572f747c7b76b059fb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/52/cceaaa63c80cbbb2a77a0cd41de149752b21a1" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/52/f0dc2c1605ff5df9cfb5712eafb30d81e1a011" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/53/66c75bd547b030c0b6210e4cf7cad52c00df78" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/53/a64a3506c9616049269eb1e6415e4169d5427e" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/55/5660caf2447887ceb9bf77a2e1adeadf2287ea" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/57/d756d4079aeec239a022c7e8fa38672fc86866" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/58/6f343d04dd15247bb957557f89615aa634ee48" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/58/91745a5f02db9d4d215df8e7a5570c9f7b3a7e" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/58/b0340ebe17bfd3395fb2d734da4f303aee4809" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/58/f0bac588c28cbe9d078e1157e0eb17b7bc771c" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/59/293901555c1011fc48be3e2b3107b9ee4ece52" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/59/8692fd329b2366b97d10744977735f10002a87" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/59/ebfa1bba01cf5bf391bdffe4ef5098f84d4733" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/5b/28ce59974383a992a04927307da80d7cc51f45" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/5b/f6c464ec8a0992f1c65eb42859159502a86b7f" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/5c/741e073ee2db0030e54d4d31cdc3892d0cfd37" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/5c/8dbd37f97860822e9e6713282ba04d329fa8e9" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/5c/ad79730efab40dbb1f5e3fb61e30c9e56dd981" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/5c/de836d547187697495883061944991230260d1" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/5c/fdee2de28497faa3fbd026d2d387ad43652b00" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/5e/19bd68a6aa74088cacc11b9e6d002d1484131c" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/5e/caeed213a4e4bc22f7ee9921d2db74362b64d2" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/5f/2325314a2037350f0341daf75ce0ed3db85ffc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/5f/e798fb4b1d214b58049de2cc42add2fd0c173d" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/5f/fd1bdbed53ae4f51a7908172e124334be46fa5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/60/7ee56dedb75abd4ca87f90d21d6667f4f4692c" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/60/8157f9dd6259818efe95f8042a188054d264b7" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/60/f361ea993930e265e99309850afe457490eba4" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/60/f463010810d4cdeaf0a3287a245bb7fe7a8718" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/61/1e36d217b8e1af9ebf84e8b9730dbba9688099" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/61/9c2e39819b65afb4be658dcd331d71f65a6c31" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/63/14d64978712483c7c5aa84ca5df8e7bc9773b0" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/63/3905fe8e4fd061271415f3dd6628612c472c9e" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/63/88754f3e6d8494354b249f2127aeeb61b875fd" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/64/20f6ef0053aeddb3033272dc37f059e9fffced" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/64/236e08d2867df8c774b4016b402ab22c1714b9" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/64/80a5504b833166a0a57a71ad2e396b81bd0b40" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/64/cd9cb158d51f5be3f24a5767dfacfe7b7cc26b" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/65/3915bae21313cd32f9294844dc9424c451ec76" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/65/9b0a71c2122e2e4a659ba6cb684a28580c5dcc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/65/e7178455433211cf3808d887d32f4fa84b6695" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/67/7451c3de038cc19ad4d0733fee0b2f7ab82501" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/6a/d3f0169b5d456e92b528a53a4b26d60e0e9c1a" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/6b/401eee2272575ac6359f38494018e8ac91845d" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/6b/99ba0bac0b50f9bd83a62f787e327fbce598c4" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/6c/63caa771182499de8f6a6f8aeb347d53ddf2f1" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/6d/7884cb2c040c04963f14f1051c804ab2094160" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/6f/444da917e23871ff80c025bd26a854922de08f" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/70/28bd999932155518cf8356c7de0ea2aacdc5eb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/71/5d0f024d105896d8009ddcba68a9991cfc2a10" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/71/73ed4fb9aec729ff37587a870e74893035b1d4" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/72/c536934a0c9477af2111625096177dd210f61b" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/72/d5e43bada0f2ba6c4c265ea519cc1dcaeba2e8" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/76/3619a210672072b534c92e68077fedafdd7701" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/77/37892a5410147637d80641e247b8786fbef96f" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/77/42896e8a16df576133864794768b2dac83e7e5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/77/7c98232e4f1bfa3e0dd5f91599e0b658a87d53" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/77/ae589e54a3cb94e6099e4056821c8cb20d1185" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/77/fe14579f8a104fca450209bf678beddad9f58f" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/79/73e077d7942c32bd4e14dd8c0d088bbcc9ceb0" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/7a/0008198e900436fcc94239ea0cf89e1e97350d" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/7b/81a3e457f54b6c7cc34723936701881ddf76c3" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/7c/d396eb08b4aa66ffe061bd339357f592a691dc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/7e/a7830a8f3c7d5e7224fbde9bd4eac69367bf0f" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/7e/f2447f4d586fce21b3dd6a38b8abdad55300c0" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/7f/5b5c670fb47be7162cfd2d2306c9f21a878f56" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/80/00516fa075bbfbc6307850492e9fc046491a77" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/81/047ab53ce3eb0242a35d00c7a0a9e8a39686ab" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/81/e43cd4f5aa6c5f7297c4bd4694e652a92d4c9f" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/82/002e8084a2d27bc1db001ab753b41edaf6bf6f" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/82/04da52344f16b8cb1d5d3784c25634f845ac65" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/83/8829eb2985b6e5c27707046bf71e8b194a348c" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/85/17f08f7236c8aee65368f6db824d4b2395bd7c" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/85/60fe890dbcef7266c847ac495db66658756f32" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/86/5ddafe331978fb2b88280952c7db38af802991" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/86/aecd0d611fcbd2538fb5dcc4ee71f7a713d7f9" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/87/631df02b83a5cdff8c31a9c72dad17d11f81f0" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/88/f5691104cd8cbb28c7d93707f2b9e83504b267" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/89/2233f1e2dfdeef5d2d3db26f5c1f520dba159e" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/89/7e1d9e9851d550f3b15523bec85f641f81308c" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/8a/69d45d4afea7510ea45482aadd4e1921121cbe" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/8a/7646ce118eb17673aac0c37e49d7f10451efb7" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/8b/e1c124977299f1291cd0aa3341ecd7058189ec" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/8c/24051df01233be09a87ff2a9c5dd56a4678cac" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/8c/86e52287baba6b0a436c9a7e007e3aa8eafd06" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/8c/b8f46500e5d38883609748be0478f19571856b" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/8c/d3930908c3d10b2962323ad10e592463258426" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/8d/a4233a3bdb21983927c1ddb6ad503bea7de6f5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/8e/03e91abeadfe1233ec4924117f26778fdc15fb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/8e/74af24d15cce5f9014a11852dbbc560a81b533" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/8f/76792742d5efbeb19954a2ff273075e7e13f54" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/90/c6dfa750ab726e811ca90206de2f4ef01fc651" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/90/f32c17859e432745ce600d245f8b6a6a2c6da4" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/91/0df810085a0d0033d34a480f602efb97e2a6b7" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/91/8b67ddf24e022280a3cd6e2736e1a84b73fcbe" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/92/477c63a125cfd7686d4aa939259f7fe2972f4c" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/92/66df79b137ef990065cf8773e645f7b6b2b9d5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/92/6935208d3e6d1d8c26a6b1e02cc12cb482e38d" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/93/6c5a67485182268aede7ab76e4f81c80bf9d0d" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/93/6ce13df5be9f6befd3d99b130e2287cd7d012d" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/93/bbc4d514ab2adbf9d91b847277569164358217" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/93/e861f9117325b1c9a98a84b0c2f57f09e5f2e3" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/94/55011acfd60dda6799284831bc817d91f93385" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/94/61219098db0933e6740acb658904f41b3b586c" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/95/8a6e5ac7af61cc2c2820a8178c33c86c6e83b7" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/95/acafd8254eec73785118a946874b6dc998b7e9" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/96/bb9bfe7cda91f1d32c76990bab6bdc9a460ab5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/97/3eeafd08cafa17fdc4dce7406048155d62e942" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/97/480015143cc31089791be90d42784a31c49a45" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/98/b3af4fbf0d77086e9e5d4798c6b847ec605b87" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/98/cf37f9a7ec6a518c141c636be1f28497bd94d9" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/99/81aef4dbd0026a1cf04562ba2d3ff7fd7cf15d" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/9a/11cd821068023f61a813f275a2ac03180f2944" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/9c/af5521b0cbef86d9bf01a5d047829ea97f9329" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/9c/de467adcebfe3cb3aed39c8b3c9b55a3e88e11" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/9e/a95600fa563bc320ff88d28292cde7f0f9df15" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/9f/befdfe8a84d67ba54ca90c3baf5dfb14c24e58" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/a0/cc7a246b0cbcdf8893c15bc105b87ee3055a63" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/a4/55ebf30e410b1b69616f057d6998331357f029" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/a5/0ab597d277411f26242dac8bdda807818bdf5e" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/a6/21887550d8745da910fe6e4cf3f09fe0b117ff" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/a6/98ee307b09ddf3ade2f9443d5a1f7ca39cb5f0" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/a6/d1d1b511b9142bfbf6778da800502756fc856c" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/a6/d4658de1fc4a4086a92797b455bbbdf3941b18" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/a9/4e1023ea1c9b4843d05cd06214f5a7ae82e3c1" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/a9/be8aea5bc92e14696ce59717db17137ce96dd3" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/aa/16eb9111a621abcdb4359326056d53bffe8479" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/aa/7b999f9d439ff5f27ecf9d54b219f60a6a5cee" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/aa/d1620fb887588f002a0d54cfc72a7c8d46e0ab" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/ab/fcc799c3ac03c2f8f3d131191433577c32f11a" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/ad/8f94c0daa1607ff68f94d23839b1f771be5763" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/af/5439654d86de5c40798267b23f5aa92bbc55b0" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/b0/4bb74dc6c71eb28040fc23b32b65657513d3ec" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/b0/817b44839352fd98db8416ca469e961e609ae9" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/b1/98bfb67a828f815cec620c969b6b41f099b9f0" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/b1/a0a8c40f4a712e10e27a0a2a068a278d39e232" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/b2/9143c6b12760fc51a13127bdebbf14398ca2c1" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/b3/34fb3204a4a0ea306e649f71bd9422105451a4" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/b3/ad7a51c3c90875a6d257bc47ce932bfa540d4e" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/b4/57e18ac0fd6c1d4f409edc59892acdecb28438" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/b6/6ab70eae92c1be3ee7a899c818b5bad4be9ed4" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/b6/7f25ef8a6aa52b8e238dead6b84552e08ac28a" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/b7/6e2eaf174563935bf85a71418ae694abd73136" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/b9/3a089e972f9cf3027b930d732baf37220e2152" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/b9/ac54ac5234c7a399d34d14cf024519f94fa7ea" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/ba/a30a722591d945b80010e776d3aeba31e24bac" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/ba/eda70de992945a5c377012bd180cbc4f94ec38" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/bb/0cb0e5d89060bb8a6d924f93ea4855d7cff126" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/bc/00913c17fadd90e4d9e9794f3e637f970b378e" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/bc/f2ff1843603d1b718844922384684a3250a43f" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/be/09b6e07ea92dfbcbf5f6798c043adccd9dcf7e" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/be/6b47b9c808ef8ac85d879f71ed4b8d3df5779c" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/c0/b3e4ac6a80757f20970c12854125de491a14b4" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/c0/e93035b80ee34e3bc0f76bf44796b2fddef59d" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/c1/2435460d62b267bcaba5049b2962757918cf59" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/c1/dd279b815645fa77938906ecbc643d31a81d61" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/c2/6110f249d1bac6a29aa2cbe3a12ae7297de6db" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/c2/ade2a500822a12a1d7a9f29574603fd1266d2c" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/c3/6bad0b97a12b2b47a1ab5c57e8c9063840dc37" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/c5/afa50f576f395fb9a7b45b83a4ac2de4bb9eab" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/c5/b75859a8094bc9dabafc862a8ea34933c97e28" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/c6/36a59828914d909b2a048cc097af2092e5b624" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/c7/6435285df6102bd0818e6c3d319fad906c1353" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/c7/84e1060e571cdd43494873380ade48b3a2c4f9" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/c7/8742e9da42d96b44d1c7cd20736b81facee303" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/c7/934c85d68844ecbd2889cd3dc302fb8c30239b" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/c7/b5aed6653dbfee1f48c0a63c5f34a2c7cdf62d" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/c8/40a9ec969874fa79bdbbb960f891390e480da3" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/c8/454d2276c505fff160d35425d614a105f7104f" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/c8/4725ee48d2e0c7e7586b460681026ed3a09832" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/c8/aaf971fbce01001ec34daf8c7b05cd141d12bf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/ca/edaf3f0e85f9a92130dd21d9fe9a24a2d5d237" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/cb/99c5b38ea717fd187e9989ee461dc760b6e80d" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/cc/79b3e4b74b7a690ee36b0e4b4435324038c2f6" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/cc/d49dc45033a3bc1dca9f0fb5acf666f64bab5f" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/cf/e148c469f0d86689a76b9e1bfa94d72617e0e7" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/d0/847723a06ce3a6c602510a8ad18be64b5734d3" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/d0/f729053bdca9c72e5226f08baffd939836ea15" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/d1/4e1cbc38db072f74961100cfe1462d524c5760" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/d3/f2c3c0bfa14c303c7c3e950acc71b273f5d9ea" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/d4/8703f0c7f8bc759b4c1f402a3badf604331f03" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/d4/fc9ad5c60b30758d4b31715613154f1be2d7d2" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/d5/5c0bf2b2b30831f58708ede6576c13ebbc595d" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/d6/afd222299f10c22341acbb2f6439165c9a9df4" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/d6/d39ae011c457209b6f0dd7cf57bae2a903ef82" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/d7/80ece4ad02f0547e607ce4712117b99e5c0c38" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/d7/f679f1f99ddc452156f4422d7816bab1105d40" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/d8/a032ec4e167feb18b2e9aad2cc37df88e4f125" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/d9/1aacac65eccf3c444c01b994c58dc1cb00cade" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/da/5515d06cd8f3fa73d2534faf5d75f98400a651" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/da/7ff92ea40545c38b3b5f056659a44f9b791edf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/dc/c3d629c938f4e8974b601003b2e55a26673841" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/dd/12fc4a67ceb357775768ac30f0db107ef2a9b6" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/dd/2b5d752c7dea5cfad4ac47fdf86a68a71bdaff" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/dd/2f7487f59e4a3f582f4cbc5eabacf60ea0249d" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/dd/e851fd824fb0b751eda2d110ad2a6da9fc8c0f" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/de/27c94befcc2324777814b526161c9b6dfbc321" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/de/9ef351f951c60697640475541ffb0ad6f39499" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/df/9d0d42aea164a45be8d6a7a320de150aafa972" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/e0/673448b8b53fcb173b4a087751df3a47260a84" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/e0/c3501e42b9eeda1fe0d8b2c49195664e07ff0e" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/e0/eff7b150af32d3243d538cfe73c223ce166bb4" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/e1/4d51e9dc2ea39e9be96765c182a0fe78487c68" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/e1/50328cb4daeb382c239fcefdaa98d5eef8c0db" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/e1/5f9fb6e973f343cf58c23330f6a0ac0372ec90" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/e1/fa85d836ebdc19133b4ed6c0285e238fd11059" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/e2/1e93b14aa5ef1a2cc32586a0b68e1d755eef7e" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/e4/5de65184b4332fa2e9b69e67dd45825146b690" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/e5/0fd5c795997d6b92b98610b32c85c606fdeeb1" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/e5/4629a533a506a13ed0fb03b1b793c877f9bb6e" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/e5/9dfd3ec39de5d913c5c32936c86384092c4dfd" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/e7/044d7b659aff86d8e4bb9e13a4fe4efd080b9f" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/e7/33bd0956e983d282ec4df398f7aa4e52ebcc91" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/e7/559c04e6bfd874d2dbe553be247dd3e30fcfb0" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/e8/9c822763ce406e0ccd2bd152aed0d6949bfa98" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/e9/07ad865ca4d67484a6392e208aa9e22da26e97" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/e9/ce66e543f12921aff0aa93cc7e94780aebaa51" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/ea/bd02c5991cf5b9bc9de523a30ca3d8e632e1e2" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/eb/903d4d39855452ad54e24b71d2bdbfa52eaa2f" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/ec/4826bb76a66e3e27fa6525adba75c8f8a0122a" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/ec/527939de98107e5917bca34bdb087d737d35fa" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/ec/bd0485f8eca8592bb08f48dc4150c31156b28a" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/ed/d5190cc13b19844fb4a04450fce8e839881722" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/ee/1bec47f6b4805896330c33b47ed4f6d50ebaac" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/ee/9e07f8d9ec1327dbdbe8ecc40ea73083aac480" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/f0/f210d5e8bb21ba34c5ff88b27679b07d4708d9" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/f2/beb9cca72ff6001b463574a75a67de52a2abe4" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/f2/c2db5d499f1b9ed0df7bb80e55772f24fffbfd" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/f2/c71a21de0b6f52525175fb53e16f624aba944f" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/f3/18dcc5ccea5d896b64e079f50b302e7a6879c8" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/f3/48524ce0ac27e1bae2fa40567d827313d4bc2e" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/f3/b166af564dc3d69c516dc7114708e25786bb57" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/f3/fbdb0f36166abf6a5f2fb964685c294e2525e1" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/f4/242d363c6d515fc8e9b279542c766447283380" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/f5/7ff2a52af32b7da2e5f1e4dbca2d0df15052de" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/f5/ee2adfebf226ec4077bd693e6ac23694f31df2" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/f6/3d6c9be444cb4961f48257ab9ed10fc6515647" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/f7/ecfa7fcdabf83c65004c70d79b2d25bb9a1d44" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/f9/3164772cb4362badacd6cb0d833cad5479e75c" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/f9/5bcca7b425b9fd8daf7311eedd0b178ed1faa5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/f9/a629cdd99ec00b7cfc2a769b02c869c65a957c" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/f9/bad741533185b39ae8d475c5d3448b566973ad" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/f9/f54e5ad29a305f77c352c6a9098d5bd6907e95" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/fa/28d2280e2b1b91641f364bb42f1dda32bcb9f9" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/fa/6de71e541fb531023233a0fa25e685f1b0d216" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/fa/a5a14af464aa0936900d5ccfa580ecec119353" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/fb/94903606cdcb7762e3184fbda4db4d6955cef4" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/fb/d3499a9ba951f5ff4eb61fa60dca3f3d803913" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/fc/660c7001e0aebfbf79e3e6cef9f01bb77f4e23" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/fd/0edd9ca01d3df88fceaca1c9076eecd697d59f" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/fe/69e525fab4611590c4ea4d0b99007b3e952998" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/pack/pack-e4c8f07a04748420d8d7eb86f84c4582e3099570.idx" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/objects/pack/pack-e4c8f07a04748420d8d7eb86f84c4582e3099570.pack" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/packed-refs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/refs/heads/master" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/refs/remotes/origin/HEAD" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.git-old/refs/remotes/origin/master" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bower.json" afterPath="$PROJECT_DIR$/bower.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/layout/master.blade.php" afterPath="$PROJECT_DIR$/resources/views/layout/master.blade.php" />
     </list>
     <ignored path="controle.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -14,7 +415,6 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
   </component>
@@ -27,8 +427,8 @@
       <file leaf-file-name="CategoryController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/CategoryController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="362">
-              <caret line="53" column="0" selection-start-line="53" selection-start-column="0" selection-end-line="53" selection-end-column="0" />
+            <state relative-caret-position="825">
+              <caret line="58" column="0" selection-start-line="58" selection-start-column="0" selection-end-line="58" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -37,8 +437,8 @@
       <file leaf-file-name="HomeController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/HomeController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="13" column="48" selection-start-line="13" selection-start-column="48" selection-end-line="13" selection-end-column="48" />
+            <state relative-caret-position="330">
+              <caret line="24" column="29" selection-start-line="24" selection-start-column="29" selection-end-line="24" selection-end-column="29" />
               <folding />
             </state>
           </provider>
@@ -57,21 +457,51 @@
       <file leaf-file-name="list.blade.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/transaction/list.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="17" column="35" selection-start-line="17" selection-start-column="35" selection-end-line="17" selection-end-column="35" />
+            <state relative-caret-position="555">
+              <caret line="37" column="35" selection-start-line="37" selection-start-column="35" selection-end-line="37" selection-end-column="35" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Transaction.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Transaction.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Model/Transaction.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="557">
-              <caret line="113" column="5" selection-start-line="113" selection-start-column="5" selection-end-line="113" selection-end-column="5" />
+            <state relative-caret-position="287">
+              <caret line="179" column="42" selection-start-line="179" selection-start-column="42" selection-end-line="179" selection-end-column="42" />
               <folding>
                 <element signature="e#29#36#0#PHP" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="composer.json" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/composer.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="home.blade.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/home.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="565">
+              <caret line="136" column="11" selection-start-line="136" selection-start-column="11" selection-end-line="136" selection-end-column="11" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="master.blade.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/resources/views/layout/master.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="135">
+              <caret line="43" column="43" selection-start-line="43" selection-start-column="43" selection-end-line="43" selection-end-column="43" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -93,6 +523,7 @@
         <option value="$PROJECT_DIR$/app/Http/Controllers/CategoryController.php" />
         <option value="$PROJECT_DIR$/resources/views/transaction/list.blade.php" />
         <option value="$PROJECT_DIR$/app/Model/Transaction.php" />
+        <option value="$PROJECT_DIR$/resources/views/layout/master.blade.php" />
       </list>
     </option>
   </component>
@@ -109,15 +540,18 @@
     </gulpfiles>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
+  <component name="NodeModulesDirectoryManager">
+    <handled-path value="$PROJECT_DIR$/node_modules" />
+  </component>
   <component name="PhpServers">
     <servers />
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="35" />
-    <option name="y" value="24" />
-    <option name="width" value="1331" />
-    <option name="height" value="744" />
+    <option name="x" value="49" />
+    <option name="y" value="18" />
+    <option name="width" value="1311" />
+    <option name="height" value="750" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -145,6 +579,7 @@
     </navigator>
     <panes>
       <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -173,7 +608,47 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="controle" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="controle" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="layout" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="controle" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="controle" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -190,14 +665,9 @@
               <option name="myItemId" value="app" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Model" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -220,6 +690,12 @@
       <method />
     </configuration>
     <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <gulpfile />
+      <tasks />
+      <arguments />
+      <envs />
       <method />
     </configuration>
     <configuration default="true" type="js.build_tools.npm" factoryName="npm">
@@ -246,18 +722,20 @@
       <workItem from="1461953378336" duration="82000" />
       <workItem from="1461955575405" duration="480000" />
       <workItem from="1461956939720" duration="592000" />
+      <workItem from="1465674941952" duration="1512000" />
+      <workItem from="1483112093774" duration="1625000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="8011000" />
+    <option name="totallyTimeSpent" value="11148000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="35" y="24" width="1331" height="744" extended-state="6" />
-    <editor active="false" />
+    <frame x="49" y="18" width="1311" height="750" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22990233" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22959574" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -293,11 +771,84 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/database/migrations/2016_04_29_185306_Transaction.php">
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/CategoryController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="825">
+          <caret line="58" column="0" selection-start-line="58" selection-start-column="0" selection-end-line="58" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/HomeController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="24" column="29" selection-start-line="24" selection-start-column="29" selection-end-line="24" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/category/show.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="47" selection-start-line="8" selection-start-column="47" selection-end-line="8" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/transaction/list.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="555">
+          <caret line="37" column="35" selection-start-line="37" selection-start-column="35" selection-end-line="37" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Model/Transaction.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#29#36#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/CategoryController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/HomeController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="13" column="48" selection-start-line="13" selection-start-column="48" selection-end-line="13" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/category/show.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="47" selection-start-line="8" selection-start-column="47" selection-end-line="8" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/transaction/list.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" column="35" selection-start-line="17" selection-start-column="35" selection-end-line="17" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2016_04_29_185306_Transaction.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -324,7 +875,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
           <caret line="5" column="23" selection-start-line="5" selection-start-column="23" selection-end-line="5" selection-end-column="23" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -332,7 +882,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -340,7 +889,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="351">
           <caret line="45" column="10" selection-start-line="45" selection-start-column="10" selection-end-line="45" selection-end-column="10" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -348,7 +896,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="300">
           <caret line="21" column="12" selection-start-line="21" selection-start-column="12" selection-end-line="21" selection-end-column="12" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -375,17 +922,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
           <caret line="17" column="39" selection-start-line="17" selection-start-column="28" selection-end-line="17" selection-end-column="39" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/home.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="157" column="62" selection-start-line="157" selection-start-column="62" selection-end-line="157" selection-end-column="62" />
-          <folding>
-            <element signature="e#74#5952#0#HTML" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -393,7 +929,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -409,41 +944,64 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="195">
           <caret line="93" column="28" selection-start-line="93" selection-start-column="23" selection-end-line="93" selection-end-column="28" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/transaction/list.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="35" selection-start-line="17" selection-start-column="35" selection-end-line="17" selection-end-column="35" />
+        <state relative-caret-position="555">
+          <caret line="37" column="35" selection-start-line="37" selection-start-column="35" selection-end-line="37" selection-end-column="35" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/HomeController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="13" column="48" selection-start-line="13" selection-start-column="48" selection-end-line="13" selection-end-column="48" />
+        <state relative-caret-position="330">
+          <caret line="24" column="29" selection-start-line="24" selection-start-column="29" selection-end-line="24" selection-end-column="29" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/CategoryController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="362">
-          <caret line="53" column="0" selection-start-line="53" selection-start-column="0" selection-end-line="53" selection-end-column="0" />
+        <state relative-caret-position="825">
+          <caret line="58" column="0" selection-start-line="58" selection-start-column="0" selection-end-line="58" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Model/Transaction.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="557">
-          <caret line="113" column="5" selection-start-line="113" selection-start-column="5" selection-end-line="113" selection-end-column="5" />
+        <state relative-caret-position="287">
+          <caret line="179" column="42" selection-start-line="179" selection-start-column="42" selection-end-line="179" selection-end-column="42" />
           <folding>
             <element signature="e#29#36#0#PHP" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/composer.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/home.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="565">
+          <caret line="136" column="11" selection-start-line="136" selection-start-column="11" selection-end-line="136" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/layout/master.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="43" column="43" selection-start-line="43" selection-start-column="43" selection-end-line="43" selection-end-column="43" />
+          <folding />
         </state>
       </provider>
     </entry>

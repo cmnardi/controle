@@ -14,10 +14,10 @@ class ReportController extends Controller
         return view('graph');
     }
 
-    public function data()
+    public function data($year = null)
     {
-        $in = Transaction::getAgregateDataByMonth('>');
-        $out = Transaction::getAgregateDataByMonth('<');
+        $in = Transaction::getAgregateDataByMonth('>', $year);
+        $out = Transaction::getAgregateDataByMonth('<', $year);
         //$diff = Transaction::getAgregateDataByMonth();
 
         $inValues = Transaction::getValuesToReportList($in);

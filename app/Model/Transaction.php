@@ -92,7 +92,7 @@ class Transaction extends Model
         }
         if ( !is_null($month)) {
             $rows->where(DB::raw('month(date)'),$month);
-        }
+        }   
 		return $rows
             ->get();
     }
@@ -112,7 +112,8 @@ class Transaction extends Model
         if ( !is_null($year) ){
             $return->where(DB::raw('year(date)'), '=', $year);
         }
-        $return->limit(12);
+        //$return->limit(12);
+        $return->orderBy('date', 'desc');
         return $return->get();
     }
 

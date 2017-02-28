@@ -36,4 +36,18 @@ class Category extends Model
     public static function listByIdCategory($id_category){
         return self::where('id_category', $id_category)->get();
     }
+
+    public function getParent()
+    {
+        if (!is_null($this->id_category)){
+            $parent = $this->find($this->id_category);
+            return $parent;
+        }
+        return null;
+    }
+
+    public function __toString()
+    {
+        return $this->name;
+    }
 }

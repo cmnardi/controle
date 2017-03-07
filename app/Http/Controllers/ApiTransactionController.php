@@ -38,6 +38,14 @@ class ApiTransactionController extends Controller
         $row = Transaction::find($id);
         $row->id_category = $request->id_category;
         $row->save();
+
+        if ( $request->changeAll == 'true') {
+            $rows = Transaction::findByDescription($row->description);
+            foreach ($rows as $row2) {
+                $row2->id_category = $request->id_category;
+                $row2->save();
+            }
+        }
         return $row;
     }
 }

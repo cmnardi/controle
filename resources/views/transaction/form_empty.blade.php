@@ -13,6 +13,16 @@
 				<input type="hidden" name="id" id="id" value="">
 				<div class="box-body">
 					<div class="form-group">
+						<div class="col-sm-offset-2 col-sm-10">
+							<div class="checkbox">
+								<label>
+									<input type="checkbox" name="changeAll" id="changeAll" value="1">
+									Mudar todos
+								</label>
+							</div>
+						</div>
+					</div>
+					<div class="form-group">
 						<label for="description">ID</label>
 						<input type="text" class="form-control" id="fitid" readonly>
 					</div>

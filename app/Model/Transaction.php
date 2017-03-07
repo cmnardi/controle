@@ -24,6 +24,12 @@ class Transaction extends Model
     	return (is_null($t))?new Transaction():$t;
     }
 
+    public static function findByDescription($description)
+    {
+        $t = self::where('description', $description)->get();
+        return $t;
+    }
+
     public static function testTransaction($transaction)
     {
         $p1 = Category::testPattern($transaction->memo, (float)$transaction->amount);

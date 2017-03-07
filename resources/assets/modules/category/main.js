@@ -45,6 +45,8 @@ $(document).ready(function(){
     	var transaction = {
     		"_token": $('#token').val(),
     		'id':$('#id').val(),
+    		'changeAll':$('#changeAll').val(),
+    		'changeAll':($('input[name="changeAll"]:checked').length > 0),
     		'id_category':$('#id_sub_category').val()
     	};
     	//console.info(transaction);

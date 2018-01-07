@@ -33,7 +33,7 @@
 					</div>
 					<div class="form-group">
 						<label for="exampleInputFile">Categoria {{$transaction->category->id_category}}</label>
-						<select class="form-control" >
+						<select class="form-control" id="id_category">
 							<option></option>
 							@foreach($rootCategories as $category)
 								<option value="{{$category->id}}"
@@ -46,7 +46,7 @@
 					</div>
 					<div class="form-group">
 						<label for="exampleInputFile">SubCategoria</label>
-						<select class="form-control" name="id_category">
+						<select class="form-control" name="id_category" id="id_sub_category">
 							<option></option>
 							@foreach($categories as $category)
 								<option value="{{$category->id}}" 

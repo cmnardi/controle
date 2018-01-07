@@ -23,12 +23,22 @@ Route::post('register',['middleware' => 'auth','uses'=>'Auth\AuthController@post
 
 Route::get('/', ['middleware' => 'auth','uses'=>'HomeController@index']);
 
+
+Route::get('report', 'ReportController@index');
+Route::get('report/data', 'ReportController@data');
+Route::get('report/data/{year}', 'ReportController@data');
+
 Route::resource('api_category', 'ApiCategoryController');
+Route::resource('api_transaction', 'ApiTransactionController');
 Route::resource('import', 'ImportController');
 
 Route::resource('category', 'CategoryController');
 Route::resource('transaction', 'TransactionController');
+
 Route::get('category/{id}/{mount}/{year}', ['middleware' => 'auth','uses'=>'CategoryController@show']);
-
-
 //Route::get('/{mount}/{year}', ['middleware' => 'auth','uses'=>'HomeController@index']);
+
+Route::get('api_category/sub_categories/{id}', 'ApiCategoryController@getSubCategories');
+Route::get('category/{id}/{mount}/{year}', 'CategoryController@show');
+Route::get('/{mount}/{year}', 'HomeController@index');
+

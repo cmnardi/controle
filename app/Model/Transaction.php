@@ -10,7 +10,7 @@ class Transaction extends Model
     //
     protected $table = 'transaction';
 
-    protected $fillable = ['id', 'description','value', 'id_category'];
+    protected $fillable = ['id', 'description','value', 'id_category', 'fitid'];
 
     public function category()
     {
@@ -24,7 +24,7 @@ class Transaction extends Model
     	return (is_null($t))?new Transaction():$t;
     }
 
-    public static function testTransaction($transaction) 
+    public static function testTransaction($transaction)
     {
         $p1 = Category::testPattern($transaction->memo, (float)$transaction->amount);
         if ($p1){
@@ -97,17 +97,33 @@ class Transaction extends Model
             ->get();
     }
 
-    public static function getAgregateDataByMonth()
+    public static function getAgregateDataByMonth( $compare = null, $year = null)
     {
-        return
+        $return =
             DB::table('transaction')
                 ->select(DB::raw('SUM(value) as value, month(date) as month, year(date) as year'))
                 ->groupBy(DB::raw('month(date), year(date)'))
-                ->orderBy(DB::raw('year(date)'), 'DESC')
-                ->orderBy(DB::raw('month(date)'),'DESC')
-                ->get()
-                //->sum('value')
-                ;
+                ->orderBy(DB::raw('year(date)'), 'ASC')
+                ->orderBy(DB::raw('month(date)'),'ASC')
+        ;
+        if ( !is_null($compare) ){
+            $return->where('value', $compare , 0);
+        }
+        if ( !is_null($year) ){
+            $return->where(DB::raw('year(date)'), '=', $year);
+        }
+        $return->limit(12);
+        return $return->get();
+    }
+
+    public static function getValuesToReportList( $list )
+    {
+        $result = [];
+        foreach( $list as $item){
+            $value = ($item->value < 0 )?$item->value*-1:$item->value;
+            $result[str_pad($item->month, 2, '0', STR_PAD_LEFT) . "/" . $item->year] = $value;
+        }
+        return $result;
     }
 
     public static function getTotal()

@@ -13,7 +13,8 @@
             @foreach ($transactions as $row)
                 <?php $total += $row->value; ?>
                 <tr>
-                    <td><a href="/transaction/{{$row->id}}">{{$row->id}}</a></td>
+                    <td><a data-toggle="modal" data-target="#myModal"
+                    data-id="{{$row->id}}">{{$row->id}}</a></td>
                     <td>{{$row->category}}</td>
                     <td>{{$row->subcategory}}</td>
                     <td>{{$row->description}}</td>
@@ -27,4 +28,23 @@
             </tr>
         </table>
     </div>
+</div>
+    
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Fechar"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+      </div>
+      <div class="modal-body">
+        @include('transaction.form_empty')
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+        <button type="button" class="btn btn-primary" id="gravar">Gravar</button>
+      </div>
+    </div>
+  </div>
 </div>
